@@ -1,0 +1,28 @@
+# Build
+dist/
+.output/
+.astro/
+node_modules/
+
+# Deps
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.production
+.env.local
+.dev.vars
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/preview/
+.idea/
+
+# Cloudflare
+.wrangler/

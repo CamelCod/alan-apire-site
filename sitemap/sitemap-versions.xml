@@ -1,0 +1,32 @@
+<!-- Version 1: English XML Sitemap -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/solutions/</loc></url>
+  <url><loc>https://example.com/sectors/</loc></url>
+  <url><loc>https://example.com/projects/</loc></url>
+  <url><loc>https://example.com/insights/</loc></url>
+  <url><loc>https://example.com/company/</loc></url>
+  <url><loc>https://example.com/contact/</loc></url>
+</urlset>
+
+<!-- Version 2: Arabic XML Sitemap -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/ar/</loc></url>
+  <url><loc>https://example.com/ar/solutions/</loc></url>
+  <url><loc>https://example.com/ar/sectors/</loc></url>
+  <url><loc>https://example.com/ar/projects/</loc></url>
+  <url><loc>https://example.com/ar/insights/</loc></url>
+  <url><loc>https://example.com/ar/company/</loc></url>
+  <url><loc>https://example.com/ar/contact/</loc></url>
+</urlset>
+
+<!-- Version 3: Russian XML Sitemap -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/ru/</loc></url>
+  <url><loc>https://example.com/ru/solutions/</loc></url>
+  <url><loc>https://example.com/ru/sectors/</loc></url>
+  <url><loc>https://example.com/ru/projects/</loc></url>
+  <url><loc>https://example.com/ru/insights/</loc></url>
+  <url><loc>https://example.com/ru/company/</loc></url>
+  <url><loc>https://example.com/ru/contact/</loc></url>
+</urlset>
