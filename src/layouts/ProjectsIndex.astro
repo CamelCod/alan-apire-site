@@ -1,0 +1,33 @@
+---
+import type { Locale } from '../i18n/config';
+import Base from './Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { PAGES } from '../i18n/pages';
+import { getCollection } from 'astro:content';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const all = await getCollection('projects', (e) => e.data.locale === locale);
+const projects = all.sort((a, b) => a.data.order - b.data.order).slice(0, 10);
+---
+
+<Base locale={locale} page="projects">
+  <PageHero eyebrow={PAGES.projects[locale].label} title={PAGES.projects[locale].title} subtitle={PAGES.projects[locale].description} />
+  <section class="section">
+    <div class="container-page grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((p) => (
+        <article class="card flex flex-col">
+          <h3 class="text-lg">{p.data.title}</h3>
+          {p.data.sector && <p class="mt-1 text-xs font-semibold uppercase tracking-widest text-accent">{p.data.sector}</p>}
+          <p class="mt-2 flex-1 text-sm text-brand-600">{p.data.summary}</p>
+          <a href={`/${locale}/projects/${p.slug}`} class="mt-4 text-sm font-semibold text-brand-700 hover:underline">
+            {locale === 'ar' ? 'التفاصيل' : locale === 'ru' ? 'Подробнее' : 'Read case'}
+          </a>
+        </article>
+      ))}
+      {projects.length === 0 && (
+        <p class="text-brand-500">Project case studies will appear here once Phase 5 content is delivered.</p>
+      )}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,26 @@
+# Build settings (Cloudflare Pages dashboard: Settings → Builds & deployments)
+[build]
+command = "npm run build"
+upload_format = "directory"
+
+[build.environment]
+NODE_VERSION = "20"
+
+# Headers: security + caching basics
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,78 @@
+---
+import { LOCALES, LOCALE_META, type Locale } from '../i18n/config';
+import { PAGES, PAGE_ORDER, localizedPath, type PageKey } from '../i18n/pages';
+import { BRAND } from '../i18n/config';
+
+interface Props { locale: Locale; page: PageKey; }
+const { locale, page } = Astro.props;
+const navItems = PAGE_ORDER.filter((p) => p !== 'home').map((p) => ({
+  key: p as PageKey,
+  label: PAGES[p][locale].label,
+  href: localizedPath(locale, p),
+}));
+const otherLocales = LOCALES.filter((l) => l !== locale);
+---
+
+<header class="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-brand-100 bg-white/90 backdrop-blur">
+  <div class="container-page flex h-full items-center justify-between gap-4">
+    <a href={localizedPath(locale, 'home')} class="flex items-center gap-2 font-serif text-lg font-bold text-brand-800">
+      <img src="/brand/logo-mark.svg" alt="" width="32" height="32" class="h-8 w-8" />
+      <span>Alan Apire</span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-md px-3 py-2 text-sm font-medium',
+            page === item.key ? 'text-brand-900 bg-brand-50' : 'text-brand-600 hover:text-brand-900 hover:bg-brand-50',
+          ]}
+        >{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="hidden items-center gap-1 sm:flex">
+        {otherLocales.map((l) => (
+          <a
+            href={localizedPath(l, page)}
+            hreflang={LOCALE_META[l].htmlLang}
+            rel="alternate"
+            class="rounded border border-brand-100 px-2 py-1 text-xs font-medium text-brand-600 hover:bg-brand-50"
+          >{LOCALE_META[l].label}</a>
+        ))}
+      </div>
+      <a href={localizedPath(locale, 'contact')} class="btn-primary hidden sm:inline-flex">{PAGES.contact[locale].label}</a>
+      <button id="menu-btn" aria-label="Menu" aria-expanded="false" class="rounded-md p-2 text-brand-700 lg:hidden">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-brand-100 bg-white lg:hidden">
+    <nav class="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
+      {navItems.map((item) => (
+        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50">{item.label}</a>
+      ))}
+      <div class="mt-2 flex gap-2">
+        {otherLocales.map((l) => (
+          <a href={localizedPath(l, page)} class="rounded border border-brand-100 px-2 py-1 text-xs font-medium text-brand-600">{LOCALE_META[l].label}</a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const open = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>

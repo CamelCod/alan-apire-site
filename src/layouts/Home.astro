@@ -1,0 +1,54 @@
+---
+import type { Locale } from '../i18n/config';
+import Base from './Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+
+const landing: { key: PageKey; items: PageKey[] }[] = [
+  { key: 'services', items: ['services', 'industries', 'operational-excellence' as PageKey].filter((k) => PAGES[k as PageKey]) as PageKey[] },
+];
+
+const cards: { key: PageKey; desc: string }[][] = [
+  [
+    { key: 'services', desc: PAGES.services[locale].description },
+    { key: 'industries', desc: PAGES.industries[locale].description },
+    { key: 'projects', desc: PAGES.projects[locale].description },
+  ],
+  [
+    { key: 'about', desc: PAGES.about[locale].description },
+    { key: 'team', desc: PAGES.team[locale].description },
+    { key: 'contact', desc: PAGES.contact[locale].description },
+  ],
+];
+---
+
+<Base locale={locale} page="home">
+  <PageHero eyebrow={locale === 'ar' ? 'آلان أپاير' : 'Alan Apire'} title={PAGES.home[locale].title} subtitle={PAGES.home[locale].description} />
+
+  <section class="section">
+    <div class="container-page grid gap-6 md:grid-cols-3">
+      {cards.flat().map((c) => (
+        <a href={localizedPath(locale, c.key)} class="card group hover:border-brand-300">
+          <h3 class="text-xl">{PAGES[c.key][locale].label}</h3>
+          <p class="mt-2 text-sm text-brand-600">{c.desc}</p>
+          <span class="mt-4 inline-block text-sm font-semibold text-brand-700 group-hover:underline">
+            {locale === 'ar' ? 'اعرف المزيد' : locale === 'ru' ? 'Подробнее' : 'Learn more'}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-brand-50">
+    <div class="container-page section flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="text-2xl sm:text-3xl">{PAGES.contact[locale].title}</h2>
+        <p class="mt-2 text-brand-600">{PAGES.contact[locale].description}</p>
+      </div>
+      <a href={localizedPath(locale, 'contact')} class="btn-primary">{PAGES.contact[locale].label}</a>
+    </div>
+  </section>
+</Base>

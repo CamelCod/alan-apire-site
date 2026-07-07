@@ -1,0 +1,33 @@
+---
+import { BRAND, type Locale } from '../i18n/config';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const dict = {
+  en: { name: 'Full name', email: 'Email', phone: 'Phone', message: 'Message', send: 'Send message', privacy: 'By submitting, you agree to our Privacy Policy.', action: 'Send' },
+  ar: { name: 'الاسم الكامل', email: 'البريد الإلكتروني', phone: 'الهاتف', message: 'الرسالة', send: 'إرسال الرسالة', privacy: 'بالإرسال أنت توافق على سياسة الخصوصية.', action: 'إرسال' },
+  ru: { name: 'Полное имя', email: 'Эл. почта', phone: 'Телефон', message: 'Сообщение', send: 'Отправить сообщение', privacy: 'Отправляя форму, вы соглашаетесь с политикой конфиденциальности.', action: 'Отправить' },
+}[locale];
+// Formspree endpoint - set in .env at launch (Phase 6 of the quote).
+const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/your-id';
+---
+
+<form action={formAction} method="POST" class="card grid gap-4" accept-charset="utf-8">
+  <label class="grid gap-1 text-sm font-medium text-brand-700">
+    {dict.name}
+    <input type="text" name="name" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+  </label>
+  <label class="grid gap-1 text-sm font-medium text-brand-700">
+    {dict.email}
+    <input type="email" name="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+  </label>
+  <label class="grid gap-1 text-sm font-medium text-brand-700">
+    {dict.phone}
+    <input type="tel" name="phone" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+  </label>
+  <label class="grid gap-1 text-sm font-medium text-brand-700">
+    {dict.message}
+    <textarea name="message" rows="5" required class="rounded-md border border-brand-200 px-3 py-2 text-sm"></textarea>
+  </label>
+  <button type="submit" class="btn-primary justify-self-start">{dict.action}</button>
+  <p class="text-xs text-brand-500">{dict.privacy}</p>
+</form>

@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Base from '../../../layouts/Base.astro';
+import PageHero from '../../../components/PageHero.astro';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({
+    params: { locale: p.data.locale, slug: p.slug },
+    props: { project: p },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const locale = project.data.locale;
+---
+
+<Base locale={locale} page="projects" image={project.data.cover?.src}>
+  <PageHero eyebrow={project.data.sector ?? ''} title={project.data.title} subtitle={project.data.summary} />
+  <section class="section">
+    <div class="container-page max-w-3xl prose-tight">
+      {project.data.cover && <img src={project.data.cover.src} alt={project.data.title} class="mb-8 rounded-lg" />}
+      <Content />
+    </div>
+  </section>
+</Base>

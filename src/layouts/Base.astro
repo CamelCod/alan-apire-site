@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import { LOCALES, LOCALE_META, SITE_URL, BRAND, type Locale } from '../i18n/config';
+import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { ANALYTICS } from '../i18n/config';
+
+interface Props {
+  locale: Locale;
+  page: PageKey;
+  image?: string;
+}
+
+const { locale, page, image } = Astro.props;
+const meta = LOCALE_META[locale];
+const t = PAGES[page][locale];
+const dir = meta.dir;
+
+const canonical = new URL(localizedPath(locale, page) + '/', SITE_URL).toString();
+const ogImage = image ?? '/brand/og-default.svg';
+
+// hreflang alternates for all locales, plus x-default.
+const alternates = LOCALES.map((l) => ({
+  hreflang: LOCALE_META[l].htmlLang,
+  href: new URL(localizedPath(l, page) + '/', SITE_URL).toString(),
+}));
+---
+
+<!doctype html>
+<html lang={meta.htmlLang} dir={dir} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('en', page) + '/', SITE_URL).toString()} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={meta.htmlLang} />
+    <meta property="og:site_name" content={BRAND.name} />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, SITE_URL).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="theme-color" content="#2c4462" />
+    <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <slot name="head" />
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    <Header locale={locale} page={page} />
+    <main id="main" class="flex-1 pt-[var(--header-h)]">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <WhatsAppButton locale={locale} />
+
+    {ANALYTICS.provider === 'plausible' && (
+      <script defer data-domain={ANALYTICS.domain} src="https://plausible.io/js/script.js"></script>
+    )}
+    {ANALYTICS.provider === 'ga4' && ANALYTICS.measurementId && (
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.measurementId}`}></script>
+    )}
+    {ANALYTICS.provider === 'ga4' && ANALYTICS.measurementId && (
+      <script is:inline define:vars={{ gaId: ANALYTICS.measurementId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+      </script>
+    )}
+  </body>
+</html>

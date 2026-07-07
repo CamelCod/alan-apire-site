@@ -1,0 +1,24 @@
+---
+import type { Locale } from '../i18n/config';
+import { DEFAULT_LOCALE, LOCALE_META } from '../i18n/config';
+import Base from './Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+
+interface Props { locale: Locale; page: PageKey; }
+const { locale, page } = Astro.props;
+const t = PAGES[page][locale];
+---
+
+<Base locale={locale} page={page}>
+  <PageHero eyebrow={PAGES[page][locale].label} title={t.title} subtitle={t.description} />
+  <section class="section">
+    <div class="container-page prose-tight max-w-3xl">
+      <p>{t.description}</p>
+      <p class="mt-4 text-brand-500">
+        Content placeholder — awaiting final copy from the client (Week 3 of the Lean MVP delivery).
+        Russian source copy will be written first, then translated to EN and AR-RTL before production.
+      </p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,3 @@
+# Public redirects (Cloudflare Pages will read this from public/)
+# Default: root → English home
+/                /en/               302
