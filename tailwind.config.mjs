@@ -4,28 +4,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand tokens — replace with final palette from Phase 1 (Discovery & Brand).
+        // Alan Apire Design System — Phase 1 Brand Identity
         brand: {
-          50: '#f3f6fa',
-          100: '#e2e9f1',
-          200: '#c5d3e3',
-          300: '#9bb5cd',
-          400: '#6a8fb1',
-          500: '#476c95',
-          600: '#365479',
-          700: '#2c4462',
-          800: '#273a53',
-          900: '#233247',
-          950: '#18212f',
+          50: '#f7f8fa',   // Very light background
+          100: '#eef0f3',  // Light background
+          200: '#dee2e8',  // Light gray
+          300: '#c5cbd3',  // Medium-light gray
+          400: '#9aa3af',  // Medium gray
+          500: '#6b7480',  // Medium-dark gray
+          600: '#4e5763',  // Dark gray
+          700: '#383f49',  // Darker gray
+          800: '#262b33',  // Very dark gray
+          900: '#171a1f',  // Almost black
+          950: '#0b1930',  // Navy black (primary dark)
         },
         accent: {
-          DEFAULT: '#c9a24b', // muted gold — consultancies often favor this; swap on approval
-          dark: '#a8842f',
+          DEFAULT: '#B08D57',  // Warm gold — Alan Apire signature
+          light: '#D9BD8D',    // Lighter gold
+          dark: '#8A6B3E',     // Darker gold
         },
+        success: '#1E7A4C',    // Muted green
+        warning: '#B3261E',    // Muted red
+        info: '#345078',       // Muted blue
       },
       fontFamily: {
         sans: ['"Inter"', '"Noto Sans Arabic"', 'system-ui', 'sans-serif'],
         serif: ['"Playfair Display"', '"Amiri"', 'Georgia', 'serif'],
+        // Luxury consultancy aesthetic
+        display: ['"Playfair Display"', '"Amiri"', 'Georgia', 'serif'],
       },
       container: {
         center: true,
