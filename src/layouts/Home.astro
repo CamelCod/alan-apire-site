@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../i18n/config';
 import Base from './Base.astro';
-import PageHero from '../components/PageHero.astro';
+import AnimatedHero from '../components/AnimatedHero.astro';
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
 
 interface Props { locale: Locale; }
@@ -26,7 +26,7 @@ const cards: { key: PageKey; desc: string }[][] = [
 ---
 
 <Base locale={locale} page="home">
-  <PageHero eyebrow={locale === 'ar' ? 'آلان أپاير' : 'Alan Apire'} title={PAGES.home[locale].title} subtitle={PAGES.home[locale].description} />
+  <AnimatedHero eyebrow={locale === 'ar' ? 'آلان أپاير' : 'Alan Apire'} title={PAGES.home[locale].title} subtitle={PAGES.home[locale].description} backgroundImage="/brand/power-plant-hero.jpg" />
 
   <section class="section">
     <div class="container-page grid gap-6 md:grid-cols-3">
