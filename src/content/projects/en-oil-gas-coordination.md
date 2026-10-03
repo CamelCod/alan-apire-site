@@ -9,6 +9,8 @@ cover: ./oil-refinery-cover.jpg
 order: 3
 locale: en
 translationKey: oil-refinery-modernization
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 <!-- IMAGE: cover — refinery / hydrocracking unit (wide 16:9). Save to src/assets/projects/refinery-cover.jpg -->

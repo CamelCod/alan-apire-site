@@ -9,6 +9,8 @@ cover: ./oil-refinery-cover.jpg
 order: 3
 locale: ru
 translationKey: oil-refinery-modernization
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 <!-- IMAGE: обложка — НПЗ / установка гидрокрекинга (16:9). Сохранить в src/assets/projects/refinery-cover.jpg -->

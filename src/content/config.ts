@@ -13,6 +13,8 @@ export const projects = defineCollection({
       year: z.string().optional(),
       location: z.string().optional(),
       cover: image().optional(),
+      datePublished: z.string().optional(),
+      dateModified: z.string().optional(),
       order: z.number().default(99),
       locale: z.enum(LOCALES),
       translationKey: z.string(),

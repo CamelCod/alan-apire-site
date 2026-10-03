@@ -26,10 +26,10 @@ const altPaths = Object.fromEntries(
 );
 
 // Localized labels for the project meta strip.
-const META_LABELS: Record<string, { sector: string; service: string; year: string; location: string }> = {
-  en: { sector: 'Sector', service: 'Service', year: 'Year', location: 'Location' },
-  ru: { sector: 'Направление', service: 'Услуга', year: 'Год', location: 'Локация' },
-  ar: { sector: 'القطاع', service: 'الخدمة', year: 'السنة', location: 'الموقع' },
+const META_LABELS: Record<string, { sector: string; service: string; year: string; location: string; published: string; updated: string }> = {
+  en: { sector: 'Sector', service: 'Service', year: 'Year', location: 'Location', published: 'Published', updated: 'Updated' },
+  ru: { sector: 'Направление', service: 'Услуга', year: 'Год', location: 'Локация', published: 'Опубликовано', updated: 'Обновлено' },
+  ar: { sector: 'القطاع', service: 'الخدمة', year: 'السنة', location: 'الموقع', published: 'نُشر', updated: 'تم التحديث' },
 };
 const L = META_LABELS[locale] ?? META_LABELS.en;
 ---
@@ -50,7 +50,7 @@ const L = META_LABELS[locale] ?? META_LABELS.en;
       <!-- Cover image slot. Drop an image into frontmatter `cover:` to replace the placeholder. -->
       <figure class="mb-10">
         {d.cover ? (
-          <img src={d.cover.src} alt={d.title} class="w-full rounded-lg object-cover aspect-video" />
+          <img src={d.cover.src} alt={d.title} width={d.cover.width} height={d.cover.height} class="w-full rounded-lg object-cover aspect-video" />
         ) : (
           <div
             class="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-brand-200 bg-brand-50 text-brand-400"
@@ -68,12 +68,14 @@ const L = META_LABELS[locale] ?? META_LABELS.en;
       </figure>
 
       <!-- Project meta strip -->
-      {(d.sector || d.service || d.year || d.location) && (
+      {(d.sector || d.service || d.year || d.location || d.datePublished || d.dateModified) && (
         <dl class="mb-10 grid grid-cols-2 gap-4 rounded-lg border border-brand-100 bg-white p-6 sm:grid-cols-4">
           {d.sector && <div><dt class="eyebrow text-[0.65rem]">{L.sector}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.sector}</dd></div>}
           {d.service && <div><dt class="eyebrow text-[0.65rem]">{L.service}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.service}</dd></div>}
           {d.year && <div><dt class="eyebrow text-[0.65rem]">{L.year}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.year}</dd></div>}
           {d.location && <div><dt class="eyebrow text-[0.65rem]">{L.location}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.location}</dd></div>}
+          {d.datePublished && <div><dt class="eyebrow text-[0.65rem]">{L.published}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.datePublished}</dd></div>}
+          {d.dateModified && <div><dt class="eyebrow text-[0.65rem]">{L.updated}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.dateModified}</dd></div>}
         </dl>
       )}
 

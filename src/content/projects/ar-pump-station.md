@@ -9,6 +9,8 @@ cover: ./pump-station-cover.jpg
 order: 1
 locale: ar
 translationKey: pump-station-heat-network
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 ## التحدي: موثوقية نقل الحرارة في شبكات التوزيع الإقليمية

@@ -9,6 +9,8 @@ cover: ./water-supply-cover.jpg
 order: 2
 locale: ar
 translationKey: haranor-water-supply
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 ## التحدي: البنية التحتية القديمة والفقد المتزايد ومتطلبات التوسع

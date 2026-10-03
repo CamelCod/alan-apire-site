@@ -9,6 +9,8 @@ cover: ./pump-station-cover.jpg
 order: 1
 locale: en
 translationKey: pump-station-heat-network
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 ## Challenge: Heat Carrier Reliability in Regional Distribution

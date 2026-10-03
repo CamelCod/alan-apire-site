@@ -118,4 +118,14 @@ const {
       font-size: 1.875rem;
     }
   }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn,
+    .animate-glowIn,
+    .animate-slideUp {
+      animation: none;
+      opacity: 1 !important;
+    }
+  }
 </style>

@@ -9,6 +9,8 @@ cover: ./water-supply-cover.jpg
 order: 2
 locale: en
 translationKey: haranor-water-supply
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 ## Challenge: Aging Infrastructure, Rising Losses, Expansion Demands

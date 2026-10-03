@@ -9,6 +9,8 @@ cover: ./pump-station-cover.jpg
 order: 1
 locale: ru
 translationKey: pump-station-heat-network
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 ## Задача: Надежность теплоносителя в региональных распределительных сетях

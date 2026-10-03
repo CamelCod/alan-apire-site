@@ -40,20 +40,20 @@ const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f
   <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
   <label class="grid gap-1 text-sm font-medium text-brand-700">
     {dict.name}
-    <input type="text" name="name" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    <input type="text" name="name" autocomplete="name" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
   </label>
   <label class="grid gap-1 text-sm font-medium text-brand-700">
     {dict.company}
-    <input type="text" name="company" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    <input type="text" name="company" autocomplete="organization" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
   </label>
   <div class="grid gap-4 sm:grid-cols-2">
     <label class="grid gap-1 text-sm font-medium text-brand-700">
       {dict.email}
-      <input type="email" name="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+      <input type="email" name="email" autocomplete="email" inputmode="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
     </label>
     <label class="grid gap-1 text-sm font-medium text-brand-700">
       {dict.phone}
-      <input type="tel" name="phone" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+      <input type="tel" name="phone" autocomplete="tel" inputmode="tel" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
     </label>
   </div>
   <label class="grid gap-1 text-sm font-medium text-brand-700">

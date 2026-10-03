@@ -26,7 +26,7 @@ const projects = all.sort((a, b) => a.data.order - b.data.order);
         <article class="card flex flex-col overflow-hidden">
           {p.data.cover && (
             <div class="mb-4 -mx-6 -mt-6 aspect-video overflow-hidden bg-brand-100">
-              <img src={p.data.cover.src} alt={p.data.title} class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
+              <img src={p.data.cover.src} alt={p.data.title} width={p.data.cover.width} height={p.data.cover.height} class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
             </div>
           )}
           <h3 class="text-lg">{p.data.title}</h3>

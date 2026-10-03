@@ -9,6 +9,8 @@ cover: ./oil-refinery-cover.jpg
 order: 3
 locale: ar
 translationKey: oil-refinery-modernization
+datePublished: '2026-09-20'
+dateModified: '2026-10-03'
 ---
 
 <!-- IMAGE: الغلاف — مصفاة / وحدة هيدروكراكنغ (16:9). احفظ في src/assets/projects/refinery-cover.jpg -->
