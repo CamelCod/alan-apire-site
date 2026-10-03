@@ -13,27 +13,37 @@ export function isLocale(value: string | undefined): value is Locale {
   return !!value && (LOCALES as readonly string[]).includes(value);
 }
 
-// Canonical site URL (keep in sync with astro.config.mjs).
-export const SITE_URL = 'https://alanapire.ae';
+// Canonical site URL — follows astro.config.mjs `site` (ASTRO_SITE on Cloudflare).
+export const SITE_URL = (import.meta.env.SITE as string | undefined)?.replace(/\/$/, '') || 'https://alanapire.ae';
 
-// Public-facing brand contact details — fill from client brief (Week 1 deliverable).
+// Public-facing brand contact details — aligned with the DIEZ trade license.
 export const BRAND = {
-  name: 'Alan Apire Management Consultancies',
+  name: 'ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO',
   shortName: 'Alan Apire',
   phone: '+971000000000',
   whatsapp: '971000000000', // international format, no +
   email: 'info@alanapire.ae',
   address: {
-    en: 'Sharjah, United Arab Emirates',
-    ar: 'الشارقة، الإمارات العربية المتحدة',
-    ru: 'Шарджа, Объединенные Арабские Эмираты',
+    en: 'Dubai Integrated Economic Zones Authority (DIEZ), Dubai, United Arab Emirates',
+    ar: 'سلطة دبي للمناطق الاقتصادية المتكاملة (دايز)، دبي، الإمارات العربية المتحدة',
+    ru: 'Dubai Integrated Economic Zones Authority (DIEZ), Дубай, Объединенные Арабские Эмираты',
   },
-  mapsQuery: 'Sharjah UAE',
+  mapsQuery: 'Dubai Integrated Economic Zones Authority Dubai UAE',
 };
 
-// Plausible / GA4 — set in .env at launch.
+// Analytics — enabled only when the matching build env var is set in Cloudflare Pages.
+const plausibleDomain = String(import.meta.env.PLAUSIBLE_DOMAIN ?? '').trim();
+const gaMeasurementId = String(import.meta.env.GA4_MEASUREMENT_ID ?? '').trim();
+const analyticsProvider = String(import.meta.env.ANALYTICS_PROVIDER ?? '').trim().toLowerCase();
+
 export const ANALYTICS = {
-  provider: 'plausible' as 'plausible' | 'ga4' | 'none',
-  domain: 'alanapire.ae',
-  measurementId: '',
+  provider: (analyticsProvider === 'ga4' || analyticsProvider === 'plausible' || analyticsProvider === 'none'
+    ? analyticsProvider
+    : gaMeasurementId
+      ? 'ga4'
+      : plausibleDomain
+        ? 'plausible'
+        : 'none') as 'plausible' | 'ga4' | 'none',
+  domain: plausibleDomain || 'alanapire.ae',
+  measurementId: gaMeasurementId,
 };

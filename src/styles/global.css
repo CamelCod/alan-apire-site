@@ -30,7 +30,7 @@
 @layer components {
   .container-page { @apply container max-w-6xl; }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition min-h-[44px];
   }
   .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
   .btn-outline { @apply btn border border-brand-200 text-brand-800 hover:bg-brand-50; }

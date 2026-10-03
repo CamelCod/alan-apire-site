@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 8
+order: 99
 locale: "ar"
 translationKey: "layout-space-planning"
 ---

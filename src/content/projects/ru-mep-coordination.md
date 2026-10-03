@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 5
+order: 99
 locale: "ru"
 translationKey: "mep-coordination"
 ---

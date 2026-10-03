@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 1
+order: 99
 locale: "ar"
 translationKey: "manufacturing-process-flow"
 ---

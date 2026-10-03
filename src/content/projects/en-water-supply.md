@@ -5,6 +5,7 @@ sector: Energy Infrastructure
 service: Design & Implementation
 year: "2024-2025"
 location: Haranor Power Plant, Yasnogorsk, Zabaykalsky Krai, Russia
+cover: ./water-supply-cover.jpg
 order: 2
 locale: en
 translationKey: haranor-water-supply

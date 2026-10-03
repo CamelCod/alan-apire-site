@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 6
+order: 99
 locale: "ar"
 translationKey: "process-improvement"
 ---

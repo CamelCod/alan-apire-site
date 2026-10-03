@@ -1,3 +1,11 @@
-# Public redirects (Cloudflare Pages will read this from public/)
-# Default: root → English home
-/                /en/               302
+# Cloudflare Pages redirects (copied from public/ into dist/)
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Default locale
+/                 /en/    301
+/index.html       /en/    301
+
+# Language homes without a trailing slash (Astro trailingSlash: always)
+/en               /en/    301
+/ar               /ar/    301
+/ru               /ru/    301

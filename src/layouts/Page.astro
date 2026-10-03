@@ -1,24 +1,128 @@
 ---
 import type { Locale } from '../i18n/config';
-import { DEFAULT_LOCALE, LOCALE_META } from '../i18n/config';
 import Base from './Base.astro';
 import PageHero from '../components/PageHero.astro';
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import { ABOUT, PILLARS, SECTORS, INDUSTRIES_COPY, CTA_LABEL } from '../i18n/site';
 
 interface Props { locale: Locale; page: PageKey; }
 const { locale, page } = Astro.props;
 const t = PAGES[page][locale];
+
+const pillars = PILLARS[locale];
+const sectors = SECTORS[locale];
+
+const aboutCopy = page === 'about' ? {
+  positioning: ABOUT.positioning[locale],
+  profile: ABOUT.profile[locale],
+  corpHeading: ABOUT.corpHeading[locale],
+  legalEntityLabel: ABOUT.legalEntityLabel[locale],
+  legalEntity: ABOUT.legalEntity,
+  jurisdictionLabel: ABOUT.jurisdictionLabel[locale],
+  jurisdiction: ABOUT.jurisdiction[locale],
+  licensedLabel: ABOUT.licensedLabel[locale],
+  licensed: ABOUT.licensed[locale],
+  operatingHeading: ABOUT.operatingHeading[locale],
+  operating: ABOUT.operating[locale],
+} : null;
 ---
 
 <Base locale={locale} page={page}>
-  <PageHero eyebrow={PAGES[page][locale].label} title={t.title} subtitle={t.description} />
-  <section class="section">
-    <div class="container-page prose-tight max-w-3xl">
-      <p>{t.description}</p>
-      <p class="mt-4 text-brand-500">
-        Content placeholder — awaiting final copy from the client (Week 3 of the Lean MVP delivery).
-        Russian source copy will be written first, then translated to EN and AR-RTL before production.
-      </p>
-    </div>
-  </section>
+  <PageHero eyebrow={t.label} title={t.title} subtitle={t.description} />
+
+  {page === 'about' && aboutCopy && (
+    <section class="section">
+      <div class="container-page max-w-4xl">
+        <p class="font-serif text-2xl font-bold text-brand-900 sm:text-3xl">{aboutCopy.positioning}</p>
+        {aboutCopy.profile.map((p) => <p class="mt-6 text-brand-700">{p}</p>)}
+
+        <div class="mt-10 rounded-lg border border-brand-100 bg-brand-50 p-6 sm:p-8">
+          <h2 class="text-xl text-brand-900">{aboutCopy.corpHeading}</h2>
+          <dl class="mt-4 space-y-4 text-sm">
+            <div>
+              <dt class="eyebrow text-[0.65rem]">{aboutCopy.legalEntityLabel}</dt>
+              <dd class="mt-1 font-semibold text-brand-800">{aboutCopy.legalEntity}</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-[0.65rem]">{aboutCopy.jurisdictionLabel}</dt>
+              <dd class="mt-1 font-semibold text-brand-800">{aboutCopy.jurisdiction}</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-[0.65rem]">{aboutCopy.licensedLabel}</dt>
+              <dd class="mt-1">
+                <ol class="list-decimal space-y-1 ps-5 font-semibold text-brand-800">
+                  {aboutCopy.licensed.map((l) => <li>{l}</li>)}
+                </ol>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <h2 class="mt-10 text-xl text-brand-900">{aboutCopy.operatingHeading}</h2>
+        <p class="mt-3 text-brand-700">{aboutCopy.operating}</p>
+      </div>
+    </section>
+  )}
+
+  {page === 'services' && (
+    <section class="section">
+      <div class="container-page space-y-12">
+        {pillars.map((p, i) => (
+          <article class="grid gap-6 border-b border-brand-100 pb-12 last:border-0 lg:grid-cols-3">
+            <div>
+              <p class="eyebrow text-accent">Pillar 0{i + 1}</p>
+              <h2 class="mt-2 text-2xl text-brand-900">{p.title}</h2>
+              <p class="mt-2 font-medium text-brand-700">{p.tagline}</p>
+            </div>
+            <div class="lg:col-span-2">
+              <p class="text-brand-600">{p.desc}</p>
+              <ul class="mt-4 grid gap-2 sm:grid-cols-2">
+                {p.scope.map((s) => (
+                  <li class="flex items-start gap-2 text-sm text-brand-700">
+                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {page === 'industries' && (
+    <section class="section">
+      <div class="container-page">
+        <p class="max-w-3xl text-brand-700">{INDUSTRIES_COPY.intro[locale]}</p>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {sectors.map((s) => (
+            <article class="card">
+              <h2 class="text-lg text-brand-900">{s.title}</h2>
+              <p class="mt-2 text-sm text-brand-600">{s.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {!['about', 'services', 'industries'].includes(page) && (
+    <section class="section">
+      <div class="container-page prose-tight max-w-3xl">
+        <p>{t.description}</p>
+      </div>
+    </section>
+  )}
+
+  {['about', 'services', 'industries'].includes(page) && (
+    <section class="bg-brand-950 text-white">
+      <div class="container-page section flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <h2 class="text-2xl text-white sm:text-3xl">{PAGES.contact[locale].title}</h2>
+        <a href={localizedPath(locale, 'contact')} class="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-brand-950 transition-all hover:bg-accent-light hover:shadow-lg">
+          {CTA_LABEL[locale]}
+        </a>
+      </div>
+    </section>
+  )}
 </Base>

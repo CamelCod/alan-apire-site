@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 7
+order: 99
 locale: "en"
 translationKey: "project-governance"
 ---

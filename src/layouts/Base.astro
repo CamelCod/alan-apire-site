@@ -11,21 +11,32 @@ interface Props {
   locale: Locale;
   page: PageKey;
   image?: string;
+  /** Per-page overrides (case studies, etc.). Fall back to the shared PAGES metadata. */
+  title?: string;
+  description?: string;
+  /** Absolute path for the canonical URL, e.g. `/en/projects/en-pump-station`. */
+  canonicalPath?: string;
+  /** hreflang alternates keyed by locale → absolute path. Overrides the default page-level alternates. */
+  altPaths?: Partial<Record<Locale, string>>;
 }
 
-const { locale, page, image } = Astro.props;
+const { locale, page, image, title, description, canonicalPath, altPaths } = Astro.props;
 const meta = LOCALE_META[locale];
 const t = PAGES[page][locale];
 const dir = meta.dir;
 
-const canonical = new URL(localizedPath(locale, page) + '/', SITE_URL).toString();
+const pageTitle = title ?? t.title;
+const pageDescription = description ?? t.description;
+
+const canonical = new URL((canonicalPath ?? localizedPath(locale, page)) + '/', SITE_URL).toString();
 const ogImage = image ?? '/brand/og-default.svg';
 
 // hreflang alternates for all locales, plus x-default.
 const alternates = LOCALES.map((l) => ({
   hreflang: LOCALE_META[l].htmlLang,
-  href: new URL(localizedPath(l, page) + '/', SITE_URL).toString(),
+  href: new URL((altPaths?.[l] ?? localizedPath(l, page)) + '/', SITE_URL).toString(),
 }));
+const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE_URL).toString();
 ---
 
 <!doctype html>
@@ -33,27 +44,102 @@ const alternates = LOCALES.map((l) => ({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.title}</title>
-    <meta name="description" content={t.description} />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('en', page) + '/', SITE_URL).toString()} />
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={meta.htmlLang} />
     <meta property="og:site_name" content={BRAND.name} />
-    <meta property="og:title" content={t.title} />
-    <meta property="og:description" content={t.description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(ogImage, SITE_URL).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={t.title} />
-    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={new URL(ogImage, SITE_URL).toString()} />
     <meta name="theme-color" content="#2c4462" />
     <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap.xml" />
     <slot name="head" />
+
+    {/* ── Local SEO: Organization + ProfessionalService JSON-LD ── */}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": `${SITE_URL}/#organization`,
+      "name": "Alan and Apire Management Consultancies – FZCO",
+      "alternateName": "Alan Apire",
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/brand/og-default.svg`,
+      "image": `${SITE_URL}/brand/og-default.svg`,
+      "description": "Engineering and project management consultancy based in Dubai (DIEZ), UAE, serving industrial and infrastructure clients across the UAE and GCC.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dubai Integrated Economic Zones Authority (DIEZ)",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.19850,
+        "longitude": 55.27210
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "Kuwait" },
+        { "@type": "Country", "name": "Qatar" },
+        { "@type": "Country", "name": "Bahrain" },
+        { "@type": "Country", "name": "Oman" }
+      ],
+      "email": "info@alanapire.ae",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@alanapire.ae",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Arabic", "Russian"]
+      },
+      "knowsAbout": [
+        "Project Management",
+        "Engineering Consultancy",
+        "Management Consultancy",
+        "Industrial Infrastructure",
+        "District Heating",
+        "Power Generation",
+        "Oil Refining",
+        "Architectural Drawings"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Engineering & Consultancy Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engineering & Technical Consultancy" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Architectural & Technical Drawings" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Management Consultancy" } }
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Dubai, UAE"
+      },
+      "sameAs": []
+    })} />
   </head>
   <body class="min-h-dvh flex flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-800 focus:text-white focus:rounded-md focus:text-sm focus:font-medium">
+      {locale === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : locale === 'ru' ? 'Перейти к основному содержанию' : 'Skip to main content'}
+    </a>
     <Header locale={locale} page={page} />
     <main id="main" class="flex-1 pt-[var(--header-h)]">
       <slot />

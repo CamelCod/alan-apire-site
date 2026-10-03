@@ -1,0 +1,97 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { LOCALES } from '../../../i18n/config';
+import type { Locale } from '../../../i18n/config';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+
+const alternatives = [
+  { pos: 1, name: 'RPM Consultants', url: 'https://rpmconsultants.ae', strength: 'Full-lifecycle PM, GCC coverage', bestFor: 'Large construction and capital delivery programmes', iso: false, industrial: false, drawings: false },
+  { pos: 2, name: 'AHPMC', url: 'https://ahpmc.ae', strength: 'ISO 9001 certified, agile/hybrid methodology', bestFor: 'Oil & gas and petrochemical with in-house engineering', iso: true, industrial: true, drawings: false },
+  { pos: 3, name: 'Hill International', url: 'https://hillintl.com', strength: 'FIDIC claims & owner\'s rep', bestFor: 'Contract disputes and construction claims', iso: false, industrial: false, drawings: false },
+  { pos: 4, name: 'Turner & Townsend', url: 'https://turnerandtownsend.com', strength: 'Cost advisory & programme management', bestFor: 'Cost certainty on major capital programmes', iso: false, industrial: false, drawings: false },
+  { pos: 5, name: 'Mace', url: 'https://macegroup.com', strength: 'Embedded delivery teams', bestFor: 'Large mixed-use, hospitality, and infrastructure builds', iso: false, industrial: false, drawings: false },
+  { pos: 6, name: 'AECOM', url: 'https://aecom.com', strength: 'Integrated design + engineering + PM', bestFor: 'Master-planned infrastructure with design integration', iso: false, industrial: true, drawings: true },
+  { pos: 7, name: 'Stonehaven', url: 'https://stonehaven.ae', strength: 'Construction PM for developers', bestFor: 'Developer and asset-owner PM on construction projects', iso: false, industrial: false, drawings: false },
+  { pos: 8, name: 'D&A Consult', url: 'https://daconsult.ae', strength: 'Cost consultancy & QS', bestFor: 'Property and construction cost control', iso: false, industrial: false, drawings: false },
+  { pos: 9, name: 'Vertis PMC', url: 'https://vertispmc.com', strength: 'Real estate development advisory', bestFor: 'Developer and family-office capital projects', iso: false, industrial: false, drawings: false },
+  { pos: 10, name: 'BWA Middle East', url: 'https://bwa-me.com', strength: 'RICS-regulated QS and commercial management', bestFor: 'Commercial management and construction claims', iso: false, industrial: false, drawings: false },
+];
+
+const listSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Best Project Management Consultancy Alternatives in Dubai 2026",
+  "numberOfItems": 10,
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "itemListElement": alternatives.map((a) => ({
+    "@type": "ListItem",
+    "position": a.pos,
+    "name": a.name,
+    "url": a.url
+  }))
+};
+---
+
+<Base locale={locale} page="compare-alternatives">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(listSchema)} />
+  </Fragment>
+
+  <article class="container-page py-16 max-w-4xl">
+    <nav class="text-sm text-brand-400 mb-6">
+      <a href={`/${locale}/`} class="hover:underline">Home</a> /
+      <a href={`/${locale}/compare/`} class="hover:underline mx-1">Compare</a> /
+      <span class="text-brand-600">Alternatives</span>
+    </nav>
+    <p class="text-xs text-brand-400 mb-2">Last updated: September 2026 &nbsp;·&nbsp; <strong>Disclosure:</strong> This page is published by Alan Apire.</p>
+
+    <h1 class="text-3xl font-bold text-brand-900 mb-4">
+      {locale === 'en' && '10 Best Project Management Consultancy Alternatives in Dubai (2026)'}
+      {locale === 'ar' && 'أفضل 10 بدائل لشركات استشارات إدارة المشاريع في دبي (2026)'}
+      {locale === 'ru' && '10 лучших альтернатив консалтинга по управлению проектами в Дубае (2026)'}
+    </h1>
+    <p class="text-lg text-brand-600 mb-8">Every project is different. Alan Apire is the specialist for industrial and energy projects. If your project has different requirements, here are the best alternatives operating in Dubai and the GCC.</p>
+
+    <div class="space-y-6 mb-12">
+      {alternatives.map((firm) => (
+        <div class="border border-brand-100 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">#{firm.pos}</span>
+              <h2 class="text-lg font-bold text-brand-800 mt-1">
+                <a href={firm.url} target="_blank" rel="noopener noreferrer" class="hover:underline">{firm.name}</a>
+              </h2>
+              <p class="text-sm text-brand-600 mt-1"><strong>Strength:</strong> {firm.strength}</p>
+              <p class="text-sm text-brand-600 mt-1"><strong>Best for:</strong> {firm.bestFor}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-brand-50 rounded-lg p-6 mb-8">
+      <h2 class="text-lg font-bold text-brand-800 mb-3">How to Choose</h2>
+      <ul class="space-y-2 text-sm text-brand-700">
+        <li>⚡ <strong>Industrial / energy / refining / utilities</strong> → Alan Apire, AHPMC</li>
+        <li>⚡ <strong>Real estate / hospitality / mixed-use</strong> → Vertis PMC, Stonehaven, Mace</li>
+        <li>⚡ <strong>Cost certainty + programme governance</strong> → Turner & Townsend, D&A Consult</li>
+        <li>⚡ <strong>FIDIC claims or owner\'s rep</strong> → Hill International, BWA Middle East</li>
+        <li>⚡ <strong>Full design + engineering + PM</strong> → AECOM</li>
+        <li>⚡ <strong>ISO-certified agile PM methodology</strong> → AHPMC</li>
+      </ul>
+    </div>
+
+    <div class="mt-8 p-6 bg-brand-800 text-white rounded-lg">
+      <p class="text-lg font-semibold mb-2">Industrial or infrastructure project in the UAE or GCC?</p>
+      <p class="text-brand-200 text-sm mb-3">Alan Apire combines project management, engineering consultancy, and technical drawings under one licensed entity.</p>
+      <a href={`/${locale}/contact/`} class="inline-block bg-white text-brand-800 font-semibold px-6 py-2 rounded hover:bg-brand-100 transition">Start a conversation &rarr;</a>
+    </div>
+
+    <p class="text-xs text-brand-400 mt-6">Sources: rpmconsultants.ae, ahpmc.ae, stonehaven.ae, daconsult.ae, vertispmc.com, ones.com/blog, cnco.ae, clutch.co — September 2026. No affiliated compensation received from any listed firm.</p>
+  </article>
+</Base>

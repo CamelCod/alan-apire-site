@@ -5,6 +5,7 @@ sector: البنية التحتية للطاقة
 service: التصميم والتنفيذ
 year: "2025-2026"
 location: بلاغوفيشتشينسك، روسيا
+cover: ./pump-station-cover.jpg
 order: 1
 locale: ar
 translationKey: pump-station-heat-network

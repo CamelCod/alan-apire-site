@@ -1,10 +1,13 @@
-# Cloudflare Pages configuration — Lean MVP deployment (Phase 7).
-# Build command and output directory for Astro's static output.
+# Cloudflare Pages — static Astro output (no Workers adapter).
+# Dashboard: Pages → Create → connect GitHub, or deploy with:
+#   npx wrangler pages deploy dist --project-name=alan-apire-site
 name = "alan-apire-site"
-compatibility_date = "2024-11-01"
+compatibility_date = "2026-09-01"
 pages_build_output_dir = "dist"
 
-# Environment variables (set in Cloudflare dashboard for production):
-# FORMSPREE_ENDPOINT  → form action target
-# PLAUSIBLE_DOMAIN / GA4_MEASUREMENT_ID → analytics
-# ASTRO_SITE          → canonical production URL
+# Set these as Cloudflare Pages *build* environment variables (not runtime):
+#   ASTRO_SITE            https://alanapire.ae
+#   FORMSPREE_ENDPOINT    https://formspree.io/f/<id>
+#   ANALYTICS_PROVIDER    plausible | ga4 | none
+#   PLAUSIBLE_DOMAIN      alanapire.ae
+#   GA4_MEASUREMENT_ID    G-XXXXXXXX

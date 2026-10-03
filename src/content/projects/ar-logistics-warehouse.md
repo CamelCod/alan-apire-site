@@ -5,7 +5,7 @@ sector: "Industrial"
 service: "Advisory"
 year: "2024"
 location: "UAE"
-order: 3
+order: 99
 locale: "ar"
 translationKey: "logistics-warehouse"
 ---

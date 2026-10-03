@@ -3,16 +3,24 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "pages:preview": "npx wrangler pages dev dist",
+    "pages:deploy": "npx wrangler pages deploy dist --project-name=alan-apire-site",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^4.16.18",
     "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.0"
   }
 }

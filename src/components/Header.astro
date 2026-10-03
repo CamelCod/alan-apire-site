@@ -1,11 +1,12 @@
 ---
 import { LOCALES, LOCALE_META, type Locale } from '../i18n/config';
-import { PAGES, PAGE_ORDER, localizedPath, type PageKey } from '../i18n/pages';
-import { BRAND } from '../i18n/config';
+import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import { CTA_LABEL } from '../i18n/site';
 
 interface Props { locale: Locale; page: PageKey; }
 const { locale, page } = Astro.props;
-const navItems = PAGE_ORDER.filter((p) => p !== 'home').map((p) => ({
+const NAV_PAGES: PageKey[] = ['about', 'services', 'projects', 'industries'];
+const navItems = NAV_PAGES.map((p) => ({
   key: p as PageKey,
   label: PAGES[p][locale].label,
   href: localizedPath(locale, p),
@@ -43,8 +44,8 @@ const otherLocales = LOCALES.filter((l) => l !== locale);
           >{LOCALE_META[l].label}</a>
         ))}
       </div>
-      <a href={localizedPath(locale, 'contact')} class="btn-primary hidden sm:inline-flex">{PAGES.contact[locale].label}</a>
-      <button id="menu-btn" aria-label="Menu" aria-expanded="false" class="rounded-md p-2 text-brand-700 lg:hidden">
+      <a href={localizedPath(locale, 'contact')} class="btn-primary hidden sm:inline-flex">{CTA_LABEL[locale]}</a>
+      <button id="menu-btn" aria-label="Menu" aria-expanded="false" class="rounded-md p-2 text-brand-700 lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -53,7 +54,7 @@ const otherLocales = LOCALES.filter((l) => l !== locale);
   <div id="mobile-menu" class="hidden border-t border-brand-100 bg-white lg:hidden">
     <nav class="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
       {navItems.map((item) => (
-        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50">{item.label}</a>
+        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50 min-h-[44px] inline-flex items-center">{item.label}</a>
       ))}
       <div class="mt-2 flex gap-2">
         {otherLocales.map((l) => (

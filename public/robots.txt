@@ -1,3 +1,26 @@
+# robots.txt — alanapire.ae
+# Updated: September 2026
+# Strategy: allow search indexing + AI citation crawlers; block pure AI training crawlers
+
+# ── AI training crawlers (block) ────────────────────────────────────────────
+# Blocks OpenAI model training. Does NOT block ChatGPT real-time browsing.
+User-agent: GPTBot
+Disallow: /
+
+# Blocks Google Gemini training. Does NOT affect Google Search or AI Overviews.
+User-agent: Google-Extended
+Disallow: /
+
+# Blocks ByteDance / TikTok training crawler.
+User-agent: Bytespider
+Disallow: /
+
+# Blocks Common Crawl open dataset.
+User-agent: CCBot
+Disallow: /
+
+# ── All other crawlers: full access ─────────────────────────────────────────
+# Includes: Googlebot, Bingbot, PerplexityBot, ChatGPT-User, ClaudeBot (citation)
 User-agent: *
 Allow: /
 

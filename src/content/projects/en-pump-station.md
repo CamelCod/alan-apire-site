@@ -5,6 +5,7 @@ sector: Energy Infrastructure
 service: Design & Implementation
 year: "2025-2026"
 location: Blagoveshchensk, Russia
+cover: ./pump-station-cover.jpg
 order: 1
 locale: en
 translationKey: pump-station-heat-network

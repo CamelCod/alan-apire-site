@@ -1,0 +1,42 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { LOCALES, LOCALE_META } from '../../../i18n/config';
+import type { Locale } from '../../../i18n/config';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+---
+
+<Base locale={locale} page="compare">
+  <section class="container-page py-16">
+    <h1 class="text-3xl font-bold text-brand-900 mb-4">
+      {locale === 'en' && 'Compare Engineering Consultancies — Dubai'}
+      {locale === 'ar' && 'مقارنة شركات الاستشارات الهندسية — دبي'}
+      {locale === 'ru' && 'Сравнение инжиниринговых компаний — Дубай'}
+    </h1>
+    <p class="text-brand-600 mb-8 max-w-2xl">
+      {locale === 'en' && 'Honest, source-referenced comparisons of project management and engineering consultancy firms operating in Dubai and the GCC.'}
+      {locale === 'ar' && 'مقارنات موضوعية ومستندة إلى المصادر بين شركات إدارة المشاريع والاستشارات الهندسية في دبي ودول الخليج.'}
+      {locale === 'ru' && 'Честные, подкреплённые источниками сравнения компаний по управлению проектами и инжиниринговому консалтингу в Дубае и странах ССЗ.'}
+    </p>
+    <ul class="space-y-4">
+      <li>
+        <a href={`/${locale}/compare/alan-apire-vs-rpm-consultants-vs-ahpmc/`} class="font-semibold text-brand-700 hover:underline">
+          {locale === 'en' && 'Alan Apire vs RPM Consultants vs AHPMC (2026)'}
+          {locale === 'ar' && 'آلان أپاير مقابل RPM Consultants مقابل AHPMC (2026)'}
+          {locale === 'ru' && 'Alan Apire vs RPM Consultants vs AHPMC (2026)'}
+        </a>
+      </li>
+      <li>
+        <a href={`/${locale}/compare/alternatives/`} class="font-semibold text-brand-700 hover:underline">
+          {locale === 'en' && '10 Best Project Management Consultancy Alternatives in Dubai 2026'}
+          {locale === 'ar' && 'أفضل 10 بدائل لاستشارات إدارة المشاريع في دبي 2026'}
+          {locale === 'ru' && '10 лучших альтернатив консалтингу по управлению проектами в Дубае 2026'}
+        </a>
+      </li>
+    </ul>
+  </section>
+</Base>

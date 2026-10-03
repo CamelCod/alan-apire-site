@@ -5,6 +5,7 @@ sector: Энергетическая инфраструктура
 service: Проектирование и реализация
 year: "2024-2025"
 location: ГРЭС "Харанор", Ясногорск, Забайкальский край, Россия
+cover: ./water-supply-cover.jpg
 order: 2
 locale: ru
 translationKey: haranor-water-supply

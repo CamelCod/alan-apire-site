@@ -5,6 +5,7 @@ sector: البنية التحتية للطاقة
 service: التصميم والتنفيذ
 year: "2024-2025"
 location: محطة هارانور للكهرباء، ياسنوغورسك، منطقة زابايكالسكي، روسيا
+cover: ./water-supply-cover.jpg
 order: 2
 locale: ar
 translationKey: haranor-water-supply

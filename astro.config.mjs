@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
-// Update this to the production domain before launch (Phase 7 of the Lean MVP quote).
-const SITE = 'https://alanapire.ae';
+// Production URL: set ASTRO_SITE in Cloudflare Pages build env (falls back to the live domain).
+const SITE = process.env.ASTRO_SITE || 'https://alanapire.ae';
 
 export default defineConfig({
   site: SITE,
+  trailingSlash: 'always',
   integrations: [tailwind({ applyBaseStyles: false })],
   build: {
     format: 'directory',

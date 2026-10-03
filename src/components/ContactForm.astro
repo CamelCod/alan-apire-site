@@ -1,29 +1,79 @@
 ---
-import { BRAND, type Locale } from '../i18n/config';
+import { type Locale } from '../i18n/config';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const dict = {
-  en: { name: 'Full name', email: 'Email', phone: 'Phone', message: 'Message', send: 'Send message', privacy: 'By submitting, you agree to our Privacy Policy.', action: 'Send' },
-  ar: { name: 'الاسم الكامل', email: 'البريد الإلكتروني', phone: 'الهاتف', message: 'الرسالة', send: 'إرسال الرسالة', privacy: 'بالإرسال أنت توافق على سياسة الخصوصية.', action: 'إرسال' },
-  ru: { name: 'Полное имя', email: 'Эл. почта', phone: 'Телефон', message: 'Сообщение', send: 'Отправить сообщение', privacy: 'Отправляя форму, вы соглашаетесь с политикой конфиденциальности.', action: 'Отправить' },
+  en: {
+    name: 'Full Name', company: 'Company Name', email: 'Work Email', phone: 'Phone Number',
+    location: 'Project Location (UAE / International)', industry: 'Industry Sector',
+    industryOptions: ['Energy & Power', 'Water Infrastructure', 'District Heating', 'Oil & Gas', 'Industrial Infrastructure', 'Other'],
+    service: 'Required Service',
+    serviceOptions: ['Project Management', 'Engineering Advisory', 'Architectural Drawings', 'Management Consulting'],
+    message: 'Project Summary & Scope', action: 'Send',
+    privacy: 'By submitting, you agree to our Privacy Policy.',
+  },
+  ar: {
+    name: 'الاسم الكامل', company: 'اسم الشركة', email: 'البريد الإلكتروني للعمل', phone: 'رقم الهاتف',
+    location: 'موقع المشروع (الإمارات / دولي)', industry: 'القطاع الصناعي',
+    industryOptions: ['الطاقة والكهرباء', 'البنية التحتية للمياه', 'التدفئة المركزية', 'النفط والغاز', 'البنية التحتية الصناعية', 'أخرى'],
+    service: 'الخدمة المطلوبة',
+    serviceOptions: ['إدارة المشاريع', 'الاستشارات الهندسية', 'الرسومات المعمارية', 'الاستشارات الإدارية'],
+    message: 'ملخص المشروع والنطاق', action: 'إرسال',
+    privacy: 'بالإرسال أنت توافق على سياسة الخصوصية.',
+  },
+  ru: {
+    name: 'Полное имя', company: 'Название компании', email: 'Рабочая эл. почта', phone: 'Номер телефона',
+    location: 'Локация проекта (ОАЭ / международная)', industry: 'Отрасль',
+    industryOptions: ['Энергетика', 'Водная инфраструктура', 'Теплоснабжение', 'Нефть и газ', 'Промышленная инфраструктура', 'Другое'],
+    service: 'Требуемая услуга',
+    serviceOptions: ['Управление проектами', 'Инженерный консалтинг', 'Архитектурные чертежи', 'Управленческий консалтинг'],
+    message: 'Краткое описание и объём проекта', action: 'Отправить',
+    privacy: 'Отправляя форму, вы соглашаетесь с политикой конфиденциальности.',
+  },
 }[locale];
 // Formspree endpoint - set in .env at launch (Phase 6 of the quote).
 const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/your-id';
 ---
 
 <form action={formAction} method="POST" class="card grid gap-4" accept-charset="utf-8">
+  <input type="hidden" name="_subject" value="Website enquiry — Alan Apire" />
+  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
   <label class="grid gap-1 text-sm font-medium text-brand-700">
     {dict.name}
     <input type="text" name="name" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
   </label>
   <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.email}
-    <input type="email" name="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    {dict.company}
+    <input type="text" name="company" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
   </label>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="grid gap-1 text-sm font-medium text-brand-700">
+      {dict.email}
+      <input type="email" name="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    </label>
+    <label class="grid gap-1 text-sm font-medium text-brand-700">
+      {dict.phone}
+      <input type="tel" name="phone" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    </label>
+  </div>
   <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.phone}
-    <input type="tel" name="phone" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
+    {dict.location}
+    <input type="text" name="project_location" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
   </label>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="grid gap-1 text-sm font-medium text-brand-700">
+      {dict.industry}
+      <select name="industry" class="rounded-md border border-brand-200 bg-white px-3 py-2 text-sm">
+        {dict.industryOptions.map((o) => <option value={o}>{o}</option>)}
+      </select>
+    </label>
+    <label class="grid gap-1 text-sm font-medium text-brand-700">
+      {dict.service}
+      <select name="service" class="rounded-md border border-brand-200 bg-white px-3 py-2 text-sm">
+        {dict.serviceOptions.map((o) => <option value={o}>{o}</option>)}
+      </select>
+    </label>
+  </div>
   <label class="grid gap-1 text-sm font-medium text-brand-700">
     {dict.message}
     <textarea name="message" rows="5" required class="rounded-md border border-brand-200 px-3 py-2 text-sm"></textarea>

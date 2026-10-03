@@ -4,8 +4,21 @@ interface Props {
   eyebrow?: string
   subtitle?: string
   backgroundImage?: string
+  primaryLabel?: string
+  primaryHref?: string
+  secondaryLabel?: string
+  secondaryHref?: string
 }
-const { title, eyebrow, subtitle, backgroundImage = '/brand/power-plant-hero.jpg' } = Astro.props;
+const {
+  title,
+  eyebrow,
+  subtitle,
+  backgroundImage = '/brand/power-plant-hero.jpg',
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+} = Astro.props;
 ---
 
 <section class="relative overflow-hidden bg-brand-950">
@@ -39,13 +52,20 @@ const { title, eyebrow, subtitle, backgroundImage = '/brand/power-plant-hero.jpg
         {subtitle}
       </p>
     )}
-    <div class="mt-10 animate-slideUp opacity-0 [animation-delay:800ms]">
-      <a href="#projects" class="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-brand-950 transition-all hover:bg-accent-light hover:shadow-lg">
-        Explore Projects
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+    <div class="mt-10 flex flex-wrap items-center gap-4 animate-slideUp opacity-0 [animation-delay:800ms]">
+      {primaryLabel && primaryHref && (
+        <a href={primaryHref} class="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-brand-950 transition-all hover:bg-accent-light hover:shadow-lg min-h-[44px]">
+          {primaryLabel}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="rtl:-scale-x-100">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      )}
+      {secondaryLabel && secondaryHref && (
+        <a href={secondaryHref} class="inline-flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 font-semibold text-white transition-all hover:border-white hover:bg-white/10 min-h-[44px]">
+          {secondaryLabel}
+        </a>
+      )}
     </div>
   </div>
 </section>

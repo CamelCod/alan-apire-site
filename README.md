@@ -50,7 +50,8 @@ src/
 public/
   brand/               # logo, favicon, og image (replace with Phase 1 deliverables)
   robots.txt
-  _redirects           # Cloudflare Pages root → /en/
+  _redirects           # Cloudflare Pages locale redirects
+  _headers             # security + cache headers
 ```
 
 ## Editing content (Markdown — no CMS)
@@ -74,20 +75,53 @@ Body is Markdown. Add a `cover` image by placing it next to the file and using `
 
 ## Configuration checklist (before launch)
 
-1. `src/i18n/config.ts` → `BRAND` phone, whatsapp, email, address, mapsQuery
-2. `src/i18n/config.ts` → `ANALYTICS` provider + `SITE_URL`
-3. `.env` → `FORMSPREE_ENDPOINT` (create at formspree.io)
-4. `astro.config.mjs` → `site` (production domain)
-5. `public/brand/` → final logo, favicon, og image from Phase 1
-6. `tailwind.config.mjs` → brand colors and fonts once Phase 1 palette is approved
+1. `src/i18n/config.ts` → `BRAND` phone, WhatsApp (no `+`), email, address, mapsQuery
+2. Copy `.env.example` to `.env` and set `FORMSPREE_ENDPOINT` (create a form at [formspree.io](https://formspree.io))
+3. Optional analytics: set `ANALYTICS_PROVIDER` plus `PLAUSIBLE_DOMAIN` or `GA4_MEASUREMENT_ID`
+4. Confirm `ASTRO_SITE=https://alanapire.ae` (Cloudflare Pages build variable)
+5. `public/brand/` → final logo, favicon, and a raster Open Graph image (PNG/JPG — SVG is ignored by most social crawlers)
 
 ## Deployment (Cloudflare Pages)
 
+This is a **static** Astro site. Do **not** add the Cloudflare SSR adapter.
+
+### Git-connected (recommended)
+
 1. Push this repo to GitHub.
-2. Cloudflare dashboard → Pages → Create project → connect the GitHub repo.
-3. Build command: `npm run build`. Output directory: `dist`.
-4. Add environment variables from `.env.example`.
-5. Deploy. Custom domain + SSL under Custom domains.
+2. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect the repo.
+3. Build settings:
+   - Framework preset: `Astro`
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Node version: `20` (from `.nvmrc`, or set `NODE_VERSION=20`)
+4. **Build** environment variables (Settings → Environment variables → Production):
+
+   | Variable | Example |
+   | --- | --- |
+   | `ASTRO_SITE` | `https://alanapire.ae` |
+   | `FORMSPREE_ENDPOINT` | `https://formspree.io/f/xxxxxxxx` |
+   | `ANALYTICS_PROVIDER` | `plausible` or `ga4` or omit |
+   | `PLAUSIBLE_DOMAIN` | `alanapire.ae` |
+   | `GA4_MEASUREMENT_ID` | `G-XXXXXXXX` |
+
+5. Deploy. Then **Custom domains** → add `alanapire.ae` and `www.alanapire.ae`, and redirect `www` → apex (or the reverse) in the domain settings. SSL is automatic.
+
+### Direct upload (no Git)
+
+```bash
+npm ci
+npm run build
+npx wrangler pages deploy dist --project-name=alan-apire-site
+```
+
+Preview a production build locally as Cloudflare would serve it:
+
+```bash
+npm run build
+npm run pages:preview
+```
+
+`public/_redirects` and `public/_headers` are copied into `dist/` and applied by Pages (locale redirect, security headers, long cache for hashed `/_astro/` assets).
 
 ## License / ownership
 

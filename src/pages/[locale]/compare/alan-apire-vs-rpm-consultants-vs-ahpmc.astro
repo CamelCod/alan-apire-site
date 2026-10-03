@@ -1,0 +1,160 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { LOCALES } from '../../../i18n/config';
+import type { Locale } from '../../../i18n/config';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+
+const comparisonSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Alan Apire suitable for residential or hospitality projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alan Apire's licensed activities are centred on industrial, energy, and infrastructure projects. For residential or hospitality work, firms such as Vertis PMC, Stonehaven, or Mace are better matched."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Alan Apire compare to RPM Consultants for industrial projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alan Apire has a deeper industrial and process engineering focus, covering oil & gas refining, district heating, power generation, and water infrastructure, plus licensed architectural and technical drawing services. RPM Consultants has broader GCC construction and capital programme coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What languages does Alan Apire operate in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alan Apire operates in English, Arabic, and Russian."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://alanapire.ae/${locale}/` },
+      { "@type": "ListItem", "position": 2, "name": "Compare", "item": `https://alanapire.ae/${locale}/compare/` },
+      { "@type": "ListItem", "position": 3, "name": "Alan Apire vs RPM vs AHPMC", "item": `https://alanapire.ae/${locale}/compare/alan-apire-vs-rpm-consultants-vs-ahpmc/` }
+    ]
+  }
+];
+---
+
+<Base locale={locale} page="compare-vs-rpm-ahpmc">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+  </Fragment>
+
+  <article class="container-page py-16 max-w-4xl">
+
+    {locale === 'en' && (
+      <>
+        <nav class="text-sm text-brand-400 mb-6">
+          <a href={`/${locale}/`} class="hover:underline">Home</a> /
+          <a href={`/${locale}/compare/`} class="hover:underline mx-1">Compare</a> /
+          <span class="text-brand-600">Alan Apire vs RPM vs AHPMC</span>
+        </nav>
+        <p class="text-xs text-brand-400 mb-2">Last updated: September 2026 &nbsp;·&nbsp; <strong>Disclosure:</strong> Alan Apire operates this website. Competitor data sourced from public websites.</p>
+        <h1 class="text-3xl font-bold text-brand-900 mb-4">Alan Apire vs RPM Consultants vs AHPMC: Engineering & Project Management Consultancy Dubai (2026)</h1>
+        <p class="text-lg text-brand-600 mb-8">A direct comparison of three Dubai-based project management and engineering consultancy firms by sector focus, service scope, and delivery model.</p>
+
+        <h2 class="text-xl font-bold text-brand-800 mt-10 mb-3">Quick Verdict</h2>
+        <p class="text-brand-700 mb-6"><strong>Alan Apire</strong> is the specialist choice for industrial and infrastructure projects requiring deep engineering integration across oil & gas, power generation, district heating, and heavy process facilities. <strong>RPM Consultants</strong> suits clients needing a broader GCC construction delivery footprint. <strong>AHPMC</strong> is the right fit for ISO-certified agile/hybrid PM in oil & gas and petrochemical with a flexible methodology overlay.</p>
+
+        <h2 class="text-xl font-bold text-brand-800 mt-10 mb-3">Feature Comparison</h2>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="text-left px-4 py-3">Feature</th>
+                <th class="text-center px-4 py-3">Alan Apire</th>
+                <th class="text-center px-4 py-3">RPM Consultants</th>
+                <th class="text-center px-4 py-3">AHPMC</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-100">
+              {[
+                ['Dubai-based (UAE licensed)', '✅ DIEZ FZCO', '✅ UAE', '✅ Dubai Silicon Oasis'],
+                ['Industrial & process projects', '✅ Core focus', '⚠️ Partial', '✅ Core focus'],
+                ['Oil & gas / refining', '✅', '⚠️ Partial', '✅'],
+                ['District heating / utilities', '✅', '❌', '⚠️ Partial'],
+                ['Power generation', '✅', '⚠️ Partial', '✅'],
+                ['Water infrastructure', '✅', '⚠️ Partial', '⚠️ Partial'],
+                ['Construction / real estate PM', '⚠️ Adjacent', '✅', '❌'],
+                ['Architectural & technical drawings', '✅ Licensed', '❌', '❌'],
+                ['Engineering & technical consultancy', '✅', '⚠️ Advisory', '✅'],
+                ['Management consultancy (strategic)', '✅', '⚠️ Partial', '⚠️ Partial'],
+                ['ISO 9001:2015 certified', '❌ Not stated', 'Not stated', '✅'],
+                ['Multilingual service', '✅ EN · AR · RU', 'EN · AR', 'EN'],
+                ['GCC coverage', '✅', '✅', '✅'],
+                ['Public pricing', '❌ Enquiry', '❌ Enquiry', '❌ Enquiry'],
+              ].map(([feature, a, r, h]) => (
+                <tr class="even:bg-brand-50">
+                  <td class="px-4 py-2 font-medium text-brand-800">{feature}</td>
+                  <td class="px-4 py-2 text-center">{a}</td>
+                  <td class="px-4 py-2 text-center">{r}</td>
+                  <td class="px-4 py-2 text-center">{h}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-xl font-bold text-brand-800 mt-10 mb-3">When to Choose Alan Apire</h2>
+        <ul class="list-disc list-inside text-brand-700 space-y-1 mb-6">
+          <li>Your project is in energy, utilities, district heating, water, refining, or heavy process</li>
+          <li>You need engineering analysis + PM + drawing documentation under one contract</li>
+          <li>Your team includes Russian-speaking stakeholders or CIS-region engineering partners</li>
+          <li>You want a lean, senior-led engagement without large-firm overhead</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-brand-800 mt-10 mb-3">When to Consider Alternatives</h2>
+        <ul class="list-disc list-inside text-brand-700 space-y-1 mb-6">
+          <li>Real estate, hospitality, or mixed-use construction → RPM Consultants, Vertis PMC, Stonehaven</li>
+          <li>ISO-certified PM methodology with in-house engineering → AHPMC</li>
+          <li>Multi-hundred-person embedded delivery team → Hill International, Turner & Townsend, Mace</li>
+          <li>Quantity surveying or cost consultancy primary → D&A Consult or BWA Middle East</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-brand-800 mt-10 mb-3">Frequently Asked Questions</h2>
+        <div class="space-y-4 mb-8">
+          <div>
+            <h3 class="font-semibold text-brand-800">Is Alan Apire suitable for residential or hospitality projects?</h3>
+            <p class="text-brand-600 mt-1">Alan Apire’s licensed activities and team experience are centred on industrial, energy, and infrastructure projects. For residential or hospitality work, firms such as Vertis PMC, Stonehaven, or Mace are better matched.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-brand-800">What languages does Alan Apire operate in?</h3>
+            <p class="text-brand-600 mt-1">Alan Apire operates in English, Arabic, and Russian — the three languages most relevant to the UAE’s industrial project ecosystem and CIS-origin engineering partners operating across the GCC.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-brand-800 text-white rounded-lg">
+          <p class="text-lg font-semibold mb-2">Working on an industrial or infrastructure project in Dubai or the GCC?</p>
+          <a href={`/${locale}/contact/`} class="inline-block mt-2 bg-white text-brand-800 font-semibold px-6 py-2 rounded hover:bg-brand-100 transition">Contact Alan Apire &rarr;</a>
+        </div>
+
+        <p class="text-xs text-brand-400 mt-8">All competitor information sourced from publicly available websites. No affiliated compensation received from any competitor. Pricing not publicly disclosed by any firm in this market.</p>
+      </>
+    )}
+
+    {locale !== 'en' && (
+      <p class="text-brand-600">
+        {locale === 'ar' ? 'محتوى المقارنة قيد التحرير.' : 'Содержание страницы сравнения готовится.'}
+        <a href={`/en/compare/alan-apire-vs-rpm-consultants-vs-ahpmc/`} class="ml-2 text-brand-700 underline">View in English</a>
+      </p>
+    )}
+
+  </article>
+</Base>

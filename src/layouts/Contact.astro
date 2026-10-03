@@ -5,6 +5,7 @@ import Base from './Base.astro';
 import PageHero from '../components/PageHero.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { PAGES } from '../i18n/pages';
+import { CONTACT_COPY } from '../i18n/site';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
@@ -12,12 +13,15 @@ const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(BRAND.mapsQ
 ---
 
 <Base locale={locale} page="contact">
-  <PageHero eyebrow={PAGES.contact[locale].label} title={PAGES.contact[locale].title} subtitle={PAGES.contact[locale].description} />
+  <link slot="head" rel="preconnect" href="https://www.google.com" />
+  <link slot="head" rel="preconnect" href="https://formspree.io" />
+  <PageHero eyebrow={PAGES.contact[locale].label} title={CONTACT_COPY.heading[locale]} subtitle={CONTACT_COPY.intro[locale]} />
   <section class="section">
     <div class="container-page grid gap-10 lg:grid-cols-2">
       <div>
-        <h2 class="text-2xl">{PAGES.contact[locale].label}</h2>
-        <p class="mt-2 text-brand-600">{BRAND.address[locale]}</p>
+        <h2 class="text-2xl">{CONTACT_COPY.detailsHeading[locale]}</h2>
+        <p class="mt-2 font-semibold text-brand-800">{BRAND.name}</p>
+        <p class="mt-1 text-brand-600">{BRAND.address[locale]}</p>
         <ul class="mt-4 space-y-1 text-sm text-brand-700">
           <li><a href={`mailto:${BRAND.email}`} class="hover:underline">{BRAND.email}</a></li>
           <li><a href={`tel:${BRAND.phone}`} dir="ltr" class="hover:underline">{BRAND.phone}</a></li>
@@ -28,13 +32,13 @@ const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(BRAND.mapsQ
       </div>
       <div class="overflow-hidden rounded-lg border border-brand-100">
         <iframe
-          title="Map"
+          title="Alan Apire office location map"
           src={mapEmbed}
           width="100%"
-          height="100%"
+          height="450"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="min-h-[400px]"
+          referrerpolicy="strict-origin"
+          class="min-h-[400px] h-full block"
         ></iframe>
       </div>
     </div>

@@ -22,7 +22,20 @@ pnpm-debug.log*
 
 # Editor
 .vscode/preview/
+.vscode/gemini-mcp/
 .idea/
+
+# Visual QA / local screenshots (not deployed)
+dist-screenshots/
+
+# Design research / raw working files (not deployed)
+Company Logo Design/
+Website Image Style Blueprint/
+design-assets/
+src/components/Company Logo Design/
+GEO-ANALYSIS.md
+Projects.md
+team-roster-raw.md
 
 # Cloudflare
 .wrangler/
