@@ -90,9 +90,9 @@ const readCaseLabel = locale === 'ar' ? 'اقرأ الحالة' : locale === 'ru
         {featured.map((p) => (
           <article class="card flex flex-col overflow-hidden">
             {p.data.cover && (
-              <div class="mb-4 -mx-6 -mt-6 aspect-video overflow-hidden bg-brand-100">
+              <a href={`/${locale}/projects/${p.slug}`} aria-label={readCaseLabel} class="mb-4 -mx-6 -mt-6 block aspect-video overflow-hidden bg-brand-100">
                 <img src={p.data.cover.src} alt={p.data.title} width={p.data.cover.width} height={p.data.cover.height} class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
-              </div>
+              </a>
             )}
             {p.data.sector && <p class="text-xs font-semibold uppercase tracking-widest text-accent">{p.data.sector}</p>}
             <h3 class="mt-2 text-lg">{p.data.title}</h3>
