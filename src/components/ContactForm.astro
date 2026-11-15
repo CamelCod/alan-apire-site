@@ -35,7 +35,7 @@ const dict = {
 const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/your-id';
 ---
 
-<form action={formAction} method="POST" class="card grid gap-4" accept-charset="utf-8">
+<form action={formAction} method="POST" class="card grid gap-4" accept-charset="utf-8" data-cio="contact-form" data-locale={locale}>
   <input type="hidden" name="_subject" value="Website enquiry — Alan Apire" />
   <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
   <label class="grid gap-1 text-sm font-medium text-brand-700">
@@ -81,3 +81,22 @@ const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f
   <button type="submit" class="btn-primary justify-self-start">{dict.action}</button>
   <p class="text-xs text-brand-500">{dict.privacy}</p>
 </form>
+
+<script>
+  import { cioIdentify, cioTrack } from '../lib/customerio';
+
+  const form = document.querySelector<HTMLFormElement>('form[data-cio="contact-form"]');
+  form?.addEventListener('submit', () => {
+    const data = new FormData(form);
+    const email = String(data.get('email') ?? '').trim();
+    const name = String(data.get('name') ?? '').trim();
+    if (email) {
+      cioIdentify(email, { email, name: name || undefined });
+    }
+    cioTrack('contact_form_submitted', {
+      locale: form?.dataset.locale,
+      industry: String(data.get('industry') ?? ''),
+      service: String(data.get('service') ?? ''),
+    });
+  });
+</script>

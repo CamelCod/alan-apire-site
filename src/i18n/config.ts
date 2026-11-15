@@ -47,3 +47,10 @@ export const ANALYTICS = {
   domain: plausibleDomain || 'alanapire.ae',
   measurementId: gaMeasurementId,
 };
+
+// Customer.io Data In (JavaScript source) — public write key, safe to ship to
+// browsers by design. Override with CIO_WRITE_KEY at build time for sandbox.
+const cioWriteKey = String(import.meta.env.CIO_WRITE_KEY ?? '').trim();
+export const CUSTOMERIO = {
+  writeKey: cioWriteKey || 'pk_us_SU1QugLNvL7f2hcu9OgPumJnxvqR9IsZ_0ilBgY',
+};

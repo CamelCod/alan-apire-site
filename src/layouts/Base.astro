@@ -5,7 +5,7 @@ import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
-import { ANALYTICS } from '../i18n/config';
+import { ANALYTICS, CUSTOMERIO } from '../i18n/config';
 
 interface Props {
   locale: Locale;
@@ -70,6 +70,7 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
     <meta name="theme-color" content="#2c4462" />
     <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap.xml" />
+    {CUSTOMERIO.writeKey && <meta name="cio-write-key" content={CUSTOMERIO.writeKey} />}
     <slot name="head" />
 
     {/* ── Local SEO: Organization + ProfessionalService JSON-LD ── */}
@@ -150,6 +151,14 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
     {ANALYTICS.provider === 'plausible' && (
       <script defer data-domain={ANALYTICS.domain} src="https://plausible.io/js/script.js"></script>
     )}
+    <script>
+      // Customer.io Data In — loaded lazily only when a write key is configured.
+      // (Scripts inside JSX expressions aren't bundled by Astro, so the guard
+      // lives here instead of around the tag.)
+      if (document.querySelector('meta[name="cio-write-key"]')?.getAttribute('content')) {
+        import('../lib/customerio').then((m) => m.initCustomerIO());
+      }
+    </script>
     {ANALYTICS.provider === 'ga4' && ANALYTICS.measurementId && (
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.measurementId}`}></script>
     )}
