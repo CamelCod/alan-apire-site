@@ -20,8 +20,8 @@ export const SITE_URL = (import.meta.env.SITE as string | undefined)?.replace(/\
 export const BRAND = {
   name: 'ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO',
   shortName: 'Alan Apire',
-  phone: '+971000000000',
-  whatsapp: '971000000000', // international format, no +
+  phone: '+971558286328',
+  whatsapp: '971558286328', // international format, no +
   email: 'info@alanapire.ae',
   address: {
     en: 'Dubai Integrated Economic Zones Authority (DIEZ), Dubai, United Arab Emirates',

@@ -25,6 +25,60 @@ const aboutCopy = page === 'about' ? {
   operatingHeading: ABOUT.operatingHeading[locale],
   operating: ABOUT.operating[locale],
 } : null;
+
+const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]> = {
+  en: [
+    {
+      name: 'Alan Marvanovich Biri',
+      role: 'Lead Engineer & Project Manager',
+      bio: 'Chief Project Engineer at OOO "Energodiagnostika" and NOPRIZ-registered designer (PI-114432). Leads multidisciplinary engineering coordination and statutory documentation for thermal networks, boiler plants and utility infrastructure.',
+    },
+    {
+      name: 'Andrei Stepanov',
+      role: 'Founder & General Manager',
+      bio: 'Dubai-based executive in investment, venture building and operational management. Executive Program in Private Equity, IE Business School (2019).',
+    },
+    {
+      name: 'Aiham Alhawar',
+      role: 'Managing Partner – UAE & GCC Business Development',
+      bio: 'Operational-excellence and transformation lead with 9+ years in high-consequence oil and gas operations: governance, quality systems (ISO 9001, API Q1/Q2), reliability and Lean Six Sigma. B.Eng. Mechanical Engineering (Honors).',
+    },
+  ],
+  ar: [
+    {
+      name: 'آلان مارفانوفيتش بيرى',
+      role: 'مهندس رئيس ومدير مشاريع',
+      bio: 'كبير مهندسي المشاريع في ООО "Energodiagnostika" ومصمم مسجل في NOPRIZ (PI-114432). يقود التنسيق الهندسي متعدد التخصصات والوثائق القانونية للشبكات الحرارية ومحطات الغلايات والبنية التحتية للمرافق.',
+    },
+    {
+      name: 'أندريه ستيبانوفيتش',
+      role: 'مؤسس ومدير عام',
+      bio: 'تنفيذي مقيم في دبي في مجال الاستثمار وبناء المشاريع وإدارة العمليات. برنامج تنفيذي في رأس المال الاستثماري، كلية IE للأعمال (2019).',
+    },
+    {
+      name: 'أيهم الحور',
+      role: 'شريك إداري – تطوير الأعمال في الإمارات ودول مجلس التعاون الخليجي',
+      bio: 'قائد التميز التشغيلي والتحول مع أكثر من 9 سنوات في عمليات النفط والغاز عالية المخاطر: الحوكمة وأنظمة الجودة (ISO 9001، API Q1/Q2) والموثوقية والليين Six Sigma. بكالوريوس هندسة ميكانيكية (بامتياز).',
+    },
+  ],
+  ru: [
+    {
+      name: 'Алан Марванович Бири',
+      role: 'Ведущий инженер и руководитель проектов',
+      bio: 'Главный инженер проекта ООО «Энергодиагностика» и проектировщик, зарегистрированный в НОПРИЗ (PI-114432). Руководит междисциплинарной инженерной координацией и нормативной документацией для тепловых сетей, котельных и инженерной инфраструктуры.',
+    },
+    {
+      name: 'Андрей Степанович Степанов',
+      role: 'Основатель и генеральный директор',
+      bio: 'Исполнительный директор в Дубае в области инвестиций, венчурного строительства и операционного управления. Программа Executive in Private Equity, IE Business School (2019).',
+    },
+    {
+      name: 'Айхам Альхавар',
+      role: 'Управляющий партнёр – развитие бизнеса ОАЭ и ССАГПЗ',
+      bio: 'Лидер операционного совершенства и трансформации с 9+ годами опыта в высокорисковых операциях нефтегазовой отрасли: управление, системы качества (ISO 9001, API Q1/Q2), надёжность и Lean Six Sigma. Бакалавр механического инженерии (с отличием).',
+    },
+  ],
+};
 ---
 
 <Base locale={locale} page={page}>
@@ -60,6 +114,21 @@ const aboutCopy = page === 'about' ? {
 
         <h2 class="mt-10 text-xl text-brand-900">{aboutCopy.operatingHeading}</h2>
         <p class="mt-3 text-brand-700">{aboutCopy.operating}</p>
+
+        <div class="mt-10 rounded-lg border border-brand-100 bg-white p-6">
+          <h3 class="text-lg text-brand-900">{locale === 'ar' ? 'ملف القدرات' : locale === 'ru' ? 'Портфолио возможностей' : 'Capability Portfolio'}</h3>
+          <p class="mt-2 text-sm text-brand-600">
+            {locale === 'ar'
+              ? 'حمّل ملف قدراتنا لدول الإمارات ودول مجلس التعاون الخليجي للاطلاع على نطاق الخدمات والمشاريع المرجعية ومنهجية التنفيذ.'
+              : locale === 'ru'
+                ? 'Скачайте наше портфолио возможностей для ОАЭ и стран Персидского залива с подробным описанием объёма услуг, референсных проектов и методологии реализации.'
+                : 'Download our UAE & GCC capability portfolio for detailed service scope, reference projects and delivery methodology.'}
+          </p>
+          <a href="/downloads/Alanpire_Gulf_Capability_Portfolio.pdf" download class="mt-4 inline-flex items-center gap-2 rounded-lg bg-brand-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-800">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            {locale === 'ar' ? 'تحميل PDF' : locale === 'ru' ? 'Скачать PDF' : 'Download PDF'}
+          </a>
+        </div>
       </div>
     </section>
   )}
@@ -107,10 +176,26 @@ const aboutCopy = page === 'about' ? {
     </section>
   )}
 
-  {!['about', 'services', 'industries'].includes(page) && (
+  {!['about', 'services', 'industries', 'team'].includes(page) && (
     <section class="section">
       <div class="container-page prose-tight max-w-3xl">
         <p>{t.description}</p>
+      </div>
+    </section>
+  )}
+
+  {page === 'team' && (
+    <section class="section">
+      <div class="container-page">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {TEAM_MEMBERS[locale].map((member) => (
+            <article class="card">
+              <h2 class="text-xl text-brand-900">{member.name}</h2>
+              <p class="mt-1 text-sm font-semibold text-accent">{member.role}</p>
+              <p class="mt-3 text-sm text-brand-600">{member.bio}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )}
