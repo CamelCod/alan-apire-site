@@ -39,6 +39,11 @@ The municipal utility required an autonomous industrial boiler facility to suppl
 - Designed PLC and SCADA automation architectures for burner control, fault logging, and safety interlocking.
 - Executed four statutory engineering surveys covering geotechnical, geodetic, hydrometeorological, and environmental conditions.
 
+## Plant Concept & Utility Integration
+
+<img src="/projects/karpinsk-schematic.jpg" alt="Autonomous 10.5 MWth boiler plant concept schematic and utilities" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Plant concept schematic: Dual-fuel natural gas and standby diesel resilience with 22 m self-supporting exhaust stacks and integrated site utilities. Source: Working documentation archive, OOO Energodiagnostika.*
+
 ## Design-Stage Drawing Excerpt
 
 <img src="/projects/karpinsk-drawing-excerpt.webp" alt="Design-stage drawing excerpt: Karpinsk boiler facility layout" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />

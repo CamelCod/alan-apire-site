@@ -41,8 +41,8 @@ The operator required a capacity upgrade from DN400 to twin DN500 transmission m
 
 ## Design-Stage Drawing Excerpt
 
-<img src="/projects/koltsovo-drawing-excerpt.webp" alt="Design-stage drawing excerpt: Koltsovo twin-pipe route alignment plan" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
-*Design-stage drawing excerpt: Route plan and expansion compensator arrangement (Volume 57.24-TS2, Sheet 4). Source: Working documentation archive, OOO Energodiagnostika.*
+<img src="/projects/koltsovo-drawing-excerpt.jpg" alt="Project drawing excerpt – 57.24-PPO2, heat-main route plan, Stage 2" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Project drawing excerpt – 57.24-PPO2, heat-main route plan, Stage 2. Design-stage documentation, Chief Project Engineer A.M. Biri. Source: Working documentation archive, OOO Energodiagnostika.*
 
 ## Statutory Approval Record
 
