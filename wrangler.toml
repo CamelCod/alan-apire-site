@@ -5,13 +5,6 @@ name = "alan-apire-site"
 compatibility_date = "2026-09-01"
 pages_build_output_dir = "dist"
 
-# Workers Builds deploys this repo with `npx wrangler deploy` (Workers, not
-# Pages). The [assets] block makes that command deploy dist/ as a static-
-# assets-only Worker. `pages_build_output_dir` above is kept for
-# `wrangler pages deploy` compatibility.
-[assets]
-directory = "./dist"
-
 # Set these as Cloudflare Pages *build* environment variables (not runtime):
 #   ASTRO_SITE            https://alanapire.ae
 #   FORMSPREE_ENDPOINT    https://formspree.io/f/<id>
