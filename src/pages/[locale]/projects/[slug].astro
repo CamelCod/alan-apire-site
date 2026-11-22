@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import type { GetStaticPaths } from 'astro';
 import Base from '../../../layouts/Base.astro';
-import PageHero from '../../../components/PageHero.astro';
 import { PROJECTS_COPY } from '../../../i18n/site';
 
 export const getStaticPaths = (async () => {
@@ -25,68 +25,160 @@ const altPaths = Object.fromEntries(
   siblings.map((s) => [s.data.locale, `/${s.data.locale}/projects/${s.slug}`])
 );
 
-// Localized labels for the project meta strip.
-const META_LABELS: Record<string, { sector: string; service: string; year: string; location: string; published: string; updated: string }> = {
-  en: { sector: 'Sector', service: 'Service', year: 'Year', location: 'Location', published: 'Published', updated: 'Updated' },
-  ru: { sector: 'Направление', service: 'Услуга', year: 'Год', location: 'Локация', published: 'Опубликовано', updated: 'Обновлено' },
-  ar: { sector: 'القطاع', service: 'الخدمة', year: 'السنة', location: 'الموقع', published: 'نُشر', updated: 'تم التحديث' },
-};
-const L = META_LABELS[locale] ?? META_LABELS.en;
+// Editorial Labels per locale
+const LABELS = {
+  en: {
+    back: '← Back to projects',
+    factStrip: 'Project Fact Strip',
+    attributionHeading: 'Mandatory Project Attribution',
+    contactHeading: 'Discuss a similar package',
+    contactSub: 'Our engineers review route alignments, sizing criteria, and hydraulic parameters for industrial infrastructure.',
+    contactBtn: 'Discuss your project',
+    assetNeeded: 'Asset required: Route alignment drawing',
+  },
+  ar: {
+    back: '→ العودة إلى المشاريع',
+    factStrip: 'شريط بيانات المشروع',
+    attributionHeading: 'إقرار نسبة المشروع الإلزامي',
+    contactHeading: 'ناقش حزمة مماثلة',
+    contactSub: 'يراجع مهندسونا مسارات الخطوط ومعايير الأبعاد والمعاملات الهيدروليكية للبنية التحتية الصناعية.',
+    contactBtn: 'ناقش مشروعك',
+    assetNeeded: 'الأصل المطلوب: مخطط محاذاة المسار',
+  },
+  ru: {
+    back: '← Назад к проектам',
+    factStrip: 'Основные параметры объекта',
+    attributionHeading: 'Обязательное указание авторства',
+    contactHeading: 'Обсудить аналогичный объем',
+    contactSub: 'Наши специалисты оценят расчетные параметры, трассировку сетей и состав проектной документации.',
+    contactBtn: 'Обсудить проект',
+    assetNeeded: 'Требуемый материал: трассировка сетей',
+  },
+}[locale];
 ---
 
 <Base
   locale={locale}
   page="projects"
   image={d.cover?.src}
-  title={d.title}
+  title={`${d.title} | Alanpire`}
   description={d.summary}
   canonicalPath={`/${locale}/projects/${project.slug}`}
   altPaths={altPaths}
 >
-  <PageHero eyebrow={d.sector ?? ''} title={d.title} subtitle={d.summary} />
+  {/* 1. Full-Width Editorial Hero with Category Label and Project Name */}
+  <section class="border-b border-[#e2e5eb] bg-[#faf9f6] pt-12 pb-16">
+    <div class="container-page">
+      <a href={`/${locale}/projects/`} class="text-xs font-semibold text-[#0b4ea2] hover:underline mb-6 inline-block">
+        {LABELS.back}
+      </a>
+      <p class="category-tag text-xs font-semibold text-[#64748b]">
+        {d.editorialLabel ?? d.sector}
+      </p>
+      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0b1930] max-w-4xl leading-tight">
+        {d.title}
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-[#475569] max-w-3xl leading-relaxed">
+        {d.supportLine ?? d.summary}
+      </p>
 
-  <section class="section">
-    <div class="container-page max-w-3xl">
-      <!-- Cover image slot. Drop an image into frontmatter `cover:` to replace the placeholder. -->
-      <figure class="mb-10">
+      {/* Hero Image / Drawing Area */}
+      <div class="mt-10 overflow-hidden border border-[#e2e5eb] bg-white">
         {d.cover ? (
-          <img src={d.cover.src} alt={d.title} width={d.cover.width} height={d.cover.height} class="w-full rounded-lg object-cover aspect-video" />
+          <Image
+            src={d.cover}
+            alt={d.title}
+            widths={[480, 768, 1200]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+            format="webp"
+            quality={80}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full aspect-[16/10] sm:aspect-[21/9] object-cover"
+          />
         ) : (
-          <div
-            class="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-brand-200 bg-brand-50 text-brand-400"
-            role="img"
-            aria-label="Project image placeholder"
-          >
-            <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <path d="m21 15-5-5L5 21" />
-            </svg>
-            <span class="text-xs font-medium uppercase tracking-widest">Image coming soon</span>
+          /* Deliberate Text-Led Layout for Missing Asset */
+          <div class="aspect-[16/10] sm:aspect-[21/9] p-8 sm:p-12 flex flex-col justify-between bg-[#faf9f6]">
+            <div>
+              <p class="category-tag">{d.editorialLabel ?? d.sector}</p>
+              <div class="mt-4 flex flex-wrap gap-8 text-[#0b1930]">
+                {d.figures?.map((fig) => (
+                  <div>
+                    <span class="text-2xl sm:text-4xl font-bold tracking-tight block">{fig}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p class="text-xs text-[#94a3b8] italic">
+              {d.missingAssetNote ?? LABELS.assetNeeded}
+            </p>
           </div>
         )}
-      </figure>
+      </div>
+    </div>
+  </section>
 
-      <!-- Project meta strip -->
-      {(d.sector || d.service || d.year || d.location || d.datePublished || d.dateModified) && (
-        <dl class="mb-10 grid grid-cols-2 gap-4 rounded-lg border border-brand-100 bg-white p-6 sm:grid-cols-4">
-          {d.sector && <div><dt class="eyebrow text-[0.65rem]">{L.sector}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.sector}</dd></div>}
-          {d.service && <div><dt class="eyebrow text-[0.65rem]">{L.service}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.service}</dd></div>}
-          {d.year && <div><dt class="eyebrow text-[0.65rem]">{L.year}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.year}</dd></div>}
-          {d.location && <div><dt class="eyebrow text-[0.65rem]">{L.location}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.location}</dd></div>}
-          {d.datePublished && <div><dt class="eyebrow text-[0.65rem]">{L.published}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.datePublished}</dd></div>}
-          {d.dateModified && <div><dt class="eyebrow text-[0.65rem]">{L.updated}</dt><dd class="mt-1 text-sm font-semibold text-brand-800">{d.dateModified}</dd></div>}
+  {/* Main Case Study Body */}
+  <section class="section">
+    <div class="container-page max-w-4xl">
+      {/* 2. Fact Strip */}
+      <div class="mb-12 border border-[#e2e5eb] bg-white p-6 sm:p-8">
+        <p class="category-tag text-xs font-semibold text-[#64748b] mb-4">
+          {LABELS.factStrip}
+        </p>
+        <dl class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
+          {d.location && (
+            <div>
+              <dt class="text-[#64748b]">{locale === 'ar' ? 'الموقع' : locale === 'ru' ? 'Локация' : 'Location'}</dt>
+              <dd class="mt-1 font-semibold text-[#0b1930]">{d.location}</dd>
+            </div>
+          )}
+          {d.year && (
+            <div>
+              <dt class="text-[#64748b]">{locale === 'ar' ? 'الجدول الزمني' : locale === 'ru' ? 'Сроки' : 'Timeline'}</dt>
+              <dd class="mt-1 font-semibold text-[#0b1930]">{d.year}</dd>
+            </div>
+          )}
+          {d.service && (
+            <div>
+              <dt class="text-[#64748b]">{locale === 'ar' ? 'نطاق الخدمة' : locale === 'ru' ? 'Услуга' : 'Service Scope'}</dt>
+              <dd class="mt-1 font-semibold text-[#0b1930]">{d.service}</dd>
+            </div>
+          )}
+          {d.figures && d.figures[0] && (
+            <div>
+              <dt class="text-[#64748b]">{locale === 'ar' ? 'المقياس الرئيسي' : locale === 'ru' ? 'Основной параметр' : 'Key Scale'}</dt>
+              <dd class="mt-1 font-semibold text-[#0b4ea2]">{d.figures[0]}</dd>
+            </div>
+          )}
         </dl>
-      )}
+      </div>
 
-      <div class="prose-tight">
+      {/* 3–6. Markdown Content: Intro, Contribution, Drawing excerpt, Approval Record */}
+      <div class="prose-tight space-y-6 text-[#334155]">
         <Content />
       </div>
 
-      <!-- Mandated attribution & confidentiality disclosure -->
-      <p class="mt-12 rounded-lg border border-brand-100 bg-brand-50 p-4 text-xs text-brand-500">
-        {PROJECTS_COPY.disclosure[locale]}
-      </p>
+      {/* 7. Attribution Block (Mandatory) */}
+      <div class="mt-12 border-l-4 border-[#0b1930] bg-white p-6 border border-[#e2e5eb]">
+        <p class="category-tag text-xs font-semibold text-[#64748b]">
+          {LABELS.attributionHeading}
+        </p>
+        <p class="mt-2 text-xs leading-relaxed text-[#475569]">
+          {PROJECTS_COPY.disclosure[locale]}
+        </p>
+      </div>
+
+      {/* 8. Contact Prompt */}
+      <div class="mt-10 border border-[#e2e5eb] bg-[#faf9f6] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-[#0b1930]">{LABELS.contactHeading}</h3>
+          <p class="mt-1 text-xs text-[#64748b] max-w-xl leading-relaxed">{LABELS.contactSub}</p>
+        </div>
+        <a href={`/${locale}/contact/`} class="btn-primary shrink-0 self-start sm:self-center">
+          {LABELS.contactBtn}
+        </a>
+      </div>
     </div>
   </section>
 </Base>

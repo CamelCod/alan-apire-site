@@ -39,3 +39,12 @@ team-roster-raw.md
 
 # Cloudflare
 .wrangler/
+
+# Performance reports
+.perf-reports/
+
+# Raw client asset dumps & oversized files (Cloudflare 25MB limit)
+Pictures project 1&2/
+public/assets/
+public/downloads/company-profile-full.pdf
+

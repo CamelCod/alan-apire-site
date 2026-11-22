@@ -2,6 +2,7 @@
 import { LOCALES, LOCALE_META, type Locale } from '../i18n/config';
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
 import { CTA_LABEL } from '../i18n/site';
+import { TECHNICAL_CONSTANTS } from '../i18n/constants';
 
 interface Props { locale: Locale; page: PageKey; }
 const { locale, page } = Astro.props;
@@ -14,11 +15,11 @@ const navItems = NAV_PAGES.map((p) => ({
 const otherLocales = LOCALES.filter((l) => l !== locale);
 ---
 
-<header class="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-brand-100 bg-white/90 backdrop-blur">
+<header class="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-[#e2e5eb] bg-[#faf9f6]/95 backdrop-blur">
   <div class="container-page flex h-full items-center justify-between gap-4">
-    <a href={localizedPath(locale, 'home')} class="flex items-center gap-2 font-serif text-lg font-bold text-brand-800">
-      <img src="/brand/logo-mark.svg" alt="" width="32" height="32" class="h-8 w-8" />
-      <span>Alan Apire</span>
+    <a href={localizedPath(locale, 'home')} class="flex items-center gap-2 text-lg font-semibold tracking-tight text-[#0b1930]">
+      <img src="/brand/logo-mark.svg" alt="" width="30" height="30" class="h-7 w-7" />
+      <span>{TECHNICAL_CONSTANTS.companyShortName}</span>
     </a>
 
     <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
@@ -26,8 +27,8 @@ const otherLocales = LOCALES.filter((l) => l !== locale);
         <a
           href={item.href}
           class:list={[
-            'rounded-md px-3 py-2 text-sm font-medium',
-            page === item.key ? 'text-brand-900 bg-brand-50' : 'text-brand-600 hover:text-brand-900 hover:bg-brand-50',
+            'rounded px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors',
+            page === item.key ? 'text-[#0b1930] bg-[#e2e5eb]/50' : 'text-[#64748b] hover:text-[#0b1930] hover:bg-[#e2e5eb]/30',
           ]}
         >{item.label}</a>
       ))}
@@ -40,12 +41,12 @@ const otherLocales = LOCALES.filter((l) => l !== locale);
             href={localizedPath(l, page)}
             hreflang={LOCALE_META[l].htmlLang}
             rel="alternate"
-            class="rounded border border-brand-100 px-2 py-1 text-xs font-medium text-brand-600 hover:bg-brand-50"
+            class="rounded border border-[#e2e5eb] bg-white px-2.5 py-1 text-xs font-medium text-[#475569] hover:bg-[#faf9f6] transition-colors"
           >{LOCALE_META[l].label}</a>
         ))}
       </div>
-      <a href={localizedPath(locale, 'contact')} class="btn-primary hidden sm:inline-flex">{CTA_LABEL[locale]}</a>
-      <button id="menu-btn" aria-label="Menu" aria-expanded="false" class="rounded-md p-2 text-brand-700 lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center">
+      <a href={localizedPath(locale, 'contact')} class="btn-primary text-xs py-2 px-4 min-h-[38px] hidden sm:inline-flex">{CTA_LABEL[locale]}</a>
+      <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" class="rounded-md p-2 text-brand-700 lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>

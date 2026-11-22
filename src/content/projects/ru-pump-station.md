@@ -6,7 +6,7 @@ service: Проектирование и реализация
 year: "2025-2026"
 location: Благовещенск, Россия
 cover: ./pump-station-cover.jpg
-order: 1
+order: 99
 locale: ru
 translationKey: pump-station-heat-network
 datePublished: '2026-09-20'

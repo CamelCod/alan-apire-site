@@ -6,7 +6,7 @@ service: Design & Implementation
 year: "2025-2026"
 location: Blagoveshchensk, Russia
 cover: ./pump-station-cover.jpg
-order: 1
+order: 99
 locale: en
 translationKey: pump-station-heat-network
 datePublished: '2026-09-20'

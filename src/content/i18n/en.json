@@ -1,0 +1,328 @@
+{
+  "brand": {
+    "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+    "shortName": "Alanpire",
+    "licenceNumber": "88988",
+    "authority": "DIEZA / IFZA, Dubai Silicon Oasis",
+    "validity": "09 June 2026 – 08 June 2027",
+    "activities": "Management Consultancies · Project Management Services · Architectural Prospective Drawings",
+    "email": "info@alanapire.ae",
+    "phone": "+971558286328",
+    "address": "Dubai Integrated Economic Zones Authority (DIEZ), Dubai, United Arab Emirates"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "industries": "Industries",
+    "contact": "Contact",
+    "cta": "Discuss your project"
+  },
+  "meta": {
+    "home": {
+      "title": "Industrial Engineering Support Dubai | Alanpire",
+      "description": "Project management, technical consultancy, and architectural prospective drawings for industrial infrastructure in Dubai and the UAE."
+    },
+    "about": {
+      "title": "About Alanpire | Technical Management Consultancies Dubai",
+      "description": "Alanpire is an IFZA-licensed technical consultancy in Dubai Silicon Oasis providing project management and engineering advisory."
+    },
+    "services": {
+      "title": "Project Management & Engineering Advisory | Alanpire",
+      "description": "Critical-path scheduling, hydraulic modelling, bid evaluation, and architectural prospective drawings for industrial facilities."
+    },
+    "industries": {
+      "title": "Industrial Sectors | Alanpire",
+      "description": "Technical support for power generation, thermal networks, water transmission, petrochemicals, and manufacturing plants."
+    },
+    "projects": {
+      "title": "Engineering References and Track Record | Alanpire",
+      "description": "Documented engineering deliverables from team members, including district heating mains and autonomous boiler facilities."
+    },
+    "team": {
+      "title": "Technical Leadership | Alanpire",
+      "description": "Registered chief project engineers and operational managers providing industrial project support in Dubai."
+    },
+    "careers": {
+      "title": "Careers | Alanpire",
+      "description": "Technical career opportunities in industrial project management and prospective engineering drawings."
+    },
+    "contact": {
+      "title": "Contact Alanpire | Dubai Engineering Support",
+      "description": "Submit project parameters to our technical consultancy team in Dubai Silicon Oasis."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Alanpire",
+      "description": "Privacy policy for the Alanpire corporate website."
+    },
+    "terms": {
+      "title": "Terms and Conditions | Alanpire",
+      "description": "Terms and conditions for the Alanpire corporate website."
+    }
+  },
+  "hero": {
+    "eyebrow": "Specialist technical partner · Dubai Integrated Economic Zones Authority (DIEZ)",
+    "headline": "Specialist industrial engineering support for UAE projects",
+    "sub": "Alanpire provides project management, technical consultancy, and architectural drawings. Our engineers deliver planning, modelling, and technical coordination under the supervision of your licensed UAE consultant.",
+    "primaryCta": "Discuss your project",
+    "secondaryCta": "View case studies"
+  },
+  "pillars": {
+    "heading": "Four Licensed Service Areas",
+    "intro": "We provide technical engineering support under three directly licensed categories in Dubai, coordinating deliverables with client-appointed consultants.",
+    "items": [
+      {
+        "key": "pm",
+        "num": "01",
+        "title": "Project Management",
+        "tagline": "Baseline scheduling and contractor interface coordination.",
+        "desc": "We build critical-path schedules in Primavera P6 and administer live risk registers. Our team verifies site progress weekly and coordinates interfaces across trade contractors.",
+        "deliverables": [
+          "Critical-path baseline schedules in Primavera P6 format",
+          "Weekly risk register updates and mitigation tracking",
+          "Multi-contractor interface matrices and coordination meetings",
+          "Independent weekly site progress verification reports",
+          "Document control, submittal tracking, and technical logs",
+          "Testing and commissioning close-out packages"
+        ]
+      },
+      {
+        "key": "tech",
+        "num": "02",
+        "title": "Technical Consultancy",
+        "tagline": "Process modelling, hydraulic calculations, and bid evaluations.",
+        "desc": "We evaluate equipment specifications, verify hydraulic calculations, and draft tender packages. Our engineers analyse system constraints across district heating networks, pumping stations, and industrial facilities.",
+        "deliverables": [
+          "Thermal and hydraulic network modelling",
+          "Process equipment specifications and datasheet reviews",
+          "Tender technical evaluations and contractor bid scoring",
+          "Existing utility condition assessments and defect logs",
+          "Materials compatibility assessments for high-pressure systems",
+          "System integration reviews for multi-unit industrial plants"
+        ]
+      },
+      {
+        "key": "drawings",
+        "num": "03",
+        "title": "Architectural Drawings",
+        "tagline": "Prospective architectural layouts and industrial arrangement plans.",
+        "desc": "Our DIEZ-licensed service drafts prospective architectural drawings and industrial layouts. We produce equipment arrangements, utility routing corridors, and spatial zoning schemes.",
+        "deliverables": [
+          "Prospective architectural layouts for industrial buildings",
+          "Industrial equipment arrangement and zoning drawings",
+          "Utility corridor alignment and pipe-rack routing plans",
+          "Preliminary space-planning layouts for plant operators",
+          "Drawing package coordination and revision control",
+          "Concept layouts for client and stakeholder reviews"
+        ]
+      },
+      {
+        "key": "management",
+        "num": "04",
+        "title": "Management Consultancy",
+        "tagline": "Capital planning, stage-gate reviews, and procurement advisory.",
+        "desc": "We analyse industrial operating workflows and prepare project governance frameworks. Our consultants evaluate capital expenditure budgets and support dispute resolution with technical documentation.",
+        "deliverables": [
+          "Capital expenditure planning and stage-gate reviews",
+          "Project governance frameworks and delegation matrices",
+          "Contractor dispute analysis and technical claim documentation",
+          "Operational readiness reviews before facility handover",
+          "Technical due diligence for industrial asset transactions",
+          "Procurement packaging strategies for major equipment"
+        ]
+      }
+    ]
+  },
+  "trust": {
+    "heading": "Licensing and Technical Qualifications",
+    "intro": "Alanpire operates under trade licence No. 88988 issued by DIEZ. Technical credentials reflect documented project history by team practitioners.",
+    "items": [
+      {
+        "label": "UAE Trade Licence",
+        "value": "DIEZ / IFZA Licence No. 88988",
+        "detail": "Management Consultancies · Architectural Drawings · Project Management. Valid to 08 June 2027."
+      },
+      {
+        "label": "Engineering Reference Approval",
+        "value": "Conclusion No. 66-1-1-3-028194-2026",
+        "detail": "Gosexpertiza positive conclusion on 10.5 MWth boiler plant design and survey package. Approved 18 June 2026."
+      },
+      {
+        "label": "Design Accreditation (SRO)",
+        "value": "Reg. P-161-005611025054-2471",
+        "detail": "Association Mezhregionproekt. Design of capital and industrial facilities via OOO Energodiagnostika."
+      },
+      {
+        "label": "Survey Accreditation (SRO)",
+        "value": "Extract 5611025054-20250325-0804",
+        "detail": "Geodetic, geological, hydrometeorological, and environmental surveys for engineering designs."
+      },
+      {
+        "label": "Chief Project Engineer",
+        "value": "NOPRIZ Register PI-114432",
+        "detail": "National register qualification for chief project engineering and statutory technical documentation."
+      },
+      {
+        "label": "UAE Operational Model",
+        "value": "Technical Support Partner",
+        "detail": "Engineering calculations and drawings delivered to client-appointed licensed UAE engineering consultants."
+      }
+    ]
+  },
+  "sectors": {
+    "heading": "Five Industrial Sectors",
+    "intro": "Our technical experience spans heavy utility, industrial generation, and fluid transport systems.",
+    "items": [
+      {
+        "title": "Power and Energy Generation",
+        "desc": "Technical coordination for generation halls, cooling loops, auxiliary piping, and plant expansion programs."
+      },
+      {
+        "title": "District Heating and Thermal Utilities",
+        "desc": "Hydraulic network modelling, thermal expansion compensation, pressure regulation stations, and custody metering nodes."
+      },
+      {
+        "title": "Water Infrastructure",
+        "desc": "Transmission main rehabilitation, pipe material evaluation, pump station hydraulic design, and interface coordination."
+      },
+      {
+        "title": "Oil Refining and Petrochemicals",
+        "desc": "Process unit coordination, piping isometric review, equipment layout schemes, and contractor package governance."
+      },
+      {
+        "title": "Industrial Facilities and Manufacturing",
+        "desc": "Spatial planning, equipment foundation coordinates, utility corridors, and building layout drawings."
+      }
+    ]
+  },
+  "process": {
+    "heading": "Five-Stage Delivery Method",
+    "intro": "Each technical engagement follows a five-stage delivery method with written deliverables at each milestone.",
+    "items": [
+      {
+        "num": "01",
+        "title": "Understand",
+        "desc": "We review existing technical documentation, boundary limits, and statutory constraints to define assignment scope."
+      },
+      {
+        "num": "02",
+        "title": "Define",
+        "desc": "We establish the baseline schedule, calculation criteria, document submission register, and interface matrix."
+      },
+      {
+        "num": "03",
+        "title": "Coordinate",
+        "desc": "We resolve contractor technical queries, check drawing revisions, and conduct weekly technical review sessions."
+      },
+      {
+        "num": "04",
+        "title": "Deliver",
+        "desc": "We produce progress tracking dashboards, evaluate earned-value milestones, and submit verified calculation packages."
+      },
+      {
+        "num": "05",
+        "title": "Close",
+        "desc": "We assemble as-built drawing sets, review punch-list close-outs, and compile operations handover dossiers."
+      }
+    ]
+  },
+  "featuredProjects": {
+    "heading": "Selected Project References",
+    "intro": "Documented engineering packages completed by our personnel through OOO Energodiagnostika prior to UAE entity establishment.",
+    "viewCase": "View case"
+  },
+  "caseStudy": {
+    "factStrip": {
+      "client": "Client Context",
+      "location": "Location",
+      "stage": "Project Stage",
+      "role": "Team Role",
+      "keyFigures": "Key Figures",
+      "record": "Statutory Record"
+    },
+    "sections": {
+      "contribution": "Engineering Contribution",
+      "drawing": "Design-Stage Drawing Excerpt",
+      "approval": "Approval and Compliance Record",
+      "attribution": "Mandatory Reference Attribution",
+      "contact": "Discuss a Similar Package"
+    },
+    "viewCase": "View case",
+    "drawingCaption": "Design-stage drawing excerpt",
+    "drawingSource": "Source: Working documentation archive, OOO Energodiagnostika."
+  },
+  "about": {
+    "positioning": "Technical consultancy, project management, and prospective architectural drawings for industrial infrastructure.",
+    "profile": [
+      "Alanpire operates as an IFZA-licensed free zone company under the Dubai Integrated Economic Zones Authority (DIEZ).",
+      "Our engineers bring technical experience from heavy industrial facilities, district heating networks, and high-pressure utilities in the CIS region.",
+      "In the UAE, our team coordinates with client-appointed, licensed engineering consultants who hold local statutory authority and site supervision remits."
+    ],
+    "corpHeading": "Corporate Registration",
+    "legalEntityLabel": "Legal Entity Name",
+    "legalEntity": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+    "jurisdictionLabel": "Jurisdiction",
+    "jurisdiction": "DIEZA / IFZA, Dubai Silicon Oasis, Dubai, UAE",
+    "licensedLabel": "Licensed Activities",
+    "licensed": [
+      "Management Consultancies",
+      "Project Management Services",
+      "Architectural Prospective Drawings"
+    ],
+    "operatingHeading": "Operating Framework in the UAE",
+    "operating": "Alanpire provides technical analysis, project management services, and architectural prospective drawings. In the UAE, client contracts, statutory authority submissions, engineering stamps, and site supervision remain under client-appointed, locally licensed consultants.",
+    "brochureHeading": "Capability Portfolio",
+    "brochureSub": "Download our technical summary covering service scopes, engineering tools, and documented reference projects.",
+    "brochureBtn": "Download PDF"
+  },
+  "team": {
+    "heading": "Technical Leadership",
+    "intro": "Our management and engineering team brings multidisciplinary experience across energy facilities and project governance.",
+    "members": [
+      {
+        "name": "Alan Marvanovich Biri",
+        "role": "Chief Project Engineer",
+        "bio": "Registered chief project engineer (NOPRIZ PI-114432) and technical director at OOO Energodiagnostika. Leads multidisciplinary engineering coordination and statutory documentation for thermal networks and boiler plants."
+      },
+      {
+        "name": "Andrei Stepanov",
+        "role": "General Manager",
+        "bio": "Executive in commercial operations, capital governance, and project structuring. Leads corporate management, contract administration, and project delivery frameworks."
+      },
+      {
+        "name": "Aiham Alhawar",
+        "role": "Technical Advisor",
+        "bio": "Mechanical engineer with experience in energy facilities, ISO 9001 and API quality systems, reliability assessments, and contractor interface coordination."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Have an industrial project to deliver?",
+    "sub": "Send us your project scope, location, and key parameters. Our team will review your requirements and outline a technical support proposal.",
+    "button": "Discuss your project"
+  },
+  "attribution": {
+    "statement": "These references reflect prior engineering work by Alanpire team members through OOO Energodiagnostika in Russia. They were not contracts awarded to Alanpire's UAE entity."
+  },
+  "contact": {
+    "heading": "Contact Alanpire",
+    "sub": "Our team reviews industrial project parameters and provides technical support proposals.",
+    "nameLabel": "Full Name",
+    "companyLabel": "Company Name",
+    "emailLabel": "Work Email",
+    "phoneLabel": "Phone Number",
+    "locationLabel": "Project Location",
+    "scopeLabel": "Project Scope and Parameters",
+    "sendButton": "Submit Inquiry"
+  },
+  "footer": {
+    "entityName": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+    "licenceText": "DIEZ Trade Licence No. 88988 · Dubai Silicon Oasis, Dubai, UAE",
+    "rights": "All rights reserved."
+  },
+  "projectsIndex": {
+    "notice": "These references reflect prior engineering work by Alanpire team members through OOO Energodiagnostika in Russia. They were not contracts awarded to Alanpire's UAE entity.",
+    "emptyNotice": "Additional project case studies are currently undergoing technical archive audit."
+  }
+}

@@ -6,7 +6,7 @@ service: Инжиниринг и модернизация
 year: "2023-2025"
 location: Россия
 cover: ./oil-refinery-cover.jpg
-order: 3
+order: 99
 locale: ru
 translationKey: oil-refinery-modernization
 datePublished: '2026-09-20'

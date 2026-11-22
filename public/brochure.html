@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alan Apire Capability Brochure</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: white; }
+    .page { width: 210mm; min-height: 297mm; page-break-after: always; position: relative; overflow: hidden; padding: 60px; }
+
+    :root {
+      --brand-navy: #0b1930;
+      --brand-gold: #B08D57;
+      --brand-gray-dark: #262b33;
+      --brand-gray: #4e5763;
+      --brand-light: #f7f8fa;
+    }
+
+    /* Cover */
+    .cover {
+      background: linear-gradient(135deg, var(--brand-navy) 0%, #1a3a5c 100%);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: white;
+    }
+    .cover-logo { width: 160px; margin-bottom: 40px; }
+    .cover h1 { font-size: 40px; font-weight: 700; letter-spacing: 3px; margin-bottom: 15px; }
+    .cover h2 { font-size: 22px; font-weight: 400; color: var(--brand-gold); margin-bottom: 35px; }
+    .cover .tagline { font-size: 16px; opacity: 0.9; max-width: 480px; line-height: 1.7; }
+    .cover-badge { position: absolute; bottom: 50px; left: 60px; right: 60px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 20px; font-size: 11px; opacity: 0.8; }
+
+    /* About */
+    .about h1 { font-size: 32px; font-weight: 700; color: var(--brand-navy); margin-bottom: 25px; line-height: 1.2; }
+    .about p { font-size: 13px; line-height: 1.8; color: var(--brand-gray); margin-bottom: 18px; }
+    .section-header { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--brand-gold); margin-bottom: 15px; }
+    .credentials { margin-top: 35px; padding: 25px; background: var(--brand-light); border-left: 4px solid var(--brand-gold); }
+    .credentials h3 { font-size: 13px; font-weight: 600; color: var(--brand-navy); margin-bottom: 12px; }
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cred-item dt { font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--brand-gray); }
+    .cred-item dd { font-size: 12px; color: var(--brand-navy); margin-top: 3px; }
+
+    /* Services */
+    .services h1 { font-size: 26px; font-weight: 700; color: var(--brand-navy); margin-bottom: 8px; }
+    .services-subtitle { font-size: 12px; color: var(--brand-gray); margin-bottom: 25px; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px; }
+    .service-card { padding: 22px; background: var(--brand-light); }
+    .service-card h3 { font-size: 14px; font-weight: 600; color: var(--brand-navy); margin-bottom: 12px; }
+    .service-card ul { list-style: none; font-size: 11px; line-height: 1.9; color: var(--brand-gray); }
+    .service-card li:before { content: "\2022 "; color: var(--brand-gold); font-weight: bold; }
+
+    /* Approach */
+    .approach { background: var(--brand-navy); color: white; }
+    .approach h1 { font-size: 28px; font-weight: 700; margin-bottom: 30px; }
+    .stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 25px; }
+    .stage { text-align: center; }
+    .stage-num { font-size: 42px; font-weight: 700; color: var(--brand-gold); }
+    .stage h3 { font-size: 13px; font-weight: 600; margin: 12px 0 8px; }
+    .stage p { font-size: 10px; opacity: 0.85; line-height: 1.4; }
+
+    /* Projects */
+    .project h1 { font-size: 24px; font-weight: 700; color: var(--brand-navy); margin-bottom: 8px; }
+    .project-subtitle { font-size: 13px; color: var(--brand-gold); margin-bottom: 25px; }
+    .project-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
+    .stat { padding: 15px; background: var(--brand-light); text-align: center; }
+    .stat-value { font-size: 20px; font-weight: 700; color: var(--brand-gold); }
+    .stat-label { font-size: 10px; color: var(--brand-gray); margin-top: 4px; }
+    .project-image { width: 100%; height: 280px; object-fit: cover; margin: 20px 0; border-radius: 6px; border: 1px solid #eee; }
+    .project-content { font-size: 12px; line-height: 1.7; color: var(--brand-gray); }
+    .project-content strong { color: var(--brand-navy); }
+    .project-content p { margin-bottom: 12px; }
+
+    /* Approvals */
+    .approvals h1 { font-size: 28px; font-weight: 700; color: var(--brand-navy); margin-bottom: 25px; }
+    .approval-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 11px; }
+    .approval-table th { background: var(--brand-navy); color: white; padding: 12px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .approval-table td { padding: 12px; border-bottom: 1px solid #eee; }
+    .approval-table tr:nth-child(even) { background: var(--brand-light); }
+    .standards { margin-top: 25px; padding: 20px; background: var(--brand-light); font-size: 11px; color: var(--brand-gray); }
+
+    /* Industries */
+    .industries h1 { font-size: 28px; font-weight: 700; color: var(--brand-navy); margin-bottom: 25px; }
+    .industry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .industry-item { padding: 18px; background: var(--brand-light); }
+    .industry-item h3 { font-size: 13px; font-weight: 600; color: var(--brand-navy); margin-bottom: 8px; }
+    .industry-item p { font-size: 11px; color: var(--brand-gray); line-height: 1.5; }
+
+    /* Contact */
+    .contact { background: var(--brand-navy); color: white; display: flex; flex-direction: column; justify-content: center; }
+    .contact h1 { font-size: 30px; font-weight: 700; margin-bottom: 30px; }
+    .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+    .contact-item h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-gold); margin-bottom: 8px; }
+    .contact-item p { font-size: 12px; opacity: 0.9; line-height: 1.7; }
+    .contact-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 10px; opacity: 0.6; }
+
+    @media print {
+      .page { page-break-after: always; min-height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Page 1: Cover -->
+<div class="page cover">
+  <img src="/brand/logo-full-white.svg" alt="Alan Apire" class="cover-logo">
+  <h1>ALAN AND APIRE</h1>
+  <h2>MANAGEMENT CONSULTANCIES – FZCO</h2>
+  <p class="tagline">Engineering Projects Managed from Concept to Delivery<br>UAE-Based Consultancy for Industrial & Infrastructure Clients Across the GCC</p>
+  <div class="cover-badge">
+    <strong>DUBAI SILICON OASIS | DIEZA / IFZA</strong><br>
+    License No. 88988 • Valid Through June 2027<br>
+    info@alanpire.ae • +971 55 828 6328 • alanpire.ae
+  </div>
+</div>
+
+<!-- Page 2: About Us -->
+<div class="page about">
+  <div class="section-header">About Us</div>
+  <h1>Engineering Clarity,<br>Delivered.</h1>
+  <p>ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO is a Dubai-based consultancy supporting government entities, utilities, developers, industrial asset owners, and EPC contractors across the UAE and wider GCC.</p>
+  <p>We combine project management, engineering coordination, technical design visualization, and authority-ready documentation for complex infrastructure and energy projects.</p>
+
+  <div class="credentials">
+    <h3>Corporate Credentials</h3>
+    <div class="cred-grid">
+      <div class="cred-item"><dt>Legal Entity</dt><dd>ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO</dd></div>
+      <div class="cred-item"><dt>Trade License</dt><dd>No. 88988 • DIEZA / IFZA</dd></div>
+      <div class="cred-item"><dt>Registered Office</dt><dd>DSO-IFZA, Dubai Silicon Oasis, Dubai, UAE</dd></div>
+      <div class="cred-item"><dt>Licensed Activities</dt><dd>Management Consultancies; Architectural Drawings; Project Management</dd></div>
+      <div class="cred-item"><dt>SRO Registration</dt><dd>P-161-005611025054-2471 (01.09.2020)</dd></div>
+      <div class="cred-item"><dt>Gosexpertiza Approval</dt><dd>No. 66-1-1-3-028194-2026 (18.06.2026)</dd></div>
+    </div>
+  </div>
+</div>
+
+<!-- Page 3: Core Services -->
+<div class="page services">
+  <div class="section-header">Our Services</div>
+  <h1>Four Integrated Service Pillars</h1>
+  <p class="services-subtitle">Unlike generalist consultancies that hand off engineering to separate firms, Alan Apire holds three directly licensed activities under one entity.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Project Management & PMO</h3>
+      <ul>
+        <li>Comprehensive baseline scheduling (CPM/P6 compatible)</li>
+        <li>Multi-contractor interface coordination</li>
+        <li>Critical-path management and recovery planning</li>
+        <li>Risk register administration and weekly update</li>
+        <li>Site progress verification and owner reporting</li>
+        <li>Close-out governance and commissioning support</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>FEED & Detailed Engineering</h3>
+      <ul>
+        <li>Process Flow Diagrams (PFDs) and thermal-hydraulic balances</li>
+        <li>Right-of-way capacity sizing (MWth/Gcal/h)</li>
+        <li>Coordinated construction packages (100+ drawings)</li>
+        <li>START pipe stress analysis and structural design</li>
+        <li>3-tier PLC/SCADA automation integration</li>
+        <li>Bill of Quantities and cost estimates</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>BIM & Technical Visualization</h3>
+      <ul>
+        <li>2D/3D CAD drafting (AutoCAD, Revit)</li>
+        <li>BIM coordination and clash review</li>
+        <li>Isometric piping views and layouts</li>
+        <li>Structural framing elevations</li>
+        <li>Non-confidential technical schematics</li>
+        <li>Authority-ready submission packages</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>Regulatory Support & HSE</h3>
+      <ul>
+        <li>HAZID/HAZOP support and QRA modeling</li>
+        <li>Fire and life-safety integration</li>
+        <li>Authority submissions and compliance mapping</li>
+        <li>Review-response coordination</li>
+        <li>Gosexpertiza dossier preparation</li>
+        <li>UAE standards alignment (ASME, API, NFPA, IEC)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Page 4: Our Approach -->
+<div class="page approach">
+  <div class="section-header" style="color: var(--brand-gold);">Our Methodology</div>
+  <h1>Five-Stage Operating Framework</h1>
+  <p style="opacity: 0.8; font-size: 12px; margin-top: 8px;">Every engagement follows this disciplined pipeline—from concept through close-out.</p>
+
+  <div class="stages">
+    <div class="stage">
+      <div class="stage-num">01</div>
+      <h3>Understand</h3>
+      <p>Stakeholder mapping, constraint identification, regulatory requirements assessment</p>
+    </div>
+    <div class="stage">
+      <div class="stage-num">02</div>
+      <h3>Define</h3>
+      <p>Baseline schedule, risk register, documentation matrix, contractor management plan</p>
+    </div>
+    <div class="stage">
+      <div class="stage-num">03</div>
+      <h3>Coordinate</h3>
+      <p>Multidisciplinary interface management, weekly progress meetings, drawing control</p>
+    </div>
+    <div class="stage">
+      <div class="stage-num">04</div>
+      <h3>Deliver</h3>
+      <p>Senior site oversight, earned-value tracking, proactive schedule recovery</p>
+    </div>
+    <div class="stage">
+      <div class="stage-num">05</div>
+      <h3>Close</h3>
+      <p>Punch-list management, commissioning coordination, as-built documentation</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 5: Flagship Project - Thermal Network -->
+<div class="page project">
+  <div class="section-header">Flagship Project</div>
+  <h1>Twin DN500 High-Pressure Thermal Main Upgrade</h1>
+  <div class="project-subtitle">FBRI SRC VB "Vector", Koltsovo, Novosibirsk Oblast, Russia</div>
+
+  <div class="project-stats">
+    <div class="stat"><div class="stat-value">2×DN500</div><div class="stat-label">Transmission Mains</div></div>
+    <div class="stat"><div class="stat-value">1.7 km</div><div class="stat-label">Main Route Length</div></div>
+    <div class="stat"><div class="stat-value">20 bar</div><div class="stat-label">Design Pressure</div></div>
+    <div class="stat"><div class="stat-value">87.5 Gcal/h</div><div class="stat-label">Thermal Capacity</div></div>
+  </div>
+
+  <img src="assets/projects/57.24-УУТЭ2_conv_png/57.24-УУТЭ2_1.png" alt="Custody Transfer Metering Skid" class="project-image">
+
+  <div class="project-content">
+    <p><strong>Challenge:</strong> Reconstruction of an existing twin-pipe high-pressure thermal main from DN400 to DN500, with new connection to a central custody-transfer heat-metering node.</p>
+    <p><strong>Scope:</strong> The 1,704 m corridor traverses an active industrial campus on elevated steel pipe-rack trestles (up to 6.49 m clearance). Engineering included thermal routing, hydraulic coordination, structural pipe-rack strengthening, U-loop expansion compensation, custody metering skid design, and full statutory approval package.</p>
+    <p><strong>Result:</strong> State Expert Examination (Gosexpertiza) approved the complete design dossier. The upgraded network delivers zero unproductive losses, reduced pumping energy, and stable supply for both industrial processes and community needs.</p>
+  </div>
+</div>
+
+<!-- Page 6: Flagship Project - Boiler Plant -->
+<div class="page project">
+  <div class="section-header">Flagship Project</div>
+  <h1>Autonomous 10.5 MWth Industrial Boiler Plant</h1>
+  <div class="project-subtitle">Municipal Public Utilities Authority "UKH", Karpinsk, Sverdlovsk Oblast, Russia</div>
+
+  <div class="project-stats">
+    <div class="stat"><div class="stat-value">10.5 MWth</div><div class="stat-label">Installed Capacity</div></div>
+    <div class="stat"><div class="stat-value">12 m</div><div class="stat-label">Clear Span Frame</div></div>
+    <div class="stat"><div class="stat-value">22 m</div><div class="stat-label">Exhaust Stack Height</div></div>
+    <div class="stat"><div class="stat-value">Gas + Diesel</div><div class="stat-label">Dual Fuel Resilience</div></div>
+  </div>
+
+  <img src="assets/projects/54_24_1_ИЭИ_повтор_conv_png/54_24_1_ИЭИ_повтор_1.png" alt="Boiler Plant Layout" class="project-image">
+
+  <div class="project-content">
+    <p><strong>Challenge:</strong> Design autonomous-capable industrial thermal-generation facility for district heating and summer domestic hot water, with fuel resilience during grid disturbances.</p>
+    <p><strong>Solution:</strong> Complete design-stage package including boiler hall configuration, integrated site utilities (water, sewerage, power, gas), PLC/SCADA automation, fire protection systems, and statutory dossier for state expertise review.</p>
+    <p><strong>Result:</strong> Positive Conclusion No. 66-1-1-3-028194-2026 issued by GAU SO "Department of State Expertise" (18.06.2026), covering 107 design documents and four engineering surveys. Facility ready for construction.</p>
+  </div>
+</div>
+
+<!-- Page 7: Approvals -->
+<div class="page approvals">
+  <div class="section-header">Quality & Compliance</div>
+  <h1>Authority Approvals & Regulatory Certifications</h1>
+
+  <table class="approval-table">
+    <thead>
+      <tr>
+        <th>Approval / Credential</th>
+        <th>Reference Number</th>
+        <th>Issuing Authority</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>UAE Trade License</strong></td>
+        <td>No. 88988</td>
+        <td>DIEZA / IFZA</td>
+        <td>09/06/2026 – 08/06/2027</td>
+      </tr>
+      <tr>
+        <td><strong>SRO Design Accreditation</strong></td>
+        <td>P-161-005611025054-2471</td>
+        <td>Assoc. SRO "Mezhregionproekt"</td>
+        <td>01.09.2020</td>
+      </tr>
+      <tr>
+        <td><strong>SRO Survey Accreditation</strong></td>
+        <td>Extract No. 5611025054-20250325-0804</td>
+        <td>Assoc. SRO "Mezhregionproekt"</td>
+        <td>25.03.2025</td>
+      </tr>
+      <tr>
+        <td><strong>Gosexpertiza Approval</strong></td>
+        <td>No. 66-1-1-3-028194-2026</td>
+        <td>GAU SO Dept. of State Expertise</td>
+        <td>18.06.2026</td>
+      </tr>
+      <tr>
+        <td><strong>Utility Technical Conditions</strong></td>
+        <td>Ref. No. 7/1604 & Contract No. 2530/24</td>
+        <td>FBRI SRC VB "Vector" / Rospotrebnadzor</td>
+        <td>07.07.2025</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="standards">
+    <strong>Standards Alignment:</strong> ASME • API • NFPA • IEC • UAE Fire & Life Safety Code of Practice • GOST • SP (Russian Building Codes)
+  </div>
+</div>
+
+<!-- Page 8: Industries -->
+<div class="page industries">
+  <div class="section-header">Sector Experience</div>
+  <h1>Industries We Serve</h1>
+
+  <div class="industry-list">
+    <div class="industry-item">
+      <h3>Energy & Power Generation</h3>
+      <p>Power stations, auxiliary utility networks, cooling systems, generation capacity expansion programs across the GCC and CIS regions.</p>
+    </div>
+    <div class="industry-item">
+      <h3>District Heating & Thermal Utilities</h3>
+      <p>High-pressure thermal distribution networks, pumping stations, heat-exchange substations, pressure-regulation nodes, custody metering.</p>
+    </div>
+    <div class="industry-item">
+      <h3>Water & Municipal Infrastructure</h3>
+      <p>Trunk-line rehabilitation, HDPE pipeline installation, transmission main replacement, potable water quality assurance.</p>
+    </div>
+    <div class="industry-item">
+      <h3>Oil Refining & Petrochemicals</h3>
+      <p>Refinery modernization, hydrocracking units, hydrotreating, catalytic cracking, delayed coking installations, Euro 5+ fuel production.</p>
+    </div>
+    <div class="industry-item">
+      <h3>Heavy Manufacturing</h3>
+      <p>Manufacturing process flow redesign, logistics warehouse complexes, MEP coordination, industrial equipment installation.</p>
+    </div>
+    <div class="industry-item">
+      <h3>Wastewater Treatment</h3>
+      <p>Biological treatment systems, aeration tanks, UV disinfection, sludge digestion, environmental remediation projects.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 9: Contact -->
+<div class="page contact">
+  <div class="section-header" style="color: var(--brand-gold);">Get In Touch</div>
+  <h1>Let's Discuss Your Next Project</h1>
+
+  <div class="contact-info">
+    <div class="contact-item">
+      <h3>Office Address</h3>
+      <p>DSO-IFZA, IFZA Properties<br>Dubai Silicon Oasis<br>Dubai, United Arab Emirates</p>
+    </div>
+    <div class="contact-item">
+      <h3>Contact Details</h3>
+      <p>Email: info@alanpire.ae<br>Phone: +971 55 828 6328<br>WhatsApp: Available 24/7</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Ready to Start?</h3>
+    <p style="font-size: 12px; opacity: 0.9; line-height: 1.6;">Tell us about your project — sector, location, timeline, and scope. Our team will review the parameters and outline a structured approach within 48 hours.</p>
+  </div>
+
+  <div class="contact-footer">
+    <p>© 2026 ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO • All rights reserved<br>
+    Trade License No. 88988 • Dubai Integrated Economic Zones Authority (DIEZA)</p>
+  </div>
+</div>
+
+</body>
+</html>

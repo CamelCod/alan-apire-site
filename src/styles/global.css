@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,37 +7,127 @@
 @layer base {
   :root {
     --header-h: 4.5rem;
+    --bg-warm: #faf9f6;
+    --text-navy: #0b1930;
+    --border-hairline: #e2e5eb;
   }
+
   html {
     scroll-behavior: smooth;
+    background-color: var(--bg-warm);
+    color: var(--text-navy);
   }
+
   body {
-    @apply bg-white text-brand-900 antialiased;
-    font-feature-settings: 'kern', 'liga';
+    background-color: var(--bg-warm);
+    color: var(--text-navy);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 1.0625rem; /* 17px body */
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  [dir='rtl'] body {
-    @apply font-sans;
+
+  /* Arabic typography overrides: IBM Plex Sans Arabic, +0.12 line-height, zero letter-spacing */
+  [dir='rtl'] body,
+  [dir='rtl'] {
+    font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    line-height: 1.72;
+    letter-spacing: 0 !important;
   }
-  h1, h2, h3, h4 {
-    @apply font-serif font-bold tracking-tight;
+
+  [dir='rtl'] * {
+    letter-spacing: 0 !important;
   }
+
+  /* Headings: plain labels, statements of fact, max weight 600, no serifs */
+  h1 {
+    font-size: clamp(2.25rem, 4vw, 3.5rem); /* fluid 36-56 px */
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--text-navy);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem); /* fluid 28-36 px */
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--text-navy);
+  }
+
+  h3 {
+    font-size: 1.25rem; /* 20 px */
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--text-navy);
+  }
+
+  h4, h5, h6 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-navy);
+  }
+
+  /* Uppercase labels only in Latin and Cyrillic, modest tracking */
+  :not([dir='rtl']) .eyebrow,
+  :not([dir='rtl']) .category-tag {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  [dir='rtl'] .eyebrow,
+  [dir='rtl'] .category-tag {
+    letter-spacing: 0 !important;
+    text-transform: none;
+  }
+
   a {
-    @apply transition-colors;
+    transition: color 0.15s ease-in-out;
   }
+
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-500;
+    outline: 2px solid #0b4ea2;
+    outline-offset: 2px;
   }
 }
 
 @layer components {
-  .container-page { @apply container max-w-6xl; }
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition min-h-[44px];
+  .container-page {
+    @apply container max-w-6xl;
   }
-  .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
-  .btn-outline { @apply btn border border-brand-200 text-brand-800 hover:bg-brand-50; }
-  .section { @apply py-16 sm:py-20; }
-  .eyebrow { @apply text-sm font-semibold uppercase tracking-widest text-accent; }
-  .card { @apply rounded-lg border border-brand-100 bg-white p-6 shadow-sm; }
-  .prose-tight p { @apply leading-relaxed text-brand-700; }
+
+  /* Plain, editorial buttons: no gradients, no pills, subtle hover color */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors min-h-[44px];
+  }
+  .btn-primary {
+    @apply btn bg-[#0b4ea2] text-white hover:bg-[#083c7d];
+  }
+  .btn-outline {
+    @apply btn border border-[#e2e5eb] bg-white text-[#0b1930] hover:bg-[#f3f2ee];
+  }
+
+  .section {
+    @apply py-16 sm:py-24;
+  }
+
+  /* Editorial Category Tag: small label above headlines */
+  .category-tag {
+    @apply text-xs font-semibold text-[#64748b];
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold text-[#64748b];
+  }
+
+  /* Editorial Card: 1px hairline steel divider, white background, no drop shadow */
+  .card {
+    @apply rounded-none border border-[#e2e5eb] bg-white p-6 sm:p-8;
+    box-shadow: none !important;
+  }
+
+  .prose-tight p {
+    @apply text-[1.0625rem] leading-relaxed text-[#334155];
+  }
 }

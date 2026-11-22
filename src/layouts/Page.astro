@@ -4,6 +4,11 @@ import Base from './Base.astro';
 import PageHero from '../components/PageHero.astro';
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
 import { ABOUT, PILLARS, SECTORS, INDUSTRIES_COPY, CTA_LABEL } from '../i18n/site';
+import en from '../content/i18n/en.json';
+import ar from '../content/i18n/ar.json';
+import ru from '../content/i18n/ru.json';
+
+const I18N = { en, ar, ru } as const;
 
 interface Props { locale: Locale; page: PageKey; }
 const { locale, page } = Astro.props;
@@ -26,59 +31,7 @@ const aboutCopy = page === 'about' ? {
   operating: ABOUT.operating[locale],
 } : null;
 
-const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]> = {
-  en: [
-    {
-      name: 'Alan Marvanovich Biri',
-      role: 'Lead Engineer & Project Manager',
-      bio: 'Chief Project Engineer at OOO "Energodiagnostika" and NOPRIZ-registered designer (PI-114432). Leads multidisciplinary engineering coordination and statutory documentation for thermal networks, boiler plants and utility infrastructure.',
-    },
-    {
-      name: 'Andrei Stepanov',
-      role: 'Founder & General Manager',
-      bio: 'Dubai-based executive in investment, venture building and operational management. Executive Program in Private Equity, IE Business School (2019).',
-    },
-    {
-      name: 'Aiham Alhawar',
-      role: 'Managing Partner – UAE & GCC Business Development',
-      bio: 'Operational-excellence and transformation lead with 9+ years in high-consequence oil and gas operations: governance, quality systems (ISO 9001, API Q1/Q2), reliability and Lean Six Sigma. B.Eng. Mechanical Engineering (Honors).',
-    },
-  ],
-  ar: [
-    {
-      name: 'آلان مارفانوفيتش بيرى',
-      role: 'مهندس رئيس ومدير مشاريع',
-      bio: 'كبير مهندسي المشاريع في ООО "Energodiagnostika" ومصمم مسجل في NOPRIZ (PI-114432). يقود التنسيق الهندسي متعدد التخصصات والوثائق القانونية للشبكات الحرارية ومحطات الغلايات والبنية التحتية للمرافق.',
-    },
-    {
-      name: 'أندريه ستيبانوفيتش',
-      role: 'مؤسس ومدير عام',
-      bio: 'تنفيذي مقيم في دبي في مجال الاستثمار وبناء المشاريع وإدارة العمليات. برنامج تنفيذي في رأس المال الاستثماري، كلية IE للأعمال (2019).',
-    },
-    {
-      name: 'أيهم الحور',
-      role: 'شريك إداري – تطوير الأعمال في الإمارات ودول مجلس التعاون الخليجي',
-      bio: 'قائد التميز التشغيلي والتحول مع أكثر من 9 سنوات في عمليات النفط والغاز عالية المخاطر: الحوكمة وأنظمة الجودة (ISO 9001، API Q1/Q2) والموثوقية والليين Six Sigma. بكالوريوس هندسة ميكانيكية (بامتياز).',
-    },
-  ],
-  ru: [
-    {
-      name: 'Алан Марванович Бири',
-      role: 'Ведущий инженер и руководитель проектов',
-      bio: 'Главный инженер проекта ООО «Энергодиагностика» и проектировщик, зарегистрированный в НОПРИЗ (PI-114432). Руководит междисциплинарной инженерной координацией и нормативной документацией для тепловых сетей, котельных и инженерной инфраструктуры.',
-    },
-    {
-      name: 'Андрей Степанович Степанов',
-      role: 'Основатель и генеральный директор',
-      bio: 'Исполнительный директор в Дубае в области инвестиций, венчурного строительства и операционного управления. Программа Executive in Private Equity, IE Business School (2019).',
-    },
-    {
-      name: 'Айхам Альхавар',
-      role: 'Управляющий партнёр – развитие бизнеса ОАЭ и ССАГПЗ',
-      bio: 'Лидер операционного совершенства и трансформации с 9+ годами опыта в высокорисковых операциях нефтегазовой отрасли: управление, системы качества (ISO 9001, API Q1/Q2), надёжность и Lean Six Sigma. Бакалавр механического инженерии (с отличием).',
-    },
-  ],
-};
+const teamMembers = I18N[locale].team.members;
 ---
 
 <Base locale={locale} page={page}>
@@ -87,24 +40,25 @@ const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]
   {page === 'about' && aboutCopy && (
     <section class="section">
       <div class="container-page max-w-4xl">
-        <p class="font-serif text-2xl font-bold text-brand-900 sm:text-3xl">{aboutCopy.positioning}</p>
-        {aboutCopy.profile.map((p) => <p class="mt-6 text-brand-700">{p}</p>)}
+        <h2 class="text-2xl font-semibold text-[#0b1930] sm:text-3xl leading-snug">{aboutCopy.positioning}</h2>
+        {aboutCopy.profile.map((p) => <p class="mt-6 text-base leading-relaxed text-[#334155]">{p}</p>)}
 
-        <div class="mt-10 rounded-lg border border-brand-100 bg-brand-50 p-6 sm:p-8">
-          <h2 class="text-xl text-brand-900">{aboutCopy.corpHeading}</h2>
-          <dl class="mt-4 space-y-4 text-sm">
+        <div class="mt-12 border border-[#e2e5eb] bg-white p-6 sm:p-8">
+          <p class="category-tag text-xs font-semibold text-[#64748b]">{locale === 'ar' ? 'بيانات التسجيل المؤسسي' : locale === 'ru' ? 'РЕГИСТРАЦИОННЫЕ ДАННЫЕ' : 'CORPORATE REGISTRATION'}</p>
+          <h3 class="mt-2 text-xl font-semibold text-[#0b1930]">{aboutCopy.corpHeading}</h3>
+          <dl class="mt-6 space-y-5 text-sm">
             <div>
-              <dt class="eyebrow text-[0.65rem]">{aboutCopy.legalEntityLabel}</dt>
-              <dd class="mt-1 font-semibold text-brand-800">{aboutCopy.legalEntity}</dd>
+              <dt class="category-tag text-[0.7rem]">{aboutCopy.legalEntityLabel}</dt>
+              <dd class="mt-1 font-semibold text-[#0b1930]">{aboutCopy.legalEntity}</dd>
             </div>
             <div>
-              <dt class="eyebrow text-[0.65rem]">{aboutCopy.jurisdictionLabel}</dt>
-              <dd class="mt-1 font-semibold text-brand-800">{aboutCopy.jurisdiction}</dd>
+              <dt class="category-tag text-[0.7rem]">{aboutCopy.jurisdictionLabel}</dt>
+              <dd class="mt-1 font-semibold text-[#0b1930]">{aboutCopy.jurisdiction}</dd>
             </div>
             <div>
-              <dt class="eyebrow text-[0.65rem]">{aboutCopy.licensedLabel}</dt>
+              <dt class="category-tag text-[0.7rem]">{aboutCopy.licensedLabel}</dt>
               <dd class="mt-1">
-                <ol class="list-decimal space-y-1 ps-5 font-semibold text-brand-800">
+                <ol class="list-decimal space-y-1 ps-5 font-semibold text-[#0b1930]">
                   {aboutCopy.licensed.map((l) => <li>{l}</li>)}
                 </ol>
               </dd>
@@ -112,47 +66,37 @@ const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]
           </dl>
         </div>
 
-        <h2 class="mt-10 text-xl text-brand-900">{aboutCopy.operatingHeading}</h2>
-        <p class="mt-3 text-brand-700">{aboutCopy.operating}</p>
-
-        <div class="mt-10 rounded-lg border border-brand-100 bg-white p-6">
-          <h3 class="text-lg text-brand-900">{locale === 'ar' ? 'ملف القدرات' : locale === 'ru' ? 'Портфолио возможностей' : 'Capability Portfolio'}</h3>
-          <p class="mt-2 text-sm text-brand-600">
-            {locale === 'ar'
-              ? 'حمّل ملف قدراتنا لدول الإمارات ودول مجلس التعاون الخليجي للاطلاع على نطاق الخدمات والمشاريع المرجعية ومنهجية التنفيذ.'
-              : locale === 'ru'
-                ? 'Скачайте наше портфолио возможностей для ОАЭ и стран Персидского залива с подробным описанием объёма услуг, референсных проектов и методологии реализации.'
-                : 'Download our UAE & GCC capability portfolio for detailed service scope, reference projects and delivery methodology.'}
-          </p>
-          <a href="/downloads/Alanpire_Gulf_Capability_Portfolio.pdf" download class="mt-4 inline-flex items-center gap-2 rounded-lg bg-brand-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-800">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            {locale === 'ar' ? 'تحميل PDF' : locale === 'ru' ? 'Скачать PDF' : 'Download PDF'}
-          </a>
-        </div>
+        <h3 class="mt-12 text-xl font-semibold text-[#0b1930]">{aboutCopy.operatingHeading}</h3>
+        <p class="mt-4 text-base leading-relaxed text-[#334155]">{aboutCopy.operating}</p>
       </div>
     </section>
   )}
 
   {page === 'services' && (
     <section class="section">
-      <div class="container-page space-y-12">
+      <div class="container-page space-y-16">
         {pillars.map((p, i) => (
-          <article class="grid gap-6 border-b border-brand-100 pb-12 last:border-0 lg:grid-cols-3">
+          <article class="grid gap-8 border-b border-[#e2e5eb] pb-16 last:border-0 lg:grid-cols-3">
             <div>
-              <p class="eyebrow text-accent">Pillar 0{i + 1}</p>
-              <h2 class="mt-2 text-2xl text-brand-900">{p.title}</h2>
-              <p class="mt-2 font-medium text-brand-700">{p.tagline}</p>
+              <p class="text-xs font-mono font-medium text-[#64748b]">0{i + 1}</p>
+              <h2 class="mt-2 text-2xl font-semibold text-[#0b1930]">{p.title}</h2>
+              <p class="mt-2 text-xs font-medium text-[#0b4ea2]">{p.tagline}</p>
             </div>
             <div class="lg:col-span-2">
-              <p class="text-brand-600">{p.desc}</p>
-              <ul class="mt-4 grid gap-2 sm:grid-cols-2">
-                {p.scope.map((s) => (
-                  <li class="flex items-start gap-2 text-sm text-brand-700">
-                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>
-                    {s}
-                  </li>
-                ))}
-              </ul>
+              <p class="text-base leading-relaxed text-[#475569]">{p.desc}</p>
+              <div class="mt-6 border-t border-[#e2e5eb] pt-6">
+                <p class="category-tag text-xs font-semibold text-[#64748b] mb-4">
+                  {locale === 'ar' ? 'المخرجات الفنية التعاقدية' : locale === 'ru' ? 'ПРОЕКТНЫЕ РЕЗУЛЬТАТЫ' : 'DELIVERABLES & SCOPE'}
+                </p>
+                <ul class="grid gap-3 sm:grid-cols-2">
+                  {p.scope.map((s) => (
+                    <li class="flex items-start gap-2 text-sm text-[#334155]">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-[#0b4ea2]"></span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </article>
         ))}
@@ -163,12 +107,28 @@ const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]
   {page === 'industries' && (
     <section class="section">
       <div class="container-page">
-        <p class="max-w-3xl text-brand-700">{INDUSTRIES_COPY.intro[locale]}</p>
-        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <p class="max-w-3xl text-base leading-relaxed text-[#475569]">{INDUSTRIES_COPY.intro[locale]}</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {sectors.map((s) => (
             <article class="card">
-              <h2 class="text-lg text-brand-900">{s.title}</h2>
-              <p class="mt-2 text-sm text-brand-600">{s.desc}</p>
+              <h2 class="text-lg font-semibold text-[#0b1930]">{s.title}</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[#475569]">{s.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {page === 'team' && (
+    <section class="section">
+      <div class="container-page">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {teamMembers.map((member) => (
+            <article class="card">
+              <h2 class="text-lg font-semibold text-[#0b1930]">{member.name}</h2>
+              <p class="mt-1 text-xs font-medium text-[#0b4ea2]">{member.role}</p>
+              <p class="mt-4 text-xs leading-relaxed text-[#475569]">{member.bio}</p>
             </article>
           ))}
         </div>
@@ -184,27 +144,20 @@ const TEAM_MEMBERS: Record<Locale, { name: string; role: string; bio: string }[]
     </section>
   )}
 
-  {page === 'team' && (
-    <section class="section">
-      <div class="container-page">
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {TEAM_MEMBERS[locale].map((member) => (
-            <article class="card">
-              <h2 class="text-xl text-brand-900">{member.name}</h2>
-              <p class="mt-1 text-sm font-semibold text-accent">{member.role}</p>
-              <p class="mt-3 text-sm text-brand-600">{member.bio}</p>
-            </article>
-          ))}
+  {['about', 'services', 'industries', 'team'].includes(page) && (
+    <section class="border-t border-[#e2e5eb] bg-[#0b1930] text-white">
+      <div class="container-page py-16 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-xl">
+          <h2 class="text-2xl font-semibold text-white sm:text-3xl">{PAGES.contact[locale].title}</h2>
+          <p class="mt-2 text-sm text-slate-300">
+            {locale === 'ar'
+              ? 'أرسل معايير مشروعك ونطاقه لنعد مقترح دعم فني منظم.'
+              : locale === 'ru'
+                ? 'Направьте нам параметры проекта для подготовки структурированного предложения.'
+                : 'Send us your project parameters and scope to prepare a structured technical support proposal.'}
+          </p>
         </div>
-      </div>
-    </section>
-  )}
-
-  {['about', 'services', 'industries'].includes(page) && (
-    <section class="bg-brand-950 text-white">
-      <div class="container-page section flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <h2 class="text-2xl text-white sm:text-3xl">{PAGES.contact[locale].title}</h2>
-        <a href={localizedPath(locale, 'contact')} class="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-brand-950 transition-all hover:bg-accent-light hover:shadow-lg">
+        <a href={localizedPath(locale, 'contact')} class="btn-primary shrink-0">
           {CTA_LABEL[locale]}
         </a>
       </div>

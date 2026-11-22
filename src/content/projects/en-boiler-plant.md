@@ -1,9 +1,9 @@
 ---
-title: Autonomous 10.5 MWth Boiler Plant
-summary: Autonomous-capable industrial thermal-generation facility for district heating and summer domestic hot water, with natural gas and standby diesel fuel resilience, integrated site utilities and SCADA automation.
+title: "Autonomous 10.5 MWth Industrial Boiler Facility"
+summary: "Industrial boiler facility with natural gas primary supply and standby diesel fuel resilience, approved by State Expert Examination."
 sector: Energy & Power Generation
-service: Engineering & Project Management
-year: "2024-2026"
+service: Design Documentation & Engineering Surveys
+year: "2024–2026"
 location: Karpinsk, Sverdlovsk Oblast, Russia
 cover: ./boiler-plant-cover.jpg
 order: 1
@@ -11,44 +11,50 @@ locale: en
 translationKey: autonomous-boiler-plant
 datePublished: '2026-11-20'
 dateModified: '2026-11-20'
+editorialLabel: "BOILER FACILITY · RUSSIA"
+supportLine: "Design-stage documentation, utility coordination, and statutory survey packages."
+figures:
+  - "10.5 MWth"
+  - "107 files"
+  - "Gosexpertiza"
 ---
 
-## Challenge: Autonomous Thermal Generation for Municipal Reliability
+## Project Context
 
-The Municipal Public Utilities Authority "UKH" in Karpinsk, Sverdlovsk Oblast required an autonomous-capable industrial thermal-generation facility to supply district heating and summer domestic hot water. The plant needed to operate independently during grid disturbances, maintain thermal supply through fuel disruptions, and integrate multiple utility systems into a single, maintainable package.
+The municipal utility required an autonomous industrial boiler facility to supply heating and hot water. The design required dual-fuel capability, SCADA automation for unmanned operation, and statutory state expertise clearance.
 
-The design had to satisfy Russian state expertise requirements while delivering a modern, automated facility capable of unattended operation with remote monitoring and control.
+## Fact Strip
 
-## Solution: Integrated Boiler Plant with Fuel Resilience and Full Automation
+- **Client Context**: Municipal Public Utilities Authority UKH
+- **Location**: Karpinsk, Sverdlovsk Oblast, Russia
+- **Project Stage**: Design-Stage Documentation & 4 Statutory Engineering Surveys
+- **Team Role**: General Designer through OOO Energodiagnostika
+- **Key Figures**: 10.5 MWth installed thermal capacity, 107 design files, 4 survey reports
 
-Alan Apire developed the complete design-stage package for the 10.5 MWth boiler plant:
+## Engineering Contribution
 
-**Autonomous thermal-generation configuration** — Engineered a boiler hall with 10.5 MWth installed thermal capacity and 10.132 MWth calculated net output, housed in a 12 m clear-span steel portal frame with 22 m self-supporting exhaust stacks. The configuration supports both natural gas primary operation and standby diesel fuel resilience.
+- Developed the complete design-stage package for a 10.5 MWth boiler hall with a 12 m clear-span steel frame.
+- Engineered dual-fuel supply systems with automated switchover from natural gas to standby diesel.
+- Coordinated buried utility corridors encompassing potable water, fire suppression, gas feed, and 0.4 kV power.
+- Designed PLC and SCADA automation architectures for burner control, fault logging, and safety interlocking.
+- Executed four statutory engineering surveys covering geotechnical, geodetic, hydrometeorological, and environmental conditions.
 
-**Integrated site utilities** — Coordinated potable and fire water systems, sewerage, 0.4 kV electrical power, gas supply and heating loop within a single utility corridor. The plant includes a 10-ton overhead crane for maintenance access.
+## Design-Stage Drawing Excerpt
 
-**Automation and SCADA integration** — Designed PLC/SCADA automation interfaces for boiler control, fuel switching, safety interlocks and remote monitoring. Fire protection systems are integrated with the automation architecture.
+<img src="/projects/karpinsk-drawing-excerpt.webp" alt="Design-stage drawing excerpt: Karpinsk boiler facility layout" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Design-stage drawing excerpt: General site layout and utility routing corridors (Volume 54.24-GP, Sheet 201). Source: Working documentation archive, OOO Energodiagnostika.*
 
-**Structural and civil coordination** — Managed multidisciplinary interfaces between thermal, civil, structural, electrical, automation and utility disciplines, producing coordinated construction packages.
+## Statutory Approval Record
 
-**Statutory dossier support** — Prepared design documentation, civil-defence and emergency-mitigation volumes, and site layout coordination documents for state expertise submission.
+The boiler plant package secured formal state expertise approval:
+- **Approval**: Gosexpertiza Positive Conclusion No. 66-1-1-3-028194-2026, dated 18 June 2026
+- **Scope**: 107 design-documentation files and four engineering-survey reports
+- **Cost Reliability**: Verified estimate documentation and capital cost calculation
 
-## Results: State-Approved Autonomous Thermal Asset
+## Project Attribution
 
-The boiler plant received formal state approval, validating the design package for construction:
+These references reflect prior engineering work by Alanpire team members through OOO Energodiagnostika in Russia. They were not contracts awarded to Alanpire's UAE entity.
 
-**Gosexpertiza Positive Conclusion** — State expertise issued Positive Conclusion No. 66-1-1-3-028194-2026, dated 18 June 2026, covering 107 design-documentation files and four engineering-survey reports.
+## Discuss a Similar Package
 
-**Fuel resilience** — Dual-fuel capability ensures thermal supply continuity during natural gas disruptions, with automated switchover to standby diesel.
-
-**Operational autonomy** — PLC/SCADA integration enables remote monitoring, automated fault response and reduced staffing requirements during normal operation.
-
-**Integrated utilities** — Single-point coordination of water, sewerage, power, gas and heating systems reduces interface risk and simplifies future maintenance.
-
-**Safety and compliance** — Civil-defence and emergency-mitigation documentation satisfies Russian regulatory requirements for industrial thermal facilities.
-
-This project demonstrates Alan Apire's capability to deliver turnkey-ready thermal generation assets — from concept through state-approved design documentation — for municipal and industrial clients in the CIS and Gulf regions.
-
----
-
-<!-- translated: en -> en | date: 2026-11-20 | translator: source -->
+Our team reviews plant capacities, fuel redundancy criteria, and equipment arrangements for industrial thermal facilities.

@@ -18,6 +18,10 @@ export const projects = defineCollection({
       order: z.number().default(99),
       locale: z.enum(LOCALES),
       translationKey: z.string(),
+      editorialLabel: z.string().optional(),
+      supportLine: z.string().optional(),
+      figures: z.array(z.string()).optional(),
+      missingAssetNote: z.string().optional(),
     }),
 });
 

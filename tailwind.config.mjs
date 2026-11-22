@@ -4,39 +4,57 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Alan Apire Design System — Phase 1 Brand Identity
-        brand: {
-          50: '#f7f8fa',   // Very light background
-          100: '#eef0f3',  // Light background
-          200: '#dee2e8',  // Light gray
-          300: '#c5cbd3',  // Medium-light gray
-          400: '#9aa3af',  // Medium gray
-          500: '#6b7480',  // Medium-dark gray
-          600: '#4e5763',  // Dark gray
-          700: '#383f49',  // Darker gray
-          800: '#262b33',  // Very dark gray
-          900: '#171a1f',  // Almost black
-          950: '#0b1930',  // Navy black (primary dark)
+        // Restrained Editorial Palette: Warm white, navy text, steel hairlines, single action accent
+        surface: {
+          DEFAULT: '#faf9f6', // Warm white background
+          pure: '#ffffff',    // Card / module background
+          subtle: '#f3f2ee',  // Subtle grey-white
+        },
+        navy: {
+          DEFAULT: '#0b1930', // Deep navy primary text
+          light: '#1b2a47',
+          dark: '#060f1e',
+        },
+        steel: {
+          DEFAULT: '#64748b', // Secondary editorial text
+          light: '#e2e5eb',   // Steel-grey hairline divider
+          dark: '#334155',
         },
         accent: {
-          DEFAULT: '#B08D57',  // Warm gold — Alan Apire signature
-          light: '#D9BD8D',    // Lighter gold
-          dark: '#8A6B3E',     // Darker gold
+          DEFAULT: '#0b4ea2', // Single accent colour strictly for primary action
+          hover: '#083c7d',
         },
-        success: '#1E7A4C',    // Muted green
-        warning: '#B3261E',    // Muted red
-        info: '#345078',       // Muted blue
+        // Keep brand mappings for backward-compatibility with existing templates
+        brand: {
+          50: '#faf9f6',
+          100: '#f0f1f4',
+          200: '#e2e5eb', // Hairline
+          300: '#cbd2db',
+          400: '#94a3b8',
+          500: '#64748b', // Steel
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#0b1930', // Navy
+        },
       },
       fontFamily: {
-        sans: ['"Inter"', '"Noto Sans Arabic"', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', '"Amiri"', 'Georgia', 'serif'],
-        // Luxury consultancy aesthetic
-        display: ['"Playfair Display"', '"Amiri"', 'Georgia', 'serif'],
+        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+        arabic: ['"IBM Plex Sans Arabic"', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        // Restrained editorial scale: H1 fluid 36-56px, H2 28-36px, body 17-18px, captions 13-14px
+        caption: ['0.84375rem', { lineHeight: '1.4' }], // ~13.5px
+        body: ['1.0625rem', { lineHeight: '1.6' }],    // 17px
+        'body-lg': ['1.125rem', { lineHeight: '1.6' }], // 18px
+        h2: ['2rem', { lineHeight: '1.25' }],           // 32px (28-36 fluid)
+        h1: ['3rem', { lineHeight: '1.15' }],           // 48px (36-56 fluid)
       },
       container: {
         center: true,
-        padding: { DEFAULT: '1rem', sm: '1.5rem', lg: '2rem' },
-        screens: { '2xl': '1200px' },
+        padding: { DEFAULT: '1.25rem', sm: '2rem', lg: '3rem' },
+        screens: { '2xl': '1280px' },
       },
     },
   },

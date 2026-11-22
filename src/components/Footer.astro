@@ -2,6 +2,7 @@
 import { BRAND, type Locale } from '../i18n/config';
 import { PAGES, localizedPath } from '../i18n/pages';
 import { PILLARS, SECTORS, FOOTER_COPY } from '../i18n/site';
+import { TECHNICAL_CONSTANTS } from '../i18n/constants';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
@@ -12,39 +13,56 @@ const servicesHref = localizedPath(locale, 'services');
 const industriesHref = localizedPath(locale, 'industries');
 ---
 
-<footer class="mt-auto border-t border-brand-100 bg-brand-950 text-brand-100">
-  <div class="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+<footer class="mt-auto border-t border-[#e2e5eb] bg-[#0b1930] text-[#faf9f6]">
+  <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <div class="flex items-center gap-2 font-serif text-lg font-bold text-white">
-        <img src="/brand/logo-mark.svg" alt="" width="28" height="28" class="h-7 w-7" />
-        <span>{BRAND.shortName}</span>
+      <div class="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
+        <img src="/brand/logo-mark.svg" alt="" width="26" height="26" class="h-6 w-6 brightness-200" />
+        <span>{TECHNICAL_CONSTANTS.companyShortName}</span>
       </div>
-      <p class="mt-3 text-xs font-semibold uppercase tracking-wider text-brand-200">{BRAND.name}</p>
-      <p class="mt-2 text-sm text-brand-300">{BRAND.address[locale]}</p>
-      <p class="mt-2 text-sm text-brand-300">{BRAND.email}</p>
+      <p class="mt-4 text-xs font-semibold leading-relaxed tracking-wider text-slate-300">
+        {TECHNICAL_CONSTANTS.companyLegalName}
+      </p>
+      <p class="mt-2 text-xs text-slate-400">
+        {FOOTER_COPY.licenceText[locale]}
+      </p>
+      <div class="mt-4 space-y-1 text-xs text-slate-400">
+        <p><span class="text-slate-500">Email:</span> {TECHNICAL_CONSTANTS.email}</p>
+        <p><span class="text-slate-500">Tel:</span> {TECHNICAL_CONSTANTS.phone}</p>
+        <p><span class="text-slate-500">Address:</span> {TECHNICAL_CONSTANTS.address}</p>
+      </div>
     </div>
     <div>
-      <h3 class="text-sm font-semibold uppercase tracking-widest text-accent">{FOOTER_COPY.pillarsHeading[locale]}</h3>
-      <ul class="mt-3 space-y-2 text-sm">
-        {pillars.map((p) => <li><a href={servicesHref} class="text-brand-300 hover:text-white">{p.title}</a></li>)}
+      <h3 class="category-tag text-slate-400">{FOOTER_COPY.pillarsHeading[locale]}</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {pillars.map((p) => <li><a href={servicesHref} class="text-slate-300 hover:text-white transition-colors">{p.title}</a></li>)}
       </ul>
     </div>
     <div>
-      <h3 class="text-sm font-semibold uppercase tracking-widest text-accent">{FOOTER_COPY.sectorsHeading[locale]}</h3>
-      <ul class="mt-3 space-y-2 text-sm">
-        {sectors.map((s) => <li><a href={industriesHref} class="text-brand-300 hover:text-white">{s.title}</a></li>)}
+      <h3 class="category-tag text-slate-400">{FOOTER_COPY.sectorsHeading[locale]}</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {sectors.map((s) => <li><a href={industriesHref} class="text-slate-300 hover:text-white transition-colors">{s.title}</a></li>)}
       </ul>
     </div>
     <div>
-      <h3 class="text-sm font-semibold uppercase tracking-widest text-accent">{PAGES.contact[locale].label}</h3>
-      <ul class="mt-3 space-y-2 text-sm">
-        <li><a href={localizedPath(locale, 'contact')} class="text-brand-300 hover:text-white">{PAGES.contact[locale].label}</a></li>
-        <li><a href={localizedPath(locale, 'privacy')} class="text-brand-300 hover:text-white">{PAGES.privacy[locale].label}</a></li>
-        <li><a href={localizedPath(locale, 'terms')} class="text-brand-300 hover:text-white">{PAGES.terms[locale].label}</a></li>
+      <h3 class="category-tag text-slate-400">{PAGES.contact[locale].label}</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href={localizedPath(locale, 'contact')} class="text-slate-300 hover:text-white transition-colors">{PAGES.contact[locale].label}</a></li>
+        <li><a href={localizedPath(locale, 'about')} class="text-slate-300 hover:text-white transition-colors">{PAGES.about[locale].label}</a></li>
+        <li><a href={localizedPath(locale, 'projects')} class="text-slate-300 hover:text-white transition-colors">{PAGES.projects[locale].label}</a></li>
+        <li><a href={localizedPath(locale, 'privacy')} class="text-slate-300 hover:text-white transition-colors">{PAGES.privacy[locale].label}</a></li>
+        <li><a href={localizedPath(locale, 'terms')} class="text-slate-300 hover:text-white transition-colors">{PAGES.terms[locale].label}</a></li>
       </ul>
     </div>
   </div>
-  <div class="border-t border-brand-900">
-    <div class="container-page py-4 text-xs text-brand-400">© {year} {BRAND.name}. All rights reserved.</div>
+  <div class="border-t border-slate-800 bg-[#060f1e]">
+    <div class="container-page py-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-400">
+      <div>
+        © {year} {TECHNICAL_CONSTANTS.companyLegalName}. {FOOTER_COPY.rights[locale]}
+      </div>
+      <div class="text-[0.7rem] text-slate-400">
+        DIEZA Licence No. 88988 · Dubai Silicon Oasis, Dubai, UAE
+      </div>
+    </div>
   </div>
 </footer>

@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "preview": "astro preview",
     "pages:preview": "npx wrangler pages dev dist",
     "pages:deploy": "npx wrangler pages deploy dist --project-name=alan-apire-site",
@@ -22,6 +23,20 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "playwright": "^1.61.0"
-  }
+    "playwright": "^1.61.0",
+    "puppeteer": "^25.18.1"
+  },
+  "description": "Lean MVP trilingual (EN / AR-RTL / RU) static site built with **Astro + Tailwind + Markdown**, deployed to **Cloudflare Pages**. Implements the scope of the Alan Apire Lean MVP Quote: 10 pages × 3 languages, 10 project case studies, WhatsApp button, contact form, Google Maps, analytics, full SEO (hreflang, sitemap, robots, Open Graph).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamelCod/alan-apire-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamelCod/alan-apire-site/issues"
+  },
+  "homepage": "https://github.com/CamelCod/alan-apire-site#readme"
 }

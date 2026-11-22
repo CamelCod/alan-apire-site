@@ -1,4 +1,9 @@
 import type { Locale } from './config';
+import en from '../content/i18n/en.json';
+import ar from '../content/i18n/ar.json';
+import ru from '../content/i18n/ru.json';
+
+const I18N = { en, ar, ru } as const;
 
 // Navigation and page metadata per locale. The 10 canonical pages from the Lean MVP quote:
 // home, about, services, industries, projects, team, careers, contact, privacy, terms
@@ -32,69 +37,69 @@ type Localized = Record<Locale, { label: string; title: string; description: str
 
 export const PAGES: Record<PageKey, Localized> = {
   home: {
-    en: { label: 'Home', title: 'Engineering & Project Management Consultancy Dubai | Alan Apire', description: 'Project management, engineering consultancy, and architectural drawing services for industrial and infrastructure projects — delivered from Dubai (DIEZ), UAE to clients across the GCC.' },
-    ar: { label: 'الرئيسية', title: 'استشارات هندسية وإدارة مشاريع في دبي | آلان أپاير', description: 'خدمات إدارة المشاريع والاستشارات الهندسية والرسومات المعمارية للمشاريع الصناعية والبنية التحتية — من دبي (دايز) لعملاء في الإمارات ودول مجلس التعاون الخليجي.' },
-    ru: { label: 'Главная', title: 'Инжиниринговый и проектный консалтинг в Дубае | Alan Apire', description: 'Управление проектами, инженерный консалтинг и архитектурные чертежи для промышленных и инфраструктурных проектов — из Дубая (DIEZ) для клиентов в ОАЭ и ССАГПЗ.' },
+    en: { label: I18N.en.nav.home, title: I18N.en.meta.home.title, description: I18N.en.meta.home.description },
+    ar: { label: I18N.ar.nav.home, title: I18N.ar.meta.home.title, description: I18N.ar.meta.home.description },
+    ru: { label: I18N.ru.nav.home, title: I18N.ru.meta.home.title, description: I18N.ru.meta.home.description },
   },
   about: {
-    en: { label: 'About', title: 'About Alan Apire | Management Consultants Dubai, UAE', description: 'Engineering knowledge. Project discipline. Practical delivery. Alan Apire is a Dubai-based management consultancy (DIEZ FZCO) bridging high-level advisory and on-the-ground technical execution for industrial projects across the UAE and GCC.' },
-    ar: { label: 'من نحن', title: 'من نحن | مستشارو الإدارة في دبي — آلان أپاير', description: 'معرفة هندسية. انضباط في المشاريع. تنفيذ عملي. آلان أپاير شركة استشارات إدارية مرخصة في دبي (دايز) تربط الاستشارات عالية المستوى بالتنفيذ الفني الميداني للمشاريع الصناعية.' },
-    ru: { label: 'О нас', title: 'О компании Alan Apire | Управленческий консалтинг Дубай', description: 'Инженерные знания. Проектная дисциплина. Практическая реализация. Alan Apire — консалтинговая компания из Дубая (DIEZ FZCO), соединяющая стратегическое консультирование и техническое исполнение на объектах в ОАЭ и ССАГПЗ.' },
+    en: { label: I18N.en.nav.about, title: I18N.en.meta.about.title, description: I18N.en.meta.about.description },
+    ar: { label: I18N.ar.nav.about, title: I18N.ar.meta.about.title, description: I18N.ar.meta.about.description },
+    ru: { label: I18N.ru.nav.about, title: I18N.ru.meta.about.title, description: I18N.ru.meta.about.description },
   },
   services: {
-    en: { label: 'Services', title: 'Project Management & Engineering Consultancy Services Dubai | Alan Apire', description: 'Project management, engineering & technical consultancy, architectural drawings, and management consultancy for industrial and infrastructure projects in Dubai, UAE, and the GCC.' },
-    ar: { label: 'الخدمات', title: 'خدمات إدارة المشاريع والاستشارات الهندسية في دبي | آلان أپاير', description: 'إدارة المشاريع والاستشارات الهندسية والفنية والرسومات المعمارية والاستشارات الإدارية للمشاريع الصناعية والبنية التحتية في دبي والإمارات ودول الخليج.' },
-    ru: { label: 'Услуги', title: 'Услуги управления проектами и инжинирингового консалтинга Дубай', description: 'Управление проектами, инженерно-технический консалтинг, архитектурные чертежи и управленческий консалтинг для промышленных и инфраструктурных проектов в Дубае, ОАЭ и странах ССАГПЗ.' },
+    en: { label: I18N.en.nav.services, title: I18N.en.meta.services.title, description: I18N.en.meta.services.description },
+    ar: { label: I18N.ar.nav.services, title: I18N.ar.meta.services.title, description: I18N.ar.meta.services.description },
+    ru: { label: I18N.ru.nav.services, title: I18N.ru.meta.services.title, description: I18N.ru.meta.services.description },
   },
   industries: {
-    en: { label: 'Industries', title: 'Industrial & Infrastructure Sectors Served | Dubai Consultancy — Alan Apire', description: 'Sector experience in energy & power generation, district heating, water infrastructure, oil refining, and heavy industrial facilities — delivered from Dubai to clients across the UAE and GCC.' },
-    ar: { label: 'القطاعات', title: 'القطاعات الصناعية والبنية التحتية | استشارات دبي — آلان أپاير', description: 'خبرة قطاعية في الطاقة وتوليد الكهرباء والتدفئة المركزية والبنية التحتية للمياه وتكرير النفط والمنشآت الصناعية الثقيلة — من دبي للعملاء في الإمارات ودول الخليج.' },
-    ru: { label: 'Отрасли', title: 'Промышленные отрасли | Консалтинг в Дубае — Alan Apire', description: 'Отраслевой опыт: энергетика и генерация, теплоснабжение, водная инфраструктура, нефтепереработка и тяжёлая промышленность — из Дубая для клиентов в ОАЭ и ССАГПЗ.' },
+    en: { label: I18N.en.nav.industries, title: I18N.en.meta.industries.title, description: I18N.en.meta.industries.description },
+    ar: { label: I18N.ar.nav.industries, title: I18N.ar.meta.industries.title, description: I18N.ar.meta.industries.description },
+    ru: { label: I18N.ru.nav.industries, title: I18N.ru.meta.industries.title, description: I18N.ru.meta.industries.description },
   },
   projects: {
-    en: { label: 'Projects', title: 'Industrial & Infrastructure Project Experience Dubai | Alan Apire', description: 'Verified delivery track record of our advisory team across heavy infrastructure, power generation, district heating, water supply, and oil refining — now serving clients in Dubai, UAE, and the GCC.' },
-    ar: { label: 'المشاريع', title: 'مشاريع صناعية وبنية تحتية — آلان أپاير دبي', description: 'سجل تنفيذ دولي موثق لفريقنا الاستشاري في البنية التحتية الثقيلة وتوليد الطاقة والتدفئة والمياه والتكرير — نخدم عملاء في دبي والإمارات ودول الخليج.' },
-    ru: { label: 'Проекты', title: 'Опыт промышленных и инфраструктурных проектов Дубай', description: 'Подтверждённый опыт нашей команды в тяжёлой инфраструктуре, энергетике, теплоснабжении, водоснабжении и нефтепереработке — сейчас для клиентов в Дубае, ОАЭ и ССАГПЗ.' },
+    en: { label: I18N.en.nav.projects, title: I18N.en.meta.projects.title, description: I18N.en.meta.projects.description },
+    ar: { label: I18N.ar.nav.projects, title: I18N.ar.meta.projects.title, description: I18N.ar.meta.projects.description },
+    ru: { label: I18N.ru.nav.projects, title: I18N.ru.meta.projects.title, description: I18N.ru.meta.projects.description },
   },
   team: {
-    en: { label: 'Team', title: 'Our Team — Alan Apire', description: 'Meet the consultants and engineers behind Alan Apire.' },
-    ar: { label: 'الفريق', title: 'فريقنا — آلان أپاير', description: 'تعرّف على المستشارين والمهندسين في آلان أپاير.' },
-    ru: { label: 'Команда', title: 'Наша команда — Alan Apire', description: 'Консультанты и инженеры компании Alan Apire.' },
+    en: { label: I18N.en.team.heading, title: I18N.en.meta.team.title, description: I18N.en.meta.team.description },
+    ar: { label: I18N.ar.team.heading, title: I18N.ar.meta.team.title, description: I18N.ar.meta.team.description },
+    ru: { label: I18N.ru.team.heading, title: I18N.ru.meta.team.title, description: I18N.ru.meta.team.description },
   },
   careers: {
-    en: { label: 'Careers', title: 'Careers — Alan Apire', description: 'Open roles and opportunities to join Alan Apire.' },
-    ar: { label: 'الوظائف', title: 'الوظائف — آلان أپاير', description: 'وظائف شاغرة وفرص للانضمام إلى آلان أپاير.' },
-    ru: { label: 'Карьера', title: 'Карьера — Alan Apire', description: 'Открытые вакансии и возможности присоединиться к Alan Apire.' },
+    en: { label: 'Careers', title: I18N.en.meta.careers.title, description: I18N.en.meta.careers.description },
+    ar: { label: 'الوظائف', title: I18N.ar.meta.careers.title, description: I18N.ar.meta.careers.description },
+    ru: { label: 'Карьера', title: I18N.ru.meta.careers.title, description: I18N.ru.meta.careers.description },
   },
   contact: {
-    en: { label: 'Contact', title: 'Contact Alan Apire | Engineering Consultancy Dubai, UAE', description: 'Start a project with Alan Apire — engineering and project management consultancy based in Dubai (DIEZ). Tell us your requirements, location, and timeline.' },
-    ar: { label: 'اتصل بنا', title: 'تواصل مع آلان أپاير | استشارات هندسية في دبي', description: 'ابدأ مشروعك مع آلان أپاير — شركة استشارات هندسية وإدارة مشاريع مقرها دبي (دايز). أخبرنا بمتطلباتك وموقعك وجدولك الزمني.' },
-    ru: { label: 'Контакты', title: 'Контакты Alan Apire | Инжинерный консалтинг Дубай', description: 'Начните проект с Alan Apire — консалтинговая компания в области инженеринга и управления проектами, базирующаяся в Дубае (DIEZ). Расскажите о требованиях, локации и сроках.' },
+    en: { label: I18N.en.nav.contact, title: I18N.en.meta.contact.title, description: I18N.en.meta.contact.description },
+    ar: { label: I18N.ar.nav.contact, title: I18N.ar.meta.contact.title, description: I18N.ar.meta.contact.description },
+    ru: { label: I18N.ru.nav.contact, title: I18N.ru.meta.contact.title, description: I18N.ru.meta.contact.description },
   },
   privacy: {
-    en: { label: 'Privacy', title: 'Privacy Policy — Alan Apire', description: 'Privacy policy for the Alan Apire website.' },
-    ar: { label: 'الخصوصية', title: 'سياسة الخصوصية — آلان أپاير', description: 'سياسة الخصوصية لموقع آلان أپاير.' },
-    ru: { label: 'Конфиденциальность', title: 'Политика конфиденциальности — Alan Apire', description: 'Политика конфиденциальности сайта Alan Apire.' },
+    en: { label: 'Privacy', title: I18N.en.meta.privacy.title, description: I18N.en.meta.privacy.description },
+    ar: { label: 'الخصوصية', title: I18N.ar.meta.privacy.title, description: I18N.ar.meta.privacy.description },
+    ru: { label: 'Конфиденциальность', title: I18N.ru.meta.privacy.title, description: I18N.ru.meta.privacy.description },
   },
   terms: {
-    en: { label: 'Terms', title: 'Terms & Conditions — Alan Apire', description: 'Terms and conditions for the Alan Apire website.' },
-    ar: { label: 'الشروط', title: 'الشروط والأحكام — آلان أپاير', description: 'الشروط والأحكام لموقع آلان أپاير.' },
-    ru: { label: 'Условия', title: 'Условия и положения — Alan Apire', description: 'Условия и положения сайта Alan Apire.' },
+    en: { label: 'Terms', title: I18N.en.meta.terms.title, description: I18N.en.meta.terms.description },
+    ar: { label: 'الشروط', title: I18N.ar.meta.terms.title, description: I18N.ar.meta.terms.description },
+    ru: { label: 'Условия', title: I18N.ru.meta.terms.title, description: I18N.ru.meta.terms.description },
   },
   compare: {
-    en: { label: 'Compare', title: 'Compare Engineering & Project Management Consultancies Dubai | Alan Apire', description: 'Compare Alan Apire with leading project management and engineering consultancy firms in Dubai and the UAE. Feature matrices, sector fit, and honest analysis.' },
-    ar: { label: 'مقارنة', title: 'مقارنة شركات الاستشارات الهندسية وإدارة المشاريع في دبي | آلان أپاير', description: 'قارن بين آلان أپاير وشركات استشارات إدارة المشاريع في دبي والإمارات.' },
-    ru: { label: 'Сравнение', title: 'Сравнение консалтинговых компаний Дубай | Alan Apire', description: 'Сравните Alan Apire с ведущими консалтинговыми компаниями в Дубае и ОАЭ.' },
+    en: { label: 'Compare', title: 'Compare Technical Consultancies Dubai | Alanpire', description: 'Compare technical capabilities, licensing, and delivery methodologies for industrial infrastructure in Dubai.' },
+    ar: { label: 'مقارنة', title: 'مقارنة الاستشارات الفنية في دبي | ألانباير', description: 'مقارنة القدرات الفنية والتراخيص ومنهجيات التسليم للبنية التحتية الصناعية في دبي.' },
+    ru: { label: 'Сравнение', title: 'Сравнение технических консультантов в Дубае | Alanpire', description: 'Сравнение технических компетенций, лицензий и методологий реализации для промышленной инфраструктуры в Дубае.' },
   },
   'compare-vs-rpm-ahpmc': {
-    en: { label: 'Alan Apire vs RPM vs AHPMC', title: 'Alan Apire vs RPM Consultants vs AHPMC: Engineering Consultancy Dubai (2026)', description: 'Detailed comparison of Alan Apire, RPM Consultants, and AHPMC for project management and engineering consultancy in Dubai. Feature matrix, sector fit, and recommendation.' },
-    ar: { label: 'آلان أپاير مقابل RPM وAHPMC', title: 'آلان أپاير مقابل RPM Consultants مقابل AHPMC: استشارات هندسية دبي 2026', description: 'مقارنة تفصيلية بين آلان أپاير وRPM Consultants وAHPMC لإدارة المشاريع والاستشارات الهندسية في دبي.' },
-    ru: { label: 'Alan Apire vs RPM vs AHPMC', title: 'Alan Apire vs RPM Consultants vs AHPMC: инжениринговый консалтинг Дубай 2026', description: 'Детальное сравнение Alan Apire, RPM Consultants и AHPMC по управлению проектами и инжиниринговому консалтингу в Дубае.' },
+    en: { label: 'Alanpire vs RPM vs AHPMC', title: 'Alanpire vs RPM Consultants vs AHPMC (2026)', description: 'Technical comparison of service scope, engineering credentials, and industrial focus.' },
+    ar: { label: 'ألانباير مقابل RPM وAHPMC', title: 'ألانباير مقابل RPM وAHPMC (2026)', description: 'مقارنة فنية لنطاق الخدمات والمؤهلات الهندسية والتخصص الصناعي.' },
+    ru: { label: 'Alanpire vs RPM vs AHPMC', title: 'Alanpire против RPM и AHPMC (2026)', description: 'Техническое сравнение объема услуг, инженерной квалификации и промышленной специализации.' },
   },
   'compare-alternatives': {
-    en: { label: 'Alternatives', title: '10 Best Project Management Consultancy Alternatives in Dubai 2026 | Alan Apire', description: 'Looking for project management and engineering consultancy alternatives in Dubai? Compare the top 10 firms by sector focus, service scope, and best-fit use case.' },
-    ar: { label: 'بدائل', title: 'أفضل 10 بدائل لشركات استشارات إدارة المشاريع في دبي 2026', description: 'مقارنة أفضل 10 شركات استشارات إدارة المشاريع والاستشارات الهندسية في دبي حسب التخصص ونطاق الخدمات.' },
-    ru: { label: 'Альтернативы', title: '10 лучших альтернатив консалтинга по управлению проектами в Дубае 2026', description: 'Ищете альтернативы для консалтинга по управлению проектами в Дубае? Сравните 10 ведущих компаний по секторной специализации и набору услуг.' },
+    en: { label: 'Alternatives', title: 'Project Management & Engineering Support Alternatives in Dubai', description: 'Overview of engineering consultancy alternatives by sector specialization and technical capabilities.' },
+    ar: { label: 'بدائل', title: 'بدائل إدارة المشاريع والدعم الهندسي في دبي', description: 'نظرة عامة على بدائل الاستشارات الهندسية حسب التخصص القطاعي والقدرات الفنية.' },
+    ru: { label: 'Альтернативы', title: 'Альтернативы в области управления проектами и инженерной поддержки', description: 'Обзор альтернатив инженерного консалтинга по отраслевой специализации и техническим возможностям.' },
   },
 };
 
@@ -120,6 +125,12 @@ const PAGE_SEGMENTS: Record<PageKey, string | null> = {
 
 export function localizedPath(locale: Locale, page: PageKey): string {
   const segment = PAGE_SEGMENTS[page];
-  if (!segment) return `/${locale}`;
-  return `/${locale}/${segment}`;
+  return segment ? `/${locale}/${segment}` : `/${locale}`;
+}
+
+export function switchLocalePath(currentPath: string, newLocale: Locale): string {
+  const parts = currentPath.split('/').filter(Boolean);
+  if (parts.length === 0) return `/${newLocale}`;
+  parts[0] = newLocale;
+  return '/' + parts.join('/');
 }

@@ -1,12 +1,11 @@
 ---
-title: Oil Refinery Modernization | Hydrocracking & Euro 5 Fuel Upgrade
-summary: Comprehensive refinery modernization enabling Euro 5 fuel production, lower sulfur content, deeper refining, and improved environmental performance.
+title: Oil Refinery Modernization
+summary: Technical advisory and project governance for refinery processing unit modernization and sulfur reduction.
 sector: Oil Refining & Industrial Modernization
-service: Engineering & Modernization
+service: Technical Advisory & Interface Management
 year: "2023-2025"
 location: Russia
-cover: ./oil-refinery-cover.jpg
-order: 3
+order: 99
 locale: en
 translationKey: oil-refinery-modernization
 datePublished: '2026-09-20'
@@ -17,7 +16,7 @@ dateModified: '2026-10-03'
 
 ## Project Overview
 
-This refinery modernization project was designed to improve fuel quality, reduce sulfur and harmful impurities, and support production of Class 5 / Euro 5-compliant motor fuels.
+This refinery modernization project was designed to improve fuel quality, reduce sulfur and harmful impurities, and support modern environmental standards.
 
 Russian refinery modernization programs have involved upgrades such as hydrocracking, hydrotreating, and petroleum-coke production to support higher-quality fuel production and deeper refining.
 
@@ -46,7 +45,7 @@ These technologies support greater output of light petroleum products and improv
 
 The project delivered:
 
-- An increase in the share of Class 5 / Euro 5 gasoline to 96%.
+- Increased yield of light petroleum products.
 - Reduced sulfur and harmful components in motor fuel.
 - Lower environmental impact from vehicle emissions.
 - Improved refining depth and feedstock efficiency.
