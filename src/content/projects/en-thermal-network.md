@@ -1,18 +1,18 @@
 ---
-title: "2×DN500 High-Pressure District Heating Main"
-summary: "Twin-pipe high-pressure thermal network upgrade over 1,704 m with ultrasonic custody metering and START stress analysis."
+title: "District Heating Network Upgrade"
+summary: "Hydraulic modelling, thermal-expansion analysis, and multidisciplinary design coordination for an existing heating network."
 sector: District Heating & Thermal Utilities
 service: Detailed Design & Hydraulic Modelling
-year: "2024–2026"
-location: Koltsovo, Novosibirsk Oblast, Russia
+year: "Design Stage"
+location: Industrial Research Campus, Eurasia
 cover: ./thermal-network-cover.jpg
 order: 0
 locale: en
 translationKey: thermal-distribution-network
 datePublished: '2026-11-20'
-dateModified: '2026-11-20'
-editorialLabel: "THERMAL NETWORK · RUSSIA"
-supportLine: "Hydraulic modelling, thermal expansion loops, and custody-transfer metering."
+dateModified: '2026-11-23'
+editorialLabel: "DISTRICT HEATING · EURASIA"
+supportLine: "Hydraulic modelling, thermal-expansion loops, and custody-transfer metering."
 figures:
   - "2 × DN500"
   - "1,704 m"
@@ -25,8 +25,8 @@ The operator required a capacity upgrade from DN400 to twin DN500 transmission m
 
 ## Fact Strip
 
-- **Client Context**: FBRI SRC VB Vector, Koltsovo campus
-- **Location**: Koltsovo, Novosibirsk Oblast, Russia
+- **Client Context**: Research and industrial campus operator
+- **Location**: Industrial Research Campus, Eurasia
 - **Project Stage**: Detailed Design Documentation (11 volumes, 853 pages)
 - **Team Role**: General Designer through OOO Energodiagnostika
 - **Key Figures**: 2 × DN500 (Ø530×9.0 mm), 1,704 m, 20.0 bar, 101.7 MWth
@@ -35,14 +35,14 @@ The operator required a capacity upgrade from DN400 to twin DN500 transmission m
 
 - Calculated thermal and hydraulic flows across 1,704 m of twin-pipe corridor.
 - Modelled custom U-loop expansion compensators in START finite-element software to absorb 150 °C thermal stress.
-- Engineered a central custody-transfer metering station with RUS-1-400 ultrasonic flowmeters and SPT 961.2 heat calculators.
+- Engineered a central custody-transfer metering station with ultrasonic flowmeters and heat integration calculators.
 - Specified structural jacket reinforcement for existing steel pipe racks and engineered bored-pile anchor foundations.
 - Formulated a two-layer anti-corrosion coating system delivering a 25-year design service life per SP 124.13330.2012.
 
-## Design-Stage Drawing Excerpt
+## Technical Drawing Excerpt
 
-<img src="/projects/koltsovo-drawing-excerpt.jpg" alt="Project drawing excerpt – 57.24-PPO2, heat-main route plan, Stage 2" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
-*Project drawing excerpt – 57.24-PPO2, heat-main route plan, Stage 2. Design-stage documentation, Chief Project Engineer A.M. Biri. Source: Working documentation archive, OOO Energodiagnostika.*
+<img src="/projects/thermal-network-route.webp" alt="District heating network route alignment and expansion coordination" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Technical drawing excerpt: Thermal distribution route coordination and expansion compensator layout. Historical design documentation delivered through OOO Energodiagnostika.*
 
 ## Statutory Approval Record
 

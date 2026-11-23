@@ -1,17 +1,17 @@
 ---
-title: "Autonomous 10.5 MWth Industrial Boiler Facility"
-summary: "Industrial boiler facility with natural gas primary supply and standby diesel fuel resilience, approved by State Expert Examination."
+title: "Industrial Boiler Facility Design"
+summary: "Design-stage documentation, engineering-survey coordination, and utility integration for an industrial heating facility."
 sector: Energy & Power Generation
 service: Design Documentation & Engineering Surveys
-year: "2024–2026"
-location: Karpinsk, Sverdlovsk Oblast, Russia
+year: "Design Stage"
+location: Municipal Utility, Eurasia
 cover: ./boiler-plant-cover.jpg
 order: 1
 locale: en
 translationKey: autonomous-boiler-plant
 datePublished: '2026-11-20'
-dateModified: '2026-11-20'
-editorialLabel: "BOILER FACILITY · RUSSIA"
+dateModified: '2026-11-23'
+editorialLabel: "BOILER FACILITY · EURASIA"
 supportLine: "Design-stage documentation, utility coordination, and statutory survey packages."
 figures:
   - "10.5 MWth"
@@ -25,8 +25,8 @@ The municipal utility required an autonomous industrial boiler facility to suppl
 
 ## Fact Strip
 
-- **Client Context**: Municipal Public Utilities Authority UKH
-- **Location**: Karpinsk, Sverdlovsk Oblast, Russia
+- **Client Context**: Municipal district utility authority
+- **Location**: Municipal Utility, Eurasia
 - **Project Stage**: Design-Stage Documentation & 4 Statutory Engineering Surveys
 - **Team Role**: General Designer through OOO Energodiagnostika
 - **Key Figures**: 10.5 MWth installed thermal capacity, 107 design files, 4 survey reports
@@ -41,19 +41,19 @@ The municipal utility required an autonomous industrial boiler facility to suppl
 
 ## Plant Concept & Utility Integration
 
-<img src="/projects/karpinsk-schematic.jpg" alt="Autonomous 10.5 MWth boiler plant concept schematic and utilities" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
-*Plant concept schematic: Dual-fuel natural gas and standby diesel resilience with 22 m self-supporting exhaust stacks and integrated site utilities. Source: Working documentation archive, OOO Energodiagnostika.*
+<img src="/projects/boiler-facility-schematic.jpg" alt="Autonomous 10.5 MWth boiler plant concept schematic and utilities" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Plant concept schematic: Dual-fuel natural gas and standby diesel resilience with 22 m self-supporting exhaust stacks and integrated site utilities. Historical design documentation delivered through OOO Energodiagnostika.*
 
-## Design-Stage Drawing Excerpt
+## Technical Drawing Excerpt
 
-<img src="/projects/karpinsk-drawing-excerpt.webp" alt="Design-stage drawing excerpt: Karpinsk boiler facility layout" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
-*Design-stage drawing excerpt: General site layout and utility routing corridors (Volume 54.24-GP, Sheet 201). Source: Working documentation archive, OOO Energodiagnostika.*
+<img src="/projects/boiler-facility-layout.webp" alt="Design-stage drawing excerpt: Industrial boiler facility layout" loading="lazy" decoding="async" class="w-full border border-[#e2e5eb]" />
+*Design-stage drawing excerpt: General site layout and utility routing corridors. Historical design documentation delivered through OOO Energodiagnostika.*
 
 ## Statutory Approval Record
 
 The boiler plant package secured formal state expertise approval:
-- **Approval**: Gosexpertiza Positive Conclusion No. 66-1-1-3-028194-2026, dated 18 June 2026
-- **Scope**: 107 design-documentation files and four engineering-survey reports
+- **Approval**: State Expert Examination Positive Conclusion
+- **Scope**: 107 design-documentation files and four statutory engineering-survey reports
 - **Cost Reliability**: Verified estimate documentation and capital cost calculation
 
 ## Project Attribution

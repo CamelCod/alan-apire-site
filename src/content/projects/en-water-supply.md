@@ -1,16 +1,16 @@
 ---
-title: "Municipal Water Transmission Main"
-summary: "Engineering design and hydraulic modelling for municipal transmission main rehabilitation using high-density polyethylene piping."
+title: "Municipal Water Main Renewal"
+summary: "Hydraulic assessment, pipe-material selection, and phased replacement planning for an existing water transmission main."
 sector: Water Infrastructure
 service: Hydraulic Modelling & Materials Selection
-year: "2024–2025"
-location: Kharanor, Zabaykalsky Krai, Russia
+year: "Engineering Design"
+location: Municipal Infrastructure, Eurasia
 order: 2
 locale: en
-translationKey: haranor-water-supply
+translationKey: water-transmission-renewal
 datePublished: '2026-11-20'
-dateModified: '2026-11-20'
-editorialLabel: "WATER INFRASTRUCTURE · RUSSIA"
+dateModified: '2026-11-23'
+editorialLabel: "WATER INFRASTRUCTURE · EURASIA"
 supportLine: "Hydraulic network modelling and polyethylene pipeline material specification."
 figures:
   - "DN300 PE"
@@ -21,12 +21,12 @@ missingAssetNote: "Asset required: Route alignment drawing"
 
 ## Project Context
 
-The municipal operator required the reconstruction of an aging water transmission corridor. The existing metallic mains suffered from severe internal corrosion, requiring complete hydraulic redesign and pipe material replacement.
+The municipal operator required the rehabilitation of an aging water transmission corridor. The project scope required complete hydraulic redesign, pressure surge mitigation, and transition to high-density polyethylene piping.
 
 ## Fact Strip
 
-- **Client Context**: Kharanor Municipal Water Authority
-- **Location**: Kharanor, Zabaykalsky Krai, Russia
+- **Client Context**: Regional water utility authority
+- **Location**: Municipal Infrastructure, Eurasia
 - **Project Stage**: Detailed Engineering Design
 - **Team Role**: Design Engineering Partner through OOO Energodiagnostika
 - **Key Figures**: 8.4 km pipeline route, DN300 polyethylene piping, 2.4 bar operating pressure

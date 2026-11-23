@@ -23,10 +23,10 @@ export const TECHNICAL_CONSTANTS = {
   // Prior Reference Entity
   priorEntityName: 'OOO "Energodiagnostika"',
 
-  // Reference 1: Koltsovo Thermal Main Upgrade
-  koltsovo: {
-    title: '2×DN500 High-Pressure District Heating Main',
-    location: 'Koltsovo, Novosibirsk Oblast, Russia',
+  // Reference 1: District Heating Network Upgrade
+  thermalNetwork: {
+    title: 'District Heating Network Upgrade',
+    location: 'Industrial Research Campus, Eurasia',
     pipeDiameter: '2 × DN500',
     pipeSpec: 'Ø530×9.0 mm',
     routeLength: '1,704 m',
@@ -34,27 +34,31 @@ export const TECHNICAL_CONSTANTS = {
     thermalCapacity: '101.7 MWth',
     gcalEquivalent: '87.55 Gcal/h',
     operatingTemp: '150 °C',
-    flowmeterType: 'RUS-1-400 ultrasonic flowmeters',
-    heatCalculator: 'SPT 961.2 heat energy calculator',
+    flowmeterType: 'Ultrasonic flowmeters',
+    heatCalculator: 'Heat energy calculator',
     steelGrade: 'C255-5',
     standards: 'SP 124.13330.2012',
     volumesCount: '11 volumes',
     sheetsCount: '853 pages',
-    approvalRecord: 'State Expert Examination Positive Conclusion No. 66-1-1-3-028194-2026',
+    approvalRecord: 'State Expert Examination Positive Conclusion',
   },
+  // Backward compatibility alias
+  get koltsovo() { return this.thermalNetwork; },
 
-  // Reference 2: Karpinsk Autonomous Boiler Plant
-  karpinsk: {
-    title: 'Autonomous 10.5 MWth Industrial Boiler Facility',
-    location: 'Karpinsk, Sverdlovsk Oblast, Russia',
+  // Reference 2: Industrial Boiler Facility Design
+  boilerFacility: {
+    title: 'Industrial Boiler Facility Design',
+    location: 'Municipal Utility, Eurasia',
     thermalCapacity: '10.5 MWth',
     fuelTypes: 'Natural gas with standby diesel fuel',
-    gosexpertizaNumber: '66-1-1-3-028194-2026',
-    gosexpertizaDate: '18 June 2026',
+    gosexpertizaNumber: 'Positive Conclusion',
+    gosexpertizaDate: 'Design Stage',
     documentationFilesCount: '107 design-documentation files',
     surveyReportsCount: '4 survey reports',
-    approvalRecord: 'Gosexpertiza Positive Conclusion No. 66-1-1-3-028194-2026, dated 18 June 2026',
+    approvalRecord: 'State Expert Examination Positive Conclusion covering 107 design files and 4 surveys',
   },
+  // Backward compatibility alias
+  get karpinsk() { return this.boilerFacility; },
 
   // Accreditations & Registry
   sroDesignAccreditation: 'P-161-005611025054-2471',
