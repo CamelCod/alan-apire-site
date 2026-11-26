@@ -28,7 +28,7 @@ Make a technical procurement decision easier: explain the assignment, practition
 - Preserve the registered name **ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO** in legal/registration contexts. Do not “correct” it into the marketing brand or invent an Arabic registered name.
 - “Alan Apire” appears in older comparison copy. Normalize editorial references consistently; legal wording remains separate.
 - Four commercial service groupings are **not proof** of four licensed activities. Do not write “Four Licensed Service Areas”. Use neutral scope headings until approved licence wording is available.
-- Do not equate DIEZ/IFZA registration with engineering-signature authority, government ownership, endorsement, guaranteed statutory approval or unrestricted UAE site-supervision rights.
+- Do not equate IFZA registration with engineering-signature authority, government ownership, endorsement, guaranteed statutory approval or unrestricted UAE site-supervision rights.
 - Preserve the operational boundary: technical calculations/drawings are delivered through/under client-appointed, locally licensed UAE consultants where required. Use exact legal wording only after qualified review.
 
 ### Clear technical B2B copy

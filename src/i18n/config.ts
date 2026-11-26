@@ -16,7 +16,7 @@ export const BRAND = {
   shortName:'Alanpire',
   phone:'+971558286328',
   whatsapp:'971558286328',
-  email:'info@alanapire.ae',
+  email:'info@alanpire.ae',
   address:{en:'IFZA, Dubai Silicon Oasis, Dubai, UAE',ar:'IFZA، واحة دبي للسيليكون، دبي، الإمارات',ru:'IFZA, Dubai Silicon Oasis, Дубай, ОАЭ'},
   mapsQuery:'IFZA Dubai Silicon Oasis UAE',
 };
@@ -26,7 +26,7 @@ const analyticsProvider = String(import.meta.env.ANALYTICS_PROVIDER ?? '').trim(
 export const ANALYTICS = {
   provider:(analyticsProvider === 'ga4' || analyticsProvider === 'plausible' || analyticsProvider === 'none'
     ? analyticsProvider : gaMeasurementId ? 'ga4' : plausibleDomain ? 'plausible' : 'none') as 'plausible'|'ga4'|'none',
-  domain:plausibleDomain || 'alanapire.ae',measurementId:gaMeasurementId,
+  domain:plausibleDomain || 'alanpire.ae',measurementId:gaMeasurementId,
 };
 // No hardcoded analytics credentials. Retained only for compatibility with unused legacy imports.
 export const CUSTOMERIO = { writeKey: String(import.meta.env.CIO_WRITE_KEY ?? '').trim() };

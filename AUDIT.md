@@ -73,7 +73,7 @@ Impact and effort are planning judgments, **not** estimated conversion uplift. I
 |---:|---|---:|---|---|
 | 1 | Configure and verify real enquiry delivery | 5 | S–M | Replace `your-id` securely; approved test reaches intended inbox; honest success/error feedback; record outcome, not just submit clicks |
 | 2 | Correct canonical, sitemap, hreflang and schema host | 5 | S–M | Confirm preferred domain ownership/DNS and redirects; every canonical URL resolves and is indexable; crawl all 48 again |
-| 3 | Separate service groupings from licence activities; remove unsupported government-parent relationship | 5 | S + owner verification | Heading no longer says four separately licensed activities; use approved licence wording; DIEZ not declared parent absent actual ownership evidence |
+| 3 | Separate service groupings from licence activities; remove the unsupported government-parent relationship | 5 | S + owner verification | Use the approved licence wording; IFZA is not represented as a parent organization |
 | 4 | Replace the privacy/terms shells and link privacy from the form | 5 | M / legal dependent | Reviewed text describes actual processing and providers; inline privacy text is a real link. Do not invent retention periods or legal basis |
 | 5 | Surface existing leadership and verifiable credentials | 4 | S–M | Link Team from About/nav; approved biographies, roles, licence evidence and redacted reference extracts. Client logos/testimonials only with permission |
 | 6 | Make mobile contact reachable from the menu | 4 | S | Visible “Discuss your project” item below 640px; keyboard-operable menu with localized label, Escape close and clear focus |
@@ -91,8 +91,8 @@ WhatsApp is a useful secondary option if a monitored business number and privacy
 **Incorrect or risky:**
 
 - Live root is `alanpire.ae`; canonical/hreflang/sitemap/JSON-LD identity uses `alanapire.ae`. [DNS observation](evidence/dns.json) shows only the former resolved here. Check authoritative DNS and Search Console before deploying the hostname correction. Do not assume both domains belong to the same owner.
-- Rendered schema uses `@type: ["Organization","ProfessionalService"]`, then `parentOrganization: {"@type":"GovernmentOrganization","name":"Dubai Integrated Economic Zones Authority (DIEZ)"}`. A licensing authority is not necessarily a parent company. Remove unless verified. `ProfessionalService` alone does not certify engineering authority.
-- Schema contains precise geo coordinates alongside a generic DIEZ address. Coordinates were **not** verified against a real office; confirm or omit them.
+- The inspected earlier schema added an unverified government authority as `parentOrganization`. A licensing authority is not a parent company; the rewritten schema omits that unsupported relationship.
+- The earlier schema included precise geo coordinates alongside a non-specific authority address. Coordinates were **not** verified against a real office; the rewritten schema omits them.
 - AR/RU comparison-detail shells have **no H1** and are nonetheless in the sitemap. English has substantial comparison text; these are not equivalent translations.
 - [Alternatives](https://alanpire.ae/en/compare/alternatives/) uses “10 Best…” and numbered recommendations without a published scoring method. Sources are listed broadly, not attached to individual competitor claims. Do not republish rankings as independent research.
 - Legal names can differ from public branding. Use `legalName` for the registered name and a verified public `name`/`alternateName` policy. Do not change registration spelling on editorial grounds.

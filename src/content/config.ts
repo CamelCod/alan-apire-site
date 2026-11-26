@@ -1,7 +1,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { LOCALES } from '../i18n/config';
 
-// 10 project case studies per the Lean MVP quote (Phase 5).
+// Only cases with approved sources, scope, role and year can generate public routes.
 export const projects = defineCollection({
   type: 'content',
   schema: ({ image }) =>
@@ -11,6 +11,8 @@ export const projects = defineCollection({
       sector: z.string().optional(),
       service: z.string().optional(),
       year: z.string().optional(),
+      scope: z.string().optional(),
+      role: z.string().optional(),
       location: z.string().optional(),
       cover: image().optional(),
       coverAlt: z.string().optional(),
