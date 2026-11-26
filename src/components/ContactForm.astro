@@ -6,7 +6,7 @@ interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const c = PARTNER_COPY[locale].form;
 const endpoint = partnerEndpoint(import.meta.env.FORMSPREE_ENDPOINT);
-const fieldLabels = {firm:c.firm,email:c.email,licence_category:c.licence,project_type:c.project,timeline:c.timeline,message:c.message,nda_requested:c.nda,capability_brief:c.capability,document_exchange:c.files,consent:c.consent};
+const fieldLabels = {email:c.email,project_type:c.project,project_location:c.location,timeline:c.timeline,message:c.message,nda_requested:c.nda,capability_brief:c.capability,consent:c.consent};
 ---
 <form
   action={endpoint ?? undefined} method="post" data-partner-form
@@ -16,20 +16,18 @@ const fieldLabels = {firm:c.firm,email:c.email,licence_category:c.licence,projec
   class="grid gap-6"
 >
   <div class="grid gap-6 sm:grid-cols-2">
-    <label class="grid gap-2 font-medium">{c.firm}<input name="firm" autocomplete="organization" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
-    <label class="grid gap-2 font-medium">{c.email}<input type="email" name="email" autocomplete="email" dir="ltr" required maxlength="254" class="w-full rounded border border-[#64748b] bg-white px-3 py-3 text-start" /></label>
-    <label class="grid gap-2 font-medium">{c.licence}<input name="licence_category" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
     <label class="grid gap-2 font-medium">{c.project}<input name="project_type" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.location}<input name="project_location" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.timeline}<input name="timeline" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.email}<input type="email" name="email" autocomplete="email" dir="ltr" required maxlength="254" class="w-full rounded border border-[#64748b] bg-white px-3 py-3 text-start" /></label>
   </div>
-  <label class="grid gap-2 font-medium">{c.timeline}<input name="timeline" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
   <label class="grid gap-2 font-medium" for="partner-message">{c.message}</label>
-  <textarea id="partner-message" name="message" rows="5" required minlength="10" maxlength="3000" aria-describedby="partner-summary-hint" class="-mt-4 w-full rounded border border-[#64748b] bg-white px-3 py-3"></textarea>
+  <textarea id="partner-message" name="message" rows="4" maxlength="2000" aria-describedby="partner-summary-hint" class="-mt-4 w-full rounded border border-[#64748b] bg-white px-3 py-3"></textarea>
   <p id="partner-summary-hint" class="-mt-3 text-sm text-[#475569]">{c.hint}</p>
   <fieldset class="grid gap-4">
     <legend class="sr-only">{c.sendHint}</legend>
     <label class="flex items-start gap-3"><input type="checkbox" name="nda_requested" value="requested" class="mt-1 h-5 w-5 shrink-0" /><span>{c.nda} <span class="text-sm text-[#475569]">({c.optional})</span></span></label>
     <label class="flex items-start gap-3" id="capability-request"><input type="checkbox" name="capability_brief" value="requested" class="mt-1 h-5 w-5 shrink-0" /><span>{c.capability} <span class="text-sm text-[#475569]">({c.optional})</span></span></label>
-    <label class="flex items-start gap-3"><input type="checkbox" name="document_exchange" value="requested" class="mt-1 h-5 w-5 shrink-0" /><span>{c.files} <span class="text-sm text-[#475569]">({c.optional})</span></span></label>
   </fieldset>
   <label class="flex items-start gap-3"><input type="checkbox" name="consent" value="agreed" required class="mt-1 h-5 w-5 shrink-0" /><span>{c.consent} <a class="font-medium text-[#0b4ea2] underline" href={`/${locale}/privacy/`}>{c.privacy}</a>.</span></label>
   {!endpoint && <p class="border-s-4 border-[#0b4ea2] bg-white p-4 text-sm">{c.fallback}</p>}
@@ -38,7 +36,8 @@ const fieldLabels = {firm:c.firm,email:c.email,licence_category:c.licence,projec
     <button type={endpoint ? 'submit' : 'button'} data-enquiry-button class="btn-primary">{endpoint ? c.submit : c.emailAction}</button>
     <a href={`mailto:${BRAND.email}`} class="font-medium text-[#0b4ea2] underline">{c.directEmail}</a>
   </div>
-  <noscript><p>{c.fallback} <a href={`mailto:${BRAND.email}`} class="underline">{c.directEmail}</a></p></noscript>
+  <p class="text-sm text-[#475569]">{c.replyPromise}</p>
+  <noscript><p><a href={`mailto:${BRAND.email}`} class="underline">{c.directEmail}</a></p></noscript>
 </form>
 <script>
   import { sendPartnerEnquiry, enquiryMailto } from '../lib/partner-form';
@@ -58,6 +57,7 @@ const fieldLabels = {firm:c.firm,email:c.email,licence_category:c.licence,projec
       status.textContent = form.dataset.sending ?? '';
       try {
         await sendPartnerEnquiry(form.dataset.endpoint, data);
+        form.dispatchEvent(new Event('partner:accepted'));
         status.textContent = form.dataset.success ?? '';
         form.reset();
       } catch {
@@ -71,7 +71,7 @@ const fieldLabels = {firm:c.firm,email:c.email,licence_category:c.licence,projec
     function applyBriefIntent() {
       if (window.location.hash !== '#capability-request') return;
       const input = form.querySelector<HTMLInputElement>('[name="capability_brief"]');
-      if (input) { input.checked = true; input.focus({preventScroll:true}); }
+      if (input) { const changed=!input.checked; input.checked = true; if(changed)input.dispatchEvent(new Event('change',{bubbles:true})); input.focus({preventScroll:true}); }
     }
     window.addEventListener('hashchange',applyBriefIntent);
     applyBriefIntent();

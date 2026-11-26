@@ -78,7 +78,7 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
     <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap.xml" />
     {page === 'home' && (
-      <link rel="preload" as="image" href="/brand/partner-network.webp" type="image/webp" fetchpriority="high" />
+      <link rel="preload" as="image" href="/brand/partner-workflow-1280.webp" imagesrcset="/brand/partner-workflow-480.webp 480w, /brand/partner-workflow-768.webp 768w, /brand/partner-workflow-1280.webp 1280w" imagesizes="(min-width:1024px) 50vw, 100vw" type="image/webp" fetchpriority="high" />
     )}
     <slot name="head" />
 
