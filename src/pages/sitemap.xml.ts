@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { LOCALES, LOCALE_META, SITE_URL } from '../i18n/config';
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import { isPublishedCase } from '../lib/case-publication';
 
 // Per-page priority and changefreq signals for crawl budget guidance.
 // lastmod is set to the build date so Bing/Yandex can detect updates.
@@ -32,7 +33,7 @@ export const GET: APIRoute = async ({ site }) => {
   const lastmod = new Date().toISOString().split('T')[0];
   const pages: SitemapRow[] = [];
 
-  const pageKeys = Object.keys(PAGES) as PageKey[];
+  const pageKeys: PageKey[] = ['home','about','services','projects','partner','contact','privacy','terms'];
   for (const page of pageKeys) {
     const meta = PAGE_META[page] ?? { priority: '0.5', changefreq: 'monthly' };
     const alternates = LOCALES.map((l) => ({
@@ -49,7 +50,7 @@ export const GET: APIRoute = async ({ site }) => {
     }
   }
 
-  const projects = await getCollection('projects', (e) => e.data.order < 99);
+  const projects = await getCollection('projects', (e) => isPublishedCase(e.data));
   const byKey = new Map<string, typeof projects>();
   for (const project of projects) {
     const list = byKey.get(project.data.translationKey) ?? [];
