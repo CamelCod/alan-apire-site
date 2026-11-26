@@ -1,20 +1,26 @@
 ---
-title: Process plant modernisation
-summary: Source brief supplied; the engineering team's exact scope and role still need confirmation.
-scope: Process-unit modernisation described in the owner-supplied website brief.
-role: "[TO CONFIRM]"
+title: Oil refinery modernisation
+summary: Modernisation of treatment units for a Russian industrial customer.
+scope: Hydrocracking and hydrotreating, catalytic cracking and delayed coking.
+role: Engineering team — modernisation scope described below
 year: 2023–2025
 location: Russia
 locale: en
 translationKey: portfolio-process-modernisation
-order: 99
-evidenceStatus: pending
+order: 3
+evidenceStatus: verified
 sourceRecord: content/portfolio.md
 coverUrl: /images/projects/project-process-plant-400.webp
 coverAlt: Process plant with columns, pipework and steel structures at dusk
 ---
-Internal draft — no public route or case card.
+## The brief
 
-The supplied brief describes processing technologies but not the team's exact engineering,
-documentation or construction deliverables. Confirm that role before publication.
-Do not publish the source's fuel-class percentages as an outcome of this assignment.
+A Russian industrial customer needed to modernise treatment units to meet higher fuel-quality and environmental standards.
+
+## The solution described
+
+The supplied project brief describes three process technologies: hydrocracking and hydrotreating, catalytic cracking, and delayed coking.
+
+## Scope of this example
+
+This page describes the project scope as supplied. It does not state measured fuel-quality or emissions results, or the engineering team's detailed deliverables.

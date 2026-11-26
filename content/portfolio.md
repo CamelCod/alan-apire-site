@@ -15,8 +15,8 @@ construction, operating results, commissioning or legal authority**. No private 
 |---|---|---|---|---|
 | `portfolio-pumping-station` | 18–38 | 2025–2026 / Russia | Design of a pressure-reducing pumping station for heat-transfer fluid | Source-supported design case; no operating-performance promise |
 | `portfolio-water-supply` | 42–76 | 2024–2025 / Russia | Design for technical re-equipment of trunk/local water supply networks; 400 mm HDPE pipe specification | Source-supported design case; no measured savings, water-quality guarantee or capacity claim |
-| `portfolio-process-modernisation` | 80–102 | 2023–2025 / Russia | [TO CONFIRM] exact team role and deliverables; process descriptions do not identify engineering versus construction responsibility | Hidden |
-| `portfolio-wastewater-treatment` | 106–158 | 2023–2025 / Russia | [TO CONFIRM] exact team role and deliverables | Hidden |
+| `portfolio-process-modernisation` | 80–99 | 2023–2025 / Russia | Process technologies named in the owner brief; detailed team deliverable not stated | Owner-requested scope-only case; fuel-class result withheld |
+| `portfolio-wastewater-treatment` | 106–143 | 2023–2025 / Russia | Treatment stages named in the owner brief; detailed team deliverable not stated | Owner-requested scope-only case; savings and outcome claims withheld |
 
 The source describes a tender process. That is not necessary to explain the engineering
 contribution, so it is omitted from public case copy. Anonymous customer sectors are retained.
