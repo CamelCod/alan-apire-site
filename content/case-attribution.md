@@ -1,14 +1,18 @@
 ---
-status: pending
-public_use: withheld
+status: verified
+public_use: approved
 ---
-# Attribution record — [TO CONFIRM]
+# Attribution record — owner-supplied website brief
 
-No case has approved scope, role, year and entity attribution yet. Use only anonymized
-customer descriptions in approved records. Never add client names or private contracts.
+Source: `projects-website-en_1795729700311.md`, line 3. The owner explicitly requested use of
+this file for the project case studies. Anonymous sectors, design scope and years for the
+first two cases are stated in lines 18–76. The remaining two cases stay hidden pending
+an exact statement of the engineering team's role.
 
-Required English case attribution, once supported:
+Required English case attribution:
 “Experience of the engineering team through OOO Energodiagnostika.
 Not contracts awarded to the UAE entity.”
 
-This draft does not confirm an agency, ownership, exclusive relationship or past UAE contract.
+This record confirms only the **owner-provided editorial attribution**. It does not establish
+an agency appointment, corporate control, exclusivity, credentials or a past UAE contract.
+Named relationship/representation wording still requires the separate authorization review.

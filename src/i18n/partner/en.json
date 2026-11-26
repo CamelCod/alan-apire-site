@@ -43,7 +43,7 @@
     {"title":"Waste management and environmental infrastructure","text":"Explore the technical support your waste project may need. This is a capability, not a past UAE project."},
     {"title":"Environmental studies and impact documentation","text":"Set out the environmental information your project needs before agreeing the work."}
   ],
-  "deliverablesNote":"We confirm deliverables in writing before starting. Project-specific deliverable lists await approved portfolio records.",
+  "deliverablesNote":"We confirm deliverables in writing before starting. Examples come only from approved project records.",
   "authorityNote":"A licensed UAE partner handles stamping, authority submissions and NOCs where required.",
   "accreditationNote":"We confirm any required specialist accreditation before accepting the work.",
   "benefitsTitle":"Why work through Alanpire",
@@ -61,7 +61,7 @@
   "held":"Licensed partner responsibilities",
   "exclusionsTitle":"What we do not do",
   "exclusions":["We do not stamp documents.","We do not issue authority approvals.","We do not obtain NOCs directly."],
-  "illustrative":"Illustrative — not a real project drawing or photograph.",
+  "illustrative":"Illustrative image",
   "visualAlt":"Illustrative workflow: Dubai contact, technical team, document delivery.",
   "experienceLink":"Read the project-experience note",
   "form":{
@@ -99,7 +99,7 @@
   "phoneLabel":"Telephone",
   "location":"Dubai, UAE",
   "scopeLabel":"Scope",
-  "roleLabel":"Attribution",
+  "roleLabel":"Team role",
   "yearLabel":"Year / period",
   "caseAction":"Discuss a similar project"
 }

@@ -1,12 +1,12 @@
 import { sourceApproved } from './approved-content';
 
 export const PORTFOLIO_CASE_KEYS = [
-  'portfolio-thermal-network','portfolio-boiler-plant','portfolio-remediation',
-  'portfolio-water-sewerage','portfolio-environmental-impact',
+  'portfolio-pumping-station','portfolio-water-supply',
+  'portfolio-process-modernisation','portfolio-wastewater-treatment',
 ] as const;
 
 export function caseSourcesAvailable() {
-  return sourceApproved('portfolio.md') && sourceApproved('case-attribution.md') && sourceApproved('authorisation.md');
+  return sourceApproved('portfolio.md') && sourceApproved('case-attribution.md');
 }
 
 /** Fail closed at cards, detail routing and sitemap, including guessed draft URLs. */

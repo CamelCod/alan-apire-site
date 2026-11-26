@@ -18,7 +18,7 @@ function approvedJson(name:RecordName) {
   } catch { return null; }
 }
 export function approvedPortfolio() {
-  return sourceApproved('authorisation.md') ? approvedJson('portfolio.md') : null;
+  return approvedJson('portfolio.md');
 }
 export function approvedTeam():Array<{name:string;roles:Record<'en'|'ar'|'ru',string>}> {
   const data=approvedJson('team-approved.md');

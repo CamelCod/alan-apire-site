@@ -15,6 +15,12 @@ export const projects = defineCollection({
       role: z.string().optional(),
       location: z.string().optional(),
       cover: image().optional(),
+      coverUrl: z.enum([
+        '/images/projects/project-pump-room-400.webp',
+        '/images/projects/project-power-plant-400.webp',
+        '/images/projects/project-process-plant-400.webp',
+        '/images/projects/project-clarifier-400.webp',
+      ]).optional(),
       coverAlt: z.string().optional(),
       coverCaption: z.string().optional(),
       datePublished: z.string().optional(),

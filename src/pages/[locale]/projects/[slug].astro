@@ -24,10 +24,16 @@ const altPaths = Object.fromEntries(siblings.map(entry => [entry.data.locale,`/$
       <p class="category-tag">{c.done}</p>
       <h1 class="mt-4">{d.title}</h1>
       <p class="mt-5 text-lg text-[#475569]">{d.summary}</p>
+      <p class="mt-5">{c.scopeLabel}: {d.scope}</p>
+      <p class="mt-3">{c.roleLabel}: {d.role}</p>
       <p class="mt-6 border-s-4 border-[#0b4ea2] bg-white p-5">{c.attribution}</p>
-      {d.year && <p class="mt-5">{c.yearLabel}: <bdi>{d.year}</bdi></p>}
-      {d.cover && <figure class="mt-8 border border-[#e2e5eb] bg-white">
-        <Image src={d.cover} alt={d.coverAlt ?? d.title} widths={[480,768,1200]} sizes="(max-width:767px) 100vw, 900px" format="webp" class="h-auto w-full" />
+      {d.year && <p class="mt-5">{d.location} · {c.yearLabel}: <bdi>{d.year}</bdi></p>}
+      {d.coverUrl && <figure class="mt-8 max-w-[400px] border border-[#e2e5eb] bg-white">
+        <img src={d.coverUrl} alt={d.coverAlt ?? ''} width="400" height="225" decoding="async" class="h-auto w-full" />
+        <figcaption class="p-4 text-sm text-[#475569]">{c.illustrative}</figcaption>
+      </figure>}
+      {!d.coverUrl && d.cover && <figure class="mt-8 max-w-[400px] border border-[#e2e5eb] bg-white">
+        <Image src={d.cover} alt={d.coverAlt ?? d.title} widths={[320,400]} sizes="(max-width:440px) calc(100vw - 40px), 400px" format="webp" class="h-auto w-full" />
         <figcaption class="p-4 text-sm text-[#475569]">{c.illustrative}</figcaption>
       </figure>}
       <div class="prose-tight mt-10 space-y-6"><Content /></div>
@@ -35,7 +41,7 @@ const altPaths = Object.fromEntries(siblings.map(entry => [entry.data.locale,`/$
       <p class="mt-4">{c.authorityNote}</p>
       <p class="category-tag mt-8">{c.held}</p>
       <p class="mt-4">{c.legalBoundary}</p>
-      <div class="mt-10 flex flex-wrap gap-4"><a class="btn-primary" href="#partner-form">{c.primary}</a><a class="btn-outline" href="#capability-request">{c.brief}</a></div>
+      <div class="mt-10 flex flex-wrap gap-4"><a class="btn-primary" data-partner-cta="discussion" href="#partner-form">{c.primary}</a><a class="btn-outline" data-partner-cta="brief" href="#capability-request">{c.brief}</a></div>
     </div>
   </section>
   <section class="section border-t border-[#e2e5eb]" id="partner-form">
