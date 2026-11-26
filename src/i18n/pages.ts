@@ -11,6 +11,7 @@ const I18N = { en, ar, ru } as const;
 export type PageKey =
   | 'home'
   | 'partner'
+  | 'outreach'
   | 'about'
   | 'services'
   | 'industries'
@@ -38,6 +39,11 @@ export const PAGE_ORDER: PageKey[] = [
 type Localized = Record<Locale, { label: string; title: string; description: string }>;
 
 export const PAGES: Record<PageKey, Localized> = {
+  outreach: {
+    en: { label: PARTNER_COPY.en.brief, title: 'Partner capability brief | Alanpire', description: PARTNER_COPY.en.pages.home.summary },
+    ar: { label: PARTNER_COPY.ar.brief, title: 'ملف القدرات للشركاء | ألانباير', description: PARTNER_COPY.ar.pages.home.summary },
+    ru: { label: PARTNER_COPY.ru.brief, title: 'Возможности для партнёров | Alanpire', description: PARTNER_COPY.ru.pages.home.summary },
+  },
   partner: {
     en: { label: PARTNER_COPY.en.nav.partner, title: `${PARTNER_COPY.en.pages.partner.title} | Alanpire`, description: PARTNER_COPY.en.pages.partner.summary },
     ar: { label: PARTNER_COPY.ar.nav.partner, title: `${PARTNER_COPY.ar.pages.partner.title} | ألانباير`, description: PARTNER_COPY.ar.pages.partner.summary },
@@ -115,6 +121,7 @@ export function t(locale: Locale, page: PageKey) {
 }
 
 const PAGE_SEGMENTS: Record<PageKey, string | null> = {
+  outreach: 'outreach',
   partner: 'partner',
   home: null,
   about: 'about',
