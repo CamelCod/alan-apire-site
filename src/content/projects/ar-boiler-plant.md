@@ -5,7 +5,9 @@ sector: توليد الطاقة والكهرباء
 service: وثائق مرحلة التصميم والمسوحات الهندسية
 year: "مرحلة التصميم"
 location: مرفق بلدي، أوراسيا
-cover: ./boiler-plant-cover.jpg
+cover: ./boiler-plant-illustration.png
+coverAlt: "رسم توضيحي لوحدتي غلايات صناعيتين متصلتين بأنابيب الإمداد والعودة."
+coverCaption: "رسم توضيحي تحريري، وليس صورة للمشروع أو مخططاً هندسياً."
 order: 1
 locale: ar
 translationKey: autonomous-boiler-plant

@@ -7,6 +7,9 @@ year: "Рабочее проектирование"
 location: Муниципальная инфраструктура, Евразия
 order: 2
 locale: ru
+cover: ./water-supply-illustration.png
+coverAlt: "Иллюстрация подземного водовода с основанием траншеи и запорным клапаном."
+coverCaption: "Редакционная иллюстрация, не фотография объекта и не инженерный чертёж."
 translationKey: water-transmission-renewal
 datePublished: '2026-11-20'
 dateModified: '2026-11-23'
@@ -16,7 +19,6 @@ figures:
   - "DN300 PE"
   - "8.4 km"
   - "2.4 bar"
-missingAssetNote: "Требуемый материал: план трассировки водовода"
 ---
 
 ## Контекст проекта

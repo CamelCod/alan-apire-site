@@ -5,7 +5,9 @@ sector: District Heating & Thermal Utilities
 service: Detailed Design & Hydraulic Modelling
 year: "Design Stage"
 location: Industrial Research Campus, Eurasia
-cover: ./thermal-network-cover.jpg
+cover: ./thermal-network-illustration.png
+coverAlt: "Illustration of twin district-heating pipes, expansion loops and isolation valves."
+coverCaption: "Editorial illustration, not a project photograph or engineering drawing."
 order: 0
 locale: en
 translationKey: thermal-distribution-network

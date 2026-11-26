@@ -1,0 +1,1232 @@
+[
+  {
+    "url": "https://alanpire.ae/ar",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/about",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/careers",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/compare",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/compare/alan-apire-vs-rpm-consultants-vs-ahpmc",
+    "jsonld": [
+      {
+        "@type": "FAQPage"
+      },
+      {
+        "@type": "BreadcrumbList"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/compare/alternatives",
+    "jsonld": [
+      {
+        "@type": "ItemList",
+        "name": "Best Project Management Consultancy Alternatives in Dubai 2026"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/contact",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/industries",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/privacy",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/projects",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/projects/ar-boiler-plant",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/projects/ar-thermal-network",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/projects/ar-water-supply",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/services",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/team",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ar/terms",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/about",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/careers",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/compare",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/compare/alan-apire-vs-rpm-consultants-vs-ahpmc",
+    "jsonld": [
+      {
+        "@type": "FAQPage"
+      },
+      {
+        "@type": "BreadcrumbList"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/compare/alternatives",
+    "jsonld": [
+      {
+        "@type": "ItemList",
+        "name": "Best Project Management Consultancy Alternatives in Dubai 2026"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/contact",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/industries",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/privacy",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/projects",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/projects/en-boiler-plant",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/projects/en-thermal-network",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/projects/en-water-supply",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/services",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/team",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/en/terms",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/about",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/careers",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/compare",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/compare/alan-apire-vs-rpm-consultants-vs-ahpmc",
+    "jsonld": [
+      {
+        "@type": "FAQPage"
+      },
+      {
+        "@type": "BreadcrumbList"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/compare/alternatives",
+    "jsonld": [
+      {
+        "@type": "ItemList",
+        "name": "Best Project Management Consultancy Alternatives in Dubai 2026"
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/contact",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/industries",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/privacy",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/projects",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/projects/ru-boiler-plant",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/projects/ru-thermal-network",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/projects/ru-water-supply",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/services",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/team",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  },
+  {
+    "url": "https://alanpire.ae/ru/terms",
+    "jsonld": [
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://alanapire.ae/#organization",
+        "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
+        "url": "https://alanapire.ae",
+        "logo": "https://alanapire.ae/brand/logo-mark.svg",
+        "image": "https://alanapire.ae/brand/og-default.png",
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1985,
+          "longitude": 55.2721
+        }
+      }
+    ]
+  }
+]

@@ -5,7 +5,9 @@ sector: Energy & Power Generation
 service: Design Documentation & Engineering Surveys
 year: "Design Stage"
 location: Municipal Utility, Eurasia
-cover: ./boiler-plant-cover.jpg
+cover: ./boiler-plant-illustration.png
+coverAlt: "Illustration of two industrial boiler units connected to supply and return pipework."
+coverCaption: "Editorial illustration, not a project photograph or engineering drawing."
 order: 1
 locale: en
 translationKey: autonomous-boiler-plant

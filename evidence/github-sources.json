@@ -1,0 +1,103 @@
+{
+  "checked": "2026-11-26",
+  "repositories": [
+    {
+      "repo": "anthropics/skills",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "lastCommit": "2026-11-16T14:22:47Z",
+      "files": [
+        {
+          "path": "skills/frontend-design/SKILL.md",
+          "status": 200
+        },
+        {
+          "path": "skills/frontend-design/LICENSE.txt",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "lastCommit": "2026-11-20T19:19:46Z",
+      "files": [
+        {
+          "path": "skills/web-design-guidelines/SKILL.md",
+          "status": 200
+        },
+        {
+          "path": "skills/writing-guidelines/SKILL.md",
+          "status": 200
+        },
+        {
+          "path": "README.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "commit": "8fd2fcade2fd6629026e9dfe6d133b55b36968b9",
+      "lastCommit": "2026-11-23T21:00:55Z",
+      "files": [
+        {
+          "path": "skills/copywriting/SKILL.md",
+          "status": 200
+        },
+        {
+          "path": "LICENSE",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "repo": "alphagov/govuk-design-system",
+      "commit": "0c6de5736a4e755a3808fb31d3a7723a33b7c705",
+      "lastCommit": "2026-11-26T11:08:18Z",
+      "files": [
+        {
+          "path": "src/components/button/index.md",
+          "status": 200
+        },
+        {
+          "path": "LICENSE",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "repo": "thenisaid/krds-ux-writing",
+      "commit": "ba286e065f7cb1f27019db3e1518466ac60fe2b0",
+      "lastCommit": "2026-11-25T23:23:13Z",
+      "files": [
+        {
+          "path": "README.md",
+          "status": 200
+        },
+        {
+          "path": "LICENSE",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "repo": "teejayfamo/ux-copywriting-skill",
+      "commit": "e66c262049e855e9119cfb9b9988093efa88240a",
+      "lastCommit": "2026-02-07T15:20:56Z",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "status": 200
+        },
+        {
+          "path": "references/ux-copywriting-guide.md",
+          "status": 200
+        },
+        {
+          "path": "LICENSE",
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

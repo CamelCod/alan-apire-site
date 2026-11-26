@@ -5,7 +5,9 @@ sector: Энергетика и генерация
 service: Проектная документация и инженерные изыскания
 year: "Стадия проектирования"
 location: Муниципальное предприятие, Евразия
-cover: ./boiler-plant-cover.jpg
+cover: ./boiler-plant-illustration.png
+coverAlt: "Иллюстрация двух промышленных котлов с подающим и обратным трубопроводами."
+coverCaption: "Редакционная иллюстрация, не фотография объекта и не инженерный чертёж."
 order: 1
 locale: ru
 translationKey: autonomous-boiler-plant

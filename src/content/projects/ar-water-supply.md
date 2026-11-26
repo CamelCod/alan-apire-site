@@ -7,6 +7,9 @@ year: "التصميم الهندسي"
 location: بنية تحتية بلدية، أوراسيا
 order: 2
 locale: ar
+cover: ./water-supply-illustration.png
+coverAlt: "رسم توضيحي لخط مياه مدفون مع فرشة الخندق وصمام عزل."
+coverCaption: "رسم توضيحي تحريري، وليس صورة للمشروع أو مخططاً هندسياً."
 translationKey: water-transmission-renewal
 datePublished: '2026-11-20'
 dateModified: '2026-11-23'
@@ -16,7 +19,6 @@ figures:
   - "DN300 PE"
   - "8.4 km"
   - "2.4 bar"
-missingAssetNote: "الأصل المطلوب: مخطط محاذاة المسار"
 ---
 
 ## سياق المشروع

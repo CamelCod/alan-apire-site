@@ -1,0 +1,44 @@
+[
+  {
+    "repo": "anthropics/skills",
+    "file": "skills/frontend-design/SKILL.md",
+    "sha": "41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f",
+    "date": "2026-09-03T16:37:13Z",
+    "url": "https://github.com/anthropics/skills/commit/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f"
+  },
+  {
+    "repo": "vercel-labs/agent-skills",
+    "file": "skills/web-design-guidelines/SKILL.md",
+    "sha": "53b6e3ddf96b3fa83af97b1783ed805b582ad3a7",
+    "date": "2026-11-09T15:58:21Z",
+    "url": "https://github.com/vercel-labs/agent-skills/commit/53b6e3ddf96b3fa83af97b1783ed805b582ad3a7"
+  },
+  {
+    "repo": "coreyhaines31/marketingskills",
+    "file": "skills/copywriting/SKILL.md",
+    "sha": "7944be5ee2fa008f17c0aa9e7ee948491238f206",
+    "date": "2026-11-18T01:09:24Z",
+    "url": "https://github.com/coreyhaines31/marketingskills/commit/7944be5ee2fa008f17c0aa9e7ee948491238f206"
+  },
+  {
+    "repo": "alphagov/govuk-design-system",
+    "file": "src/components/button/index.md",
+    "sha": "97cce6cb3cd64b16a40e2e7d6da54ebb21c1b527",
+    "date": "2026-10-08T14:48:29Z",
+    "url": "https://github.com/alphagov/govuk-design-system/commit/97cce6cb3cd64b16a40e2e7d6da54ebb21c1b527"
+  },
+  {
+    "repo": "thenisaid/krds-ux-writing",
+    "file": "README.md",
+    "sha": "7c98153843d3d73f7bb9a95eb2058115989d5668",
+    "date": "2026-08-27T10:23:35Z",
+    "url": "https://github.com/thenisaid/krds-ux-writing/commit/7c98153843d3d73f7bb9a95eb2058115989d5668"
+  },
+  {
+    "repo": "teejayfamo/ux-copywriting-skill",
+    "file": "SKILL.md",
+    "sha": "e66c262049e855e9119cfb9b9988093efa88240a",
+    "date": "2026-02-07T15:20:56Z",
+    "url": "https://github.com/teejayfamo/ux-copywriting-skill/commit/e66c262049e855e9119cfb9b9988093efa88240a"
+  }
+]

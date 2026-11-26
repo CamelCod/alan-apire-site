@@ -5,7 +5,9 @@ sector: التدفئة المركزية والمرافق الحرارية
 service: التصميم التفصيلي والنمذجة الهيدروليكية
 year: "مرحلة التصميم"
 location: مجمع أبحاث صناعي، أوراسيا
-cover: ./thermal-network-cover.jpg
+cover: ./thermal-network-illustration.png
+coverAlt: "رسم توضيحي لخطي تدفئة مركزية وحلقات تعويض التمدد وصمامات العزل."
+coverCaption: "رسم توضيحي تحريري، وليس صورة للمشروع أو مخططاً هندسياً."
 order: 0
 locale: ar
 translationKey: thermal-distribution-network

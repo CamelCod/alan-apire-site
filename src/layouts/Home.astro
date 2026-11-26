@@ -129,16 +129,21 @@ const readCaseLabel = locale === 'ar' ? 'عرض الحالة' : locale === 'ru' 
           <article class="card flex flex-col justify-between overflow-hidden p-0 group">
             {/* 16:10 Card Image Area */}
             {p.data.cover ? (
-              <a href={`/${locale}/projects/${p.slug}`} aria-label={readCaseLabel} class="block aspect-[16/10] overflow-hidden bg-[#faf9f6] border-b border-[#e2e5eb]">
+              <figure>
+              <a href={`/${locale}/projects/${p.slug}`} aria-label={`${readCaseLabel}: ${p.data.title}`} class="block aspect-[16/10] overflow-hidden bg-[#faf9f6] border-b border-[#e2e5eb]">
                 <Image
                   src={p.data.cover}
-                  alt={p.data.title}
+                  alt={p.data.coverAlt ?? p.data.title}
+                  widths={[480, 768, 1200]}
+                  sizes="(max-width: 767px) 100vw, 33vw"
                   format="webp"
                   quality={80}
                   loading="lazy"
                   class="h-full w-full object-cover transition-colors duration-200"
                 />
               </a>
+              {p.data.coverCaption && <figcaption class="px-6 pt-3 text-sm leading-relaxed text-[#475569]">{p.data.coverCaption}</figcaption>}
+              </figure>
             ) : (
               /* Deliberate Text-Led Layout for Missing Asset */
               <div class="aspect-[16/10] p-6 flex flex-col justify-between bg-[#faf9f6] border-b border-[#e2e5eb]">

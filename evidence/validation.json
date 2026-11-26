@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-26",
+  "scope": "Compiler and content checks, not an exact-lock production build or browser test",
+  "checks": [
+    {
+      "check": "Astro compiler transform: src/layouts/Home.astro",
+      "passed": true
+    },
+    {
+      "check": "Astro compiler transform: src/layouts/ProjectsIndex.astro",
+      "passed": true
+    },
+    {
+      "check": "Astro compiler transform: src/pages/[locale]/projects/[slug].astro",
+      "passed": true
+    },
+    {
+      "check": "design skill metadata and required sections",
+      "passed": true
+    },
+    {
+      "check": "writing skill metadata and required sections",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/en-thermal-network.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/en-boiler-plant.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/en-water-supply.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ar-thermal-network.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ar-boiler-plant.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ar-water-supply.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ru-thermal-network.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ru-boiler-plant.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    },
+    {
+      "check": "src/content/projects/ru-water-supply.md: cover, translated alt/caption and image dimensions",
+      "passed": true
+    }
+  ]
+}

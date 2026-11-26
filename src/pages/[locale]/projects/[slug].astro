@@ -83,11 +83,11 @@ const LABELS = {
       </p>
 
       {/* Hero Image / Drawing Area */}
-      <div class="mt-10 overflow-hidden border border-[#e2e5eb] bg-white">
+      <figure class="mt-10 overflow-hidden border border-[#e2e5eb] bg-white">
         {d.cover ? (
           <Image
             src={d.cover}
-            alt={d.title}
+            alt={d.coverAlt ?? d.title}
             widths={[480, 768, 1200]}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
             format="webp"
@@ -114,7 +114,8 @@ const LABELS = {
             </p>
           </div>
         )}
-      </div>
+        {d.coverCaption && <figcaption class="p-4 text-sm leading-relaxed text-[#475569]">{d.coverCaption}</figcaption>}
+      </figure>
     </div>
   </section>
 

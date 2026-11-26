@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs><pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#213c50"/></pattern><pattern id="soil" width="22" height="22" patternUnits="userSpaceOnUse"><path d="m0 22 22-22" stroke="#4d6a72" stroke-width="1"/></pattern></defs>
+  <path fill="#0b1930" d="M0 0h1280v800H0z"/><path fill="url(#grid)" d="M0 0h1280v800H0z"/>
+  <path d="m140 450 620-290 380 170-620 290Z" fill="#395868" stroke="#91aaba" stroke-width="2"/>
+  <path d="M140 450v150l380 170V620Z" fill="#243f4c" stroke="#91aaba" stroke-width="2"/>
+  <path d="m520 620 620-290v150L520 770Z" fill="#1a3445" stroke="#91aaba" stroke-width="2"/>
+  <path d="m268 507 620-290 112 50-620 290Z" fill="#0a1d30" stroke="#91aaba" stroke-width="2"/>
+  <path d="m287 547 620-290 72 32-620 290Z" fill="#9f8b69"/>
+  <path d="m325 550 620-290" stroke="#081724" stroke-width="48"/>
+  <path d="m325 550 620-290" stroke="#70c3d8" stroke-width="33"/>
+  <path d="m325 543 620-290" stroke="#c2eaf0" stroke-width="4" opacity=".8"/>
+  <ellipse cx="325" cy="550" rx="19" ry="26" fill="#123b53" stroke="#a9e0e8" stroke-width="4" transform="rotate(-24 325 550)"/>
+  <g fill="#24495f" stroke="#a8c9d5" stroke-width="2"><path d="m600 401 42-20 42 19-42 20Z"/><path d="M600 401v69l42 19v-69Z"/><path d="m642 420 42-20v69l-42 20Z"/></g>
+  <path d="M642 412v-87" stroke="#e6b56d" stroke-width="9"/><ellipse cx="642" cy="321" rx="34" ry="14" fill="#0b1930" stroke="#e6b56d" stroke-width="6"/><path d="M642 307v28m-32-14h64" stroke="#e6b56d" stroke-width="3"/>
+  <path d="m140 480 142 64v121l-142-65Z" fill="url(#soil)"/>
+  <g fill="none" stroke="#91aaba" stroke-width="2" stroke-dasharray="6 8"><path d="m180 371 620-290"/><path d="M180 350v42m620-332v42"/><path d="m910 616 190-89v-97"/></g>
+  <g fill="#638678"><path d="M212 362v-62l35-17v63Z"/><path d="m195 298 39-83 38 48-25 29-35 17Z"/><path d="M1018 234v-60l35-17v62Z"/><path d="m1000 171 40-81 38 48-25 29-35 17Z"/></g>
+</svg>

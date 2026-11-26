@@ -5,6 +5,9 @@ sector: Water Infrastructure
 service: Hydraulic Modelling & Materials Selection
 year: "Engineering Design"
 location: Municipal Infrastructure, Eurasia
+cover: ./water-supply-illustration.png
+coverAlt: "Illustration of a buried water main with trench bedding and an isolation valve."
+coverCaption: "Editorial illustration, not a project photograph or engineering drawing."
 order: 2
 locale: en
 translationKey: water-transmission-renewal
@@ -16,7 +19,6 @@ figures:
   - "DN300 PE"
   - "8.4 km"
   - "2.4 bar"
-missingAssetNote: "Asset required: Route alignment drawing"
 ---
 
 ## Project Context

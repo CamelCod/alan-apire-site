@@ -5,7 +5,9 @@ sector: Тепловые сети и теплоснабжение
 service: Рабочая документация и гидравлический расчет
 year: "Стадия проектирования"
 location: Промышленный научный центр, Евразия
-cover: ./thermal-network-cover.jpg
+cover: ./thermal-network-illustration.png
+coverAlt: "Иллюстрация двухтрубной тепловой сети, компенсаторов и запорной арматуры."
+coverCaption: "Редакционная иллюстрация, не фотография объекта и не инженерный чертёж."
 order: 0
 locale: ru
 translationKey: thermal-distribution-network
