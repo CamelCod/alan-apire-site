@@ -18,6 +18,8 @@ export const projects = defineCollection({
       datePublished: z.string().optional(),
       dateModified: z.string().optional(),
       order: z.number().default(99),
+      evidenceStatus: z.enum(['pending', 'verified']).default('pending'),
+      sourceRecord: z.string().optional(),
       locale: z.enum(LOCALES),
       translationKey: z.string(),
       editorialLabel: z.string().optional(),

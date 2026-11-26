@@ -2,6 +2,7 @@ import type { Locale } from './config';
 import en from '../content/i18n/en.json';
 import ar from '../content/i18n/ar.json';
 import ru from '../content/i18n/ru.json';
+import { PARTNER_COPY } from './partner';
 
 const I18N = { en, ar, ru } as const;
 
@@ -9,6 +10,7 @@ const I18N = { en, ar, ru } as const;
 // home, about, services, industries, projects, team, careers, contact, privacy, terms
 export type PageKey =
   | 'home'
+  | 'partner'
   | 'about'
   | 'services'
   | 'industries'
@@ -36,6 +38,11 @@ export const PAGE_ORDER: PageKey[] = [
 type Localized = Record<Locale, { label: string; title: string; description: string }>;
 
 export const PAGES: Record<PageKey, Localized> = {
+  partner: {
+    en: { label: PARTNER_COPY.en.nav.partner, title: `${PARTNER_COPY.en.pages.partner.title} | Alanpire`, description: PARTNER_COPY.en.pages.partner.summary },
+    ar: { label: PARTNER_COPY.ar.nav.partner, title: `${PARTNER_COPY.ar.pages.partner.title} | ألانباير`, description: PARTNER_COPY.ar.pages.partner.summary },
+    ru: { label: PARTNER_COPY.ru.nav.partner, title: `${PARTNER_COPY.ru.pages.partner.title} | Alanpire`, description: PARTNER_COPY.ru.pages.partner.summary },
+  },
   home: {
     en: { label: I18N.en.nav.home, title: I18N.en.meta.home.title, description: I18N.en.meta.home.description },
     ar: { label: I18N.ar.nav.home, title: I18N.ar.meta.home.title, description: I18N.ar.meta.home.description },
@@ -108,6 +115,7 @@ export function t(locale: Locale, page: PageKey) {
 }
 
 const PAGE_SEGMENTS: Record<PageKey, string | null> = {
+  partner: 'partner',
   home: null,
   about: 'about',
   services: 'services',

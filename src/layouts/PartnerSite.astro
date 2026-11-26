@@ -1,0 +1,98 @@
+---
+import type { Locale } from '../i18n/config';
+import type { PageKey } from '../i18n/pages';
+import Base from './Base.astro';
+import { PARTNER_COPY } from '../i18n/partner';
+import ContactForm from '../components/ContactForm.astro';
+import CaseCards from '../components/CaseCards.astro';
+interface Props { locale: Locale; page: PageKey; }
+const { locale, page } = Astro.props;
+const c = PARTNER_COPY[locale];
+const hero = c.pages[page as keyof typeof c.pages] ?? c.pages.partner;
+---
+<Base locale={locale} page={page}>
+  <section class="border-b border-[#e2e5eb] bg-[#0b1930] text-white">
+    <div class="container-page grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <p class="text-sm font-medium text-slate-300">{c.eyebrow}</p>
+        <h1 class="mt-5 max-w-4xl text-white">{hero.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200">{hero.summary}</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a class="btn-primary" href="#partner-form">{c.primary}</a>
+          <a class="btn-outline" href="#capability-request">{c.brief}</a>
+        </div>
+      </div>
+      <figure class="overflow-hidden border border-slate-600">
+        <img src="/brand/partner-network.webp" alt={c.visualAlt} width="1280" height="800" fetchpriority="high" class="h-auto w-full" />
+        <figcaption class="border-t border-slate-600 p-4 text-sm text-slate-200">{c.illustrative}</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-page max-w-4xl">
+      <h2>{c.problemTitle}</h2>
+      <p class="mt-5 max-w-3xl text-[#475569]">{c.problem}</p>
+    </div>
+  </section>
+  <section class="section border-y border-[#e2e5eb] bg-white">
+    <div class="container-page">
+      <h2>{c.processTitle}</h2>
+      <ol class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {c.steps.map((step, index) => <li>
+          <span class="inline-flex h-10 w-10 items-center justify-center border border-[#e2e5eb] font-semibold" aria-hidden="true">{index + 1}</span>
+          <h3 class="mt-4">{step.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-[#475569]">{step.text}</p>
+        </li>)}
+      </ol>
+      <h3 class="mt-12">{c.rolesTitle}</h3>
+      <table class="mt-5 w-full table-fixed border-collapse text-start text-sm">
+        <caption class="sr-only">{c.rolesTitle}</caption>
+        <thead><tr>{c.roleHeadings.map(label => <th scope="col" class="break-words border border-[#e2e5eb] bg-[#eaf0f7] p-3 text-start">{label}</th>)}</tr></thead>
+        <tbody>{c.roles.map(row => <tr>{row.map((value,index) => index === 0
+          ? <th scope="row" class="break-words border border-[#e2e5eb] p-3 text-start align-top">{value}</th>
+          : <td class="break-words border border-[#e2e5eb] p-3 align-top text-[#475569]">{value}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+  </section>
+  <section class="section" id="team-experience">
+    <div class="container-page">
+      <p class="category-tag">{c.done}</p>
+      <h2 class="mt-3">{c.doneTitle}</h2>
+      <p class="mt-4 max-w-3xl text-[#475569]">{c.attribution}</p>
+      <CaseCards locale={locale} />
+    </div>
+  </section>
+  <section class="section border-y border-[#e2e5eb] bg-white">
+    <div class="container-page">
+      <p class="category-tag">{c.possible}</p>
+      <h2 class="mt-3">{c.possibleTitle}</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {c.capabilities.map(item => <article class="card"><h3>{item.title}</h3><p class="mt-3 text-[#475569]">{item.text}</p></article>)}
+      </div>
+      <p class="mt-6 max-w-3xl font-medium">{c.authorityNote}</p>
+      <p class="mt-3 max-w-3xl text-sm text-[#475569]">{c.accreditationNote}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-page">
+      <h2>{c.benefitsTitle}</h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-3">
+        {c.benefits.map(item => <article><h3>{item.title}</h3><p class="mt-3 text-[#475569]">{item.text}</p></article>)}
+      </div>
+    </div>
+  </section>
+  <section class="section border-y border-[#e2e5eb] bg-[#eaf0f7]">
+    <div class="container-page max-w-4xl">
+      <p class="category-tag">{c.held}</p>
+      <h2 class="mt-3">{c.exclusionsTitle}</h2>
+      <ul class="mt-6 list-disc space-y-3 ps-6">{c.exclusions.map(text => <li>{text}</li>)}</ul>
+    </div>
+  </section>
+  <section class="section" id="partner-form">
+    <div class="container-page max-w-4xl">
+      <h2>{c.form.title}</h2>
+      <p class="mt-4 text-[#475569]">{c.form.intro}</p>
+      <div class="mt-8"><ContactForm locale={locale} /></div>
+    </div>
+  </section>
+</Base>
