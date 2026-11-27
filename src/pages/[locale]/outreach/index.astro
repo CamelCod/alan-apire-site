@@ -1,0 +1,25 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { LOCALES } from '../../../i18n/config';
+import { PARTNER_COPY } from '../../../i18n/partner';
+export function getStaticPaths() { return LOCALES.map(locale => ({params:{locale},props:{locale}})); }
+const { locale } = Astro.props;
+const c = PARTNER_COPY[locale];
+---
+<Base locale={locale} page="outreach">
+  <section class="section">
+    <div class="container-page max-w-4xl">
+      <p class="category-tag">Alanpire</p>
+      <h1 class="mt-4">{c.brief}</h1>
+      <p class="mt-6 text-lg">{c.pages.home.summary}</p>
+      <h2 class="mt-12">{c.done}</h2><p class="mt-4">{c.doneNote}</p>
+      <p class="mt-4 text-sm text-[#475569]">{c.attribution}</p>
+      <h2 class="mt-12">{c.possible}</h2>
+      <ul class="mt-5 list-disc space-y-3 ps-6">{c.capabilities.map(item => <li><strong>{item.title}.</strong> {item.text}</li>)}</ul>
+      <h2 class="mt-12">{c.held}</h2><p class="mt-4">{c.authorityNote}</p>
+      <p class="mt-4">{c.accreditationNote}</p>
+      <p class="mt-4">{c.legalBoundary}</p>
+      <a class="btn-primary mt-10" href={`/${locale}/partner/#capability-request`}>{c.brief}</a>
+    </div>
+  </section>
+</Base>

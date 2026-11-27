@@ -1,10 +1,10 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { LOCALES, LOCALE_META, SITE_URL } from '../i18n/config';
-import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import { PUBLISHED_PAGES, localizedPath, type PageKey } from '../i18n/pages';
+import { isPublishedCase } from '../lib/case-publication';
 
-// Per-page priority and changefreq signals for crawl budget guidance.
-// lastmod is set to the build date so Bing/Yandex can detect updates.
+// Existing priority hints retained. Do not fabricate lastmod from the build date.
 const PAGE_META: Partial<Record<PageKey, { priority: string; changefreq: string }>> = {
   home:                      { priority: '1.0', changefreq: 'weekly' },
   about:                     { priority: '0.9', changefreq: 'monthly' },
@@ -12,9 +12,8 @@ const PAGE_META: Partial<Record<PageKey, { priority: string; changefreq: string 
   industries:                { priority: '0.8', changefreq: 'monthly' },
   projects:                  { priority: '0.8', changefreq: 'weekly' },
   contact:                   { priority: '0.7', changefreq: 'yearly' },
-  compare:                   { priority: '0.7', changefreq: 'monthly' },
-  'compare-vs-rpm-ahpmc':    { priority: '0.7', changefreq: 'monthly' },
-  'compare-alternatives':    { priority: '0.7', changefreq: 'monthly' },
+  partner:                   { priority: '0.9', changefreq: 'monthly' },
+  outreach:                  { priority: '0.6', changefreq: 'monthly' },
   team:                      { priority: '0.6', changefreq: 'monthly' },
   careers:                   { priority: '0.5', changefreq: 'monthly' },
   privacy:                   { priority: '0.2', changefreq: 'yearly' },
@@ -29,10 +28,9 @@ type SitemapRow = {
 
 export const GET: APIRoute = async ({ site }) => {
   const base = (site?.toString() ?? SITE_URL).replace(/\/$/, '');
-  const lastmod = new Date().toISOString().split('T')[0];
   const pages: SitemapRow[] = [];
 
-  const pageKeys = Object.keys(PAGES) as PageKey[];
+  const pageKeys = PUBLISHED_PAGES;
   for (const page of pageKeys) {
     const meta = PAGE_META[page] ?? { priority: '0.5', changefreq: 'monthly' };
     const alternates = LOCALES.map((l) => ({
@@ -49,7 +47,7 @@ export const GET: APIRoute = async ({ site }) => {
     }
   }
 
-  const projects = await getCollection('projects', (e) => e.data.order < 99);
+  const projects = await getCollection('projects', (e) => isPublishedCase(e.data));
   const byKey = new Map<string, typeof projects>();
   for (const project of projects) {
     const list = byKey.get(project.data.translationKey) ?? [];
@@ -60,13 +58,13 @@ export const GET: APIRoute = async ({ site }) => {
   for (const siblings of byKey.values()) {
     const alternates = siblings.map((s) => ({
       lang: LOCALE_META[s.data.locale].htmlLang,
-      href: `${base}/${s.data.locale}/projects/${s.slug}/`,
+      href: `${base}/${s.data.locale}/projects/${s.id}/`,
     }));
     const english = siblings.find((s) => s.data.locale === 'en') ?? siblings[0];
-    const xdefault = `${base}/${english.data.locale}/projects/${english.slug}/`;
+    const xdefault = `${base}/${english.data.locale}/projects/${english.id}/`;
     for (const project of siblings) {
       pages.push({
-        loc: `${base}/${project.data.locale}/projects/${project.slug}/`,
+        loc: `${base}/${project.data.locale}/projects/${project.id}/`,
         alternates: [{ lang: 'x-default', href: xdefault }, ...alternates],
         meta: { priority: '0.6', changefreq: 'monthly' },
       });
@@ -80,7 +78,6 @@ export const GET: APIRoute = async ({ site }) => {
         .join('\n    ');
       return `  <url>
     <loc>${p.loc}</loc>
-    <lastmod>${lastmod}</lastmod>
     <changefreq>${p.meta.changefreq}</changefreq>
     <priority>${p.meta.priority}</priority>
     ${alt}

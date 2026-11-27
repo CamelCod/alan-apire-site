@@ -4,7 +4,7 @@ import { LOCALES, LOCALE_META, SITE_URL, BRAND, type Locale } from '../i18n/conf
 import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { ANALYTICS, CUSTOMERIO } from '../i18n/config';
+import { PARTNER_COPY } from '../i18n/partner';
 
 interface Props {
   locale: Locale;
@@ -28,19 +28,7 @@ const pageTitle = title ?? t.title;
 const pageDescription = description ?? t.description;
 
 const canonical = new URL((canonicalPath ?? localizedPath(locale, page)) + '/', SITE_URL).toString();
-const ogImage = image ?? '/brand/og-default.png';
-
-const SCHEMA_DESCRIPTIONS: Record<Locale, string> = {
-  en: 'Engineering and project management consultancy based in Dubai (DIEZ), UAE, providing technical advisory and prospective architectural drawings.',
-  ar: 'استشارات هندسية وإدارة مشاريع مقرها في دبي (دييز)، الإمارات، تقدم استشارات فنية ورسومات معمارية منظورية.',
-  ru: 'Консалтинг в области инженерии и управления проектами в Дубае (DIEZ), ОАЭ, технический консалтинг и перспективные архитектурные чертежи.',
-};
-
-const SCHEMA_SERVICES: Record<Locale, string[]> = {
-  en: ['Project Management', 'Technical Consultancy', 'Architectural Prospective Drawings', 'Management Consultancy'],
-  ar: ['إدارة المشاريع', 'الاستشارات الفنية', 'الرسومات المعمارية المنظورية', 'الاستشارات الإدارية'],
-  ru: ['Управление проектами', 'Технический консалтинг', 'Перспективные архитектурные чертежи', 'Управленческий консалтинг'],
-};
+const ogImage = image ?? '/brand/partner-network.webp';
 
 // hreflang alternates for all locales, plus x-default.
 const alternates = LOCALES.map((l) => ({
@@ -89,68 +77,39 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
     <meta name="theme-color" content="#0b1930" />
     <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap.xml" />
-    {CUSTOMERIO.writeKey && <meta name="cio-write-key" content={CUSTOMERIO.writeKey} />}
     {page === 'home' && (
-      <link rel="preload" as="image" href="/brand/power-plant-hero.webp" type="image/webp" fetchpriority="high" />
+      <link rel="preload" as="image" href="/brand/partner-workflow-1280.webp" imagesrcset="/brand/partner-workflow-480.webp 480w, /brand/partner-workflow-768.webp 768w, /brand/partner-workflow-1280.webp 1280w" imagesizes="(min-width:1024px) 50vw, 100vw" type="image/webp" fetchpriority="high" />
     )}
     <slot name="head" />
 
-    {/* ── Local SEO: Organization + ProfessionalService JSON-LD ── */}
+    {/* A licence authority is not a parent company; no unverified coordinates or credentials. */}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": ["Organization", "ProfessionalService"],
+      "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      "name": "ALAN AND APIRE MANAGEMENT CONSULTANCIES – FZCO",
-      "alternateName": "Alanpire",
+      "name": "Alanpire",
+      "legalName": BRAND.name,
       "url": SITE_URL,
       "logo": `${SITE_URL}/brand/logo-mark.svg`,
-      "image": `${SITE_URL}/brand/og-default.png`,
-      "description": SCHEMA_DESCRIPTIONS[locale],
+      "image": new URL(ogImage,SITE_URL).toString(),
+      "description": PARTNER_COPY[locale].pages.home.summary,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Dubai Integrated Economic Zones Authority (DIEZ)",
+        "streetAddress": "IFZA, Dubai Silicon Oasis",
         "addressLocality": "Dubai",
         "addressCountry": "AE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 25.19850,
-        "longitude": 55.27210
       },
       "areaServed": [
         { "@type": "Country", "name": "United Arab Emirates" }
       ],
-      "email": "info@alanapire.ae",
+      "email": "info@alanpire.ae",
       "telephone": "+971558286328",
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "info@alanapire.ae",
+        "email": "info@alanpire.ae",
         "telephone": "+971558286328",
         "contactType": "technical inquiry",
         "availableLanguage": ["English", "Arabic", "Russian"]
-      },
-      "knowsAbout": [
-        "Project Management",
-        "Technical Consultancy",
-        "District Heating",
-        "Boiler Plants",
-        "Architectural Prospective Drawings"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Licensed Services",
-        "itemListElement": SCHEMA_SERVICES[locale].map((s, idx) => ({
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": s
-          },
-          "position": idx + 1
-        }))
-      },
-      "parentOrganization": {
-        "@type": "GovernmentOrganization",
-        "name": "Dubai Integrated Economic Zones Authority (DIEZ)"
       },
       "foundingLocation": {
         "@type": "Place",
@@ -159,7 +118,7 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
       "sameAs": []
     })} />
   </head>
-  <body class="min-h-dvh flex flex-col bg-[#faf9f6] text-[#0b1930]">
+  <body class="min-h-dvh flex flex-col bg-[#faf9f6] text-[#0b1930]" data-partner-page={page} data-partner-language={locale}>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0b1930] focus:text-white focus:rounded focus:text-sm focus:font-medium">
       {locale === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : locale === 'ru' ? 'Перейти к основному содержанию' : 'Skip to main content'}
     </a>
@@ -169,24 +128,5 @@ const xDefault = new URL((altPaths?.en ?? localizedPath('en', page)) + '/', SITE
     </main>
     <Footer locale={locale} />
 
-    {ANALYTICS.provider === 'plausible' && (
-      <script defer data-domain={ANALYTICS.domain} src="https://plausible.io/js/script.js"></script>
-    )}
-    <script>
-      if (document.querySelector('meta[name="cio-write-key"]')?.getAttribute('content')) {
-        import('../lib/customerio').then((m) => m.initCustomerIO());
-      }
-    </script>
-    {ANALYTICS.provider === 'ga4' && ANALYTICS.measurementId && (
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.measurementId}`}></script>
-    )}
-    {ANALYTICS.provider === 'ga4' && ANALYTICS.measurementId && (
-      <script is:inline define:vars={{ gaId: ANALYTICS.measurementId }}>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', gaId);
-      </script>
-    )}
   </body>
 </html>

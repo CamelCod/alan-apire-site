@@ -1,8 +1,7 @@
 @import './fonts.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../../tailwind.config.mjs';
 
 @layer base {
   :root {
@@ -86,10 +85,27 @@
     transition: color 0.15s ease-in-out;
   }
 
+  [hidden] {
+    display: none !important;
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html, html.scroll-smooth { scroll-behavior: auto !important; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+
   :focus-visible {
     outline: 2px solid #0b4ea2;
     outline-offset: 2px;
   }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors min-h-[44px];
 }
 
 @layer components {
@@ -98,9 +114,6 @@
   }
 
   /* Plain, editorial buttons: no gradients, no pills, subtle hover color */
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors min-h-[44px];
-  }
   .btn-primary {
     @apply btn bg-[#0b4ea2] text-white hover:bg-[#083c7d];
   }

@@ -78,7 +78,7 @@ Body is Markdown. Add a `cover` image by placing it next to the file and using `
 1. `src/i18n/config.ts` → `BRAND` phone, WhatsApp (no `+`), email, address, mapsQuery
 2. Copy `.env.example` to `.env` and set `FORMSPREE_ENDPOINT` (create a form at [formspree.io](https://formspree.io))
 3. Optional analytics: set `ANALYTICS_PROVIDER` plus `PLAUSIBLE_DOMAIN` or `GA4_MEASUREMENT_ID`
-4. Confirm `ASTRO_SITE=https://alanapire.ae` (Cloudflare Pages build variable)
+4. Confirm `ASTRO_SITE=https://alanpire.ae` (Cloudflare Pages build variable)
 5. `public/brand/` → final logo, favicon, and a raster Open Graph image (PNG/JPG — SVG is ignored by most social crawlers)
 
 ## Deployment (Cloudflare Pages)
@@ -98,13 +98,13 @@ This is a **static** Astro site. Do **not** add the Cloudflare SSR adapter.
 
    | Variable | Example |
    | --- | --- |
-   | `ASTRO_SITE` | `https://alanapire.ae` |
+   | `ASTRO_SITE` | `https://alanpire.ae` |
    | `FORMSPREE_ENDPOINT` | `https://formspree.io/f/xxxxxxxx` |
    | `ANALYTICS_PROVIDER` | `plausible` or `ga4` or omit |
-   | `PLAUSIBLE_DOMAIN` | `alanapire.ae` |
+   | `PLAUSIBLE_DOMAIN` | `alanpire.ae` |
    | `GA4_MEASUREMENT_ID` | `G-XXXXXXXX` |
 
-5. Deploy. Then **Custom domains** → add `alanapire.ae` and `www.alanapire.ae`, and redirect `www` → apex (or the reverse) in the domain settings. SSL is automatic.
+5. Deploy. Then **Custom domains** → add `alanpire.ae` and `www.alanpire.ae`, and redirect `www` → apex (or the reverse) in the domain settings. SSL is automatic.
 
 ### Direct upload (no Git)
 

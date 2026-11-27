@@ -1,0 +1,74 @@
+[
+  {
+    "locale": "en",
+    "trial": 1,
+    "status": 200,
+    "headers_ms": 220,
+    "total_ms": 220,
+    "decoded_html_bytes": 31088
+  },
+  {
+    "locale": "en",
+    "trial": 2,
+    "status": 200,
+    "headers_ms": 79,
+    "total_ms": 79,
+    "decoded_html_bytes": 31088
+  },
+  {
+    "locale": "en",
+    "trial": 3,
+    "status": 200,
+    "headers_ms": 69,
+    "total_ms": 70,
+    "decoded_html_bytes": 31088
+  },
+  {
+    "locale": "ar",
+    "trial": 1,
+    "status": 200,
+    "headers_ms": 54,
+    "total_ms": 55,
+    "decoded_html_bytes": 34334
+  },
+  {
+    "locale": "ar",
+    "trial": 2,
+    "status": 200,
+    "headers_ms": 187,
+    "total_ms": 187,
+    "decoded_html_bytes": 34334
+  },
+  {
+    "locale": "ar",
+    "trial": 3,
+    "status": 200,
+    "headers_ms": 213,
+    "total_ms": 214,
+    "decoded_html_bytes": 34334
+  },
+  {
+    "locale": "ru",
+    "trial": 1,
+    "status": 200,
+    "headers_ms": 266,
+    "total_ms": 266,
+    "decoded_html_bytes": 37289
+  },
+  {
+    "locale": "ru",
+    "trial": 2,
+    "status": 200,
+    "headers_ms": 55,
+    "total_ms": 56,
+    "decoded_html_bytes": 37289
+  },
+  {
+    "locale": "ru",
+    "trial": 3,
+    "status": 200,
+    "headers_ms": 313,
+    "total_ms": 313,
+    "decoded_html_bytes": 37289
+  }
+]

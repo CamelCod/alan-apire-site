@@ -1,0 +1,18 @@
+====================================================
+       TRANSLATION & CONSTANTS PARITY REPORT        
+====================================================
+Total master keys (EN):          181
+Total Arabic keys (AR):          181
+Total Russian keys (RU):         181
+----------------------------------------------------
+Missing keys in AR:              0
+Missing keys in RU:              0
+Extra keys in AR:                0
+Extra keys in RU:                0
+----------------------------------------------------
+Needs-review count (EN):         0
+Needs-review count (AR):         0
+Needs-review count (RU):         0
+----------------------------------------------------
+Constant Parity Errors:          1
+====================================================

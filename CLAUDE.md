@@ -61,10 +61,10 @@ There is no test framework or linter. Validate every change with `npm run build`
 
 | Variable | Purpose |
 | --- | --- |
-| `ASTRO_SITE` | Canonical URL, e.g. `https://alanapire.ae` |
+| `ASTRO_SITE` | Canonical URL, e.g. `https://alanpire.ae` |
 | `FORMSPREE_ENDPOINT` | Contact form POST target |
 | `ANALYTICS_PROVIDER` | `plausible` \| `ga4` \| `none` |
-| `PLAUSIBLE_DOMAIN` | e.g. `alanapire.ae` |
+| `PLAUSIBLE_DOMAIN` | e.g. `alanpire.ae` |
 | `GA4_MEASUREMENT_ID` | e.g. `G-XXXXXXXX` |
 | `CIO_WRITE_KEY` | Optional Customer.io sandbox override |
 

@@ -6,8 +6,8 @@ compatibility_date = "2026-09-01"
 pages_build_output_dir = "dist"
 
 # Set these as Cloudflare Pages *build* environment variables (not runtime):
-#   ASTRO_SITE            https://alanapire.ae
+#   ASTRO_SITE            https://alanpire.ae
 #   FORMSPREE_ENDPOINT    https://formspree.io/f/<id>
 #   ANALYTICS_PROVIDER    plausible | ga4 | none
-#   PLAUSIBLE_DOMAIN      alanapire.ae
+#   PLAUSIBLE_DOMAIN      alanpire.ae
 #   GA4_MEASUREMENT_ID    G-XXXXXXXX

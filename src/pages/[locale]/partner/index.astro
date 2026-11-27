@@ -1,0 +1,7 @@
+---
+import PartnerSite from '../../../layouts/PartnerSite.astro';
+import { LOCALES } from '../../../i18n/config';
+export function getStaticPaths() { return LOCALES.map(locale => ({ params: { locale }, props: { locale } })); }
+const { locale } = Astro.props;
+---
+<PartnerSite locale={locale} page="partner" />

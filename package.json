@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=22.23.4"
   },
   "scripts": {
     "dev": "astro dev",
@@ -17,10 +17,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.4",
     "@customerio/cdp-analytics-browser": "^0.8.2",
-    "astro": "^4.16.18",
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/vite": "^4.1.0",
+    "astro": "7.4.13",
+    "tailwindcss": "^4.1.0"
   },
   "devDependencies": {
     "playwright": "^1.61.0",
@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/CamelCod/alan-apire-site/issues"
   },
-  "homepage": "https://github.com/CamelCod/alan-apire-site#readme"
+  "homepage": "https://github.com/CamelCod/alan-apire-site#readme",
+  "overrides": {
+    "vite": "8.4.0"
+  }
 }

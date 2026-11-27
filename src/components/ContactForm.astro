@@ -1,102 +1,79 @@
 ---
-import { type Locale } from '../i18n/config';
+import { BRAND, type Locale } from '../i18n/config';
+import { PARTNER_COPY } from '../i18n/partner';
+import { partnerEndpoint } from '../lib/partner-form';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
-const dict = {
-  en: {
-    name: 'Full Name', company: 'Company Name', email: 'Work Email', phone: 'Phone Number',
-    location: 'Project Location (UAE / International)', industry: 'Industry Sector',
-    industryOptions: ['Energy & Power', 'Water Infrastructure', 'District Heating', 'Oil & Gas', 'Industrial Infrastructure', 'Other'],
-    service: 'Required Service',
-    serviceOptions: ['Project Management', 'Engineering Advisory', 'Architectural Drawings', 'Management Consulting'],
-    message: 'Project Summary & Scope', action: 'Send',
-    privacy: 'By submitting, you agree to our Privacy Policy.',
-  },
-  ar: {
-    name: 'الاسم الكامل', company: 'اسم الشركة', email: 'البريد الإلكتروني للعمل', phone: 'رقم الهاتف',
-    location: 'موقع المشروع (الإمارات / دولي)', industry: 'القطاع الصناعي',
-    industryOptions: ['الطاقة والكهرباء', 'البنية التحتية للمياه', 'التدفئة المركزية', 'النفط والغاز', 'البنية التحتية الصناعية', 'أخرى'],
-    service: 'الخدمة المطلوبة',
-    serviceOptions: ['إدارة المشاريع', 'الاستشارات الهندسية', 'الرسومات المعمارية', 'الاستشارات الإدارية'],
-    message: 'ملخص المشروع والنطاق', action: 'إرسال',
-    privacy: 'بالإرسال أنت توافق على سياسة الخصوصية.',
-  },
-  ru: {
-    name: 'Полное имя', company: 'Название компании', email: 'Рабочая эл. почта', phone: 'Номер телефона',
-    location: 'Локация проекта (ОАЭ / международная)', industry: 'Отрасль',
-    industryOptions: ['Энергетика', 'Водная инфраструктура', 'Теплоснабжение', 'Нефть и газ', 'Промышленная инфраструктура', 'Другое'],
-    service: 'Требуемая услуга',
-    serviceOptions: ['Управление проектами', 'Инженерный консалтинг', 'Архитектурные чертежи', 'Управленческий консалтинг'],
-    message: 'Краткое описание и объём проекта', action: 'Отправить',
-    privacy: 'Отправляя форму, вы соглашаетесь с политикой конфиденциальности.',
-  },
-}[locale];
-// Formspree endpoint - set in .env at launch (Phase 6 of the quote).
-const formAction = import.meta.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/your-id';
+const c = PARTNER_COPY[locale].form;
+const endpoint = partnerEndpoint(import.meta.env.FORMSPREE_ENDPOINT);
+const fieldLabels = {email:c.email,project_type:c.project,project_location:c.location,timeline:c.timeline,message:c.message,nda_requested:c.nda,capability_brief:c.capability,consent:c.consent};
 ---
-
-<form action={formAction} method="POST" class="card grid gap-4" accept-charset="utf-8" data-cio="contact-form" data-locale={locale}>
-  <input type="hidden" name="_subject" value="Website enquiry — Alan Apire" />
-  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-  <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.name}
-    <input type="text" name="name" autocomplete="name" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
-  </label>
-  <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.company}
-    <input type="text" name="company" autocomplete="organization" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
-  </label>
-  <div class="grid gap-4 sm:grid-cols-2">
-    <label class="grid gap-1 text-sm font-medium text-brand-700">
-      {dict.email}
-      <input type="email" name="email" autocomplete="email" inputmode="email" required class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
-    </label>
-    <label class="grid gap-1 text-sm font-medium text-brand-700">
-      {dict.phone}
-      <input type="tel" name="phone" autocomplete="tel" inputmode="tel" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
-    </label>
+<form
+  action={endpoint ?? undefined} method="post" data-partner-form
+  data-endpoint={endpoint ?? ''} data-email={BRAND.email}
+  data-labels={JSON.stringify(fieldLabels)} data-subject={`Alanpire — ${c.title}`}
+  data-sending={c.sending} data-success={c.success} data-failure={c.failure}
+  class="grid gap-6"
+>
+  <div class="grid gap-6 sm:grid-cols-2">
+    <label class="grid gap-2 font-medium">{c.project}<input name="project_type" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.location}<input name="project_location" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.timeline}<input name="timeline" required maxlength="160" class="w-full rounded border border-[#64748b] bg-white px-3 py-3" /></label>
+    <label class="grid gap-2 font-medium">{c.email}<input type="email" name="email" autocomplete="email" dir="ltr" required maxlength="254" class="w-full rounded border border-[#64748b] bg-white px-3 py-3 text-start" /></label>
   </div>
-  <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.location}
-    <input type="text" name="project_location" class="rounded-md border border-brand-200 px-3 py-2 text-sm" />
-  </label>
-  <div class="grid gap-4 sm:grid-cols-2">
-    <label class="grid gap-1 text-sm font-medium text-brand-700">
-      {dict.industry}
-      <select name="industry" class="rounded-md border border-brand-200 bg-white px-3 py-2 text-sm">
-        {dict.industryOptions.map((o) => <option value={o}>{o}</option>)}
-      </select>
-    </label>
-    <label class="grid gap-1 text-sm font-medium text-brand-700">
-      {dict.service}
-      <select name="service" class="rounded-md border border-brand-200 bg-white px-3 py-2 text-sm">
-        {dict.serviceOptions.map((o) => <option value={o}>{o}</option>)}
-      </select>
-    </label>
+  <label class="grid gap-2 font-medium" for="partner-message">{c.message}</label>
+  <textarea id="partner-message" name="message" rows="4" maxlength="2000" aria-describedby="partner-summary-hint" class="-mt-4 w-full rounded border border-[#64748b] bg-white px-3 py-3"></textarea>
+  <p id="partner-summary-hint" class="-mt-3 text-sm text-[#475569]">{c.hint}</p>
+  <fieldset class="grid gap-4">
+    <legend class="sr-only">{c.sendHint}</legend>
+    <label class="flex items-start gap-3"><input type="checkbox" name="nda_requested" value="requested" class="mt-1 h-5 w-5 shrink-0" /><span>{c.nda} <span class="text-sm text-[#475569]">({c.optional})</span></span></label>
+    <label class="flex items-start gap-3" id="capability-request"><input type="checkbox" name="capability_brief" value="requested" class="mt-1 h-5 w-5 shrink-0" /><span>{c.capability} <span class="text-sm text-[#475569]">({c.optional})</span></span></label>
+  </fieldset>
+  <label class="flex items-start gap-3"><input type="checkbox" name="consent" value="agreed" required class="mt-1 h-5 w-5 shrink-0" /><span>{c.consent} <a class="font-medium text-[#0b4ea2] underline" href={`/${locale}/privacy/`}>{c.privacy}</a>.</span></label>
+  {!endpoint && <p class="border-s-4 border-[#0b4ea2] bg-white p-4 text-sm">{c.fallback}</p>}
+  <p data-form-status role="status" aria-live="polite" tabindex="-1" class="empty:hidden rounded border border-[#64748b] bg-white p-4 text-sm"></p>
+  <div class="flex flex-wrap items-center gap-5">
+    <button type={endpoint ? 'submit' : 'button'} data-enquiry-button class="btn-primary">{endpoint ? c.submit : c.emailAction}</button>
+    <a href={`mailto:${BRAND.email}`} class="font-medium text-[#0b4ea2] underline">{c.directEmail}</a>
   </div>
-  <label class="grid gap-1 text-sm font-medium text-brand-700">
-    {dict.message}
-    <textarea name="message" rows="5" required class="rounded-md border border-brand-200 px-3 py-2 text-sm"></textarea>
-  </label>
-  <button type="submit" class="btn-primary justify-self-start">{dict.action}</button>
-  <p class="text-xs text-brand-500">{dict.privacy}</p>
+  <p class="text-sm text-[#475569]">{c.replyPromise}</p>
+  <noscript><p><a href={`mailto:${BRAND.email}`} class="underline">{c.directEmail}</a></p></noscript>
 </form>
-
 <script>
-  import { cioIdentify, cioTrack } from '../lib/customerio';
-
-  const form = document.querySelector<HTMLFormElement>('form[data-cio="contact-form"]');
-  form?.addEventListener('submit', () => {
-    const data = new FormData(form);
-    const email = String(data.get('email') ?? '').trim();
-    const name = String(data.get('name') ?? '').trim();
-    if (email) {
-      cioIdentify(email, { email, name: name || undefined });
+  import { sendPartnerEnquiry, enquiryMailto } from '../lib/partner-form';
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-partner-form]')) {
+    const button = form.querySelector<HTMLButtonElement>('[data-enquiry-button]');
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+    let busy = false;
+    async function handle(event: Event) {
+      event.preventDefault();
+      if (busy || !form.reportValidity() || !button || !status) return;
+      const data = new FormData(form);
+      if (!form.dataset.endpoint) {
+        window.location.href = enquiryMailto(form.dataset.email ?? '', data, JSON.parse(form.dataset.labels ?? '{}'), form.dataset.subject ?? '');
+        return;
+      }
+      busy = true; button.disabled = true; form.setAttribute('aria-busy','true');
+      status.textContent = form.dataset.sending ?? '';
+      try {
+        await sendPartnerEnquiry(form.dataset.endpoint, data);
+        form.dispatchEvent(new Event('partner:accepted'));
+        status.textContent = form.dataset.success ?? '';
+        form.reset();
+      } catch {
+        status.textContent = form.dataset.failure ?? '';
+      } finally {
+        busy = false; button.disabled = false; form.removeAttribute('aria-busy'); status.focus();
+      }
     }
-    cioTrack('contact_form_submitted', {
-      locale: form?.dataset.locale,
-      industry: String(data.get('industry') ?? ''),
-      service: String(data.get('service') ?? ''),
-    });
-  });
+    form.addEventListener('submit', handle);
+    if (!form.dataset.endpoint) button?.addEventListener('click', handle);
+    function applyBriefIntent() {
+      if (window.location.hash !== '#capability-request') return;
+      const input = form.querySelector<HTMLInputElement>('[name="capability_brief"]');
+      if (input) { const changed=!input.checked; input.checked = true; if(changed)input.dispatchEvent(new Event('change',{bubbles:true})); input.focus({preventScroll:true}); }
+    }
+    window.addEventListener('hashchange',applyBriefIntent);
+    applyBriefIntent();
+  }
 </script>

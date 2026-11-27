@@ -1,80 +1,45 @@
 ---
 import { LOCALES, LOCALE_META, type Locale } from '../i18n/config';
-import { PAGES, localizedPath, type PageKey } from '../i18n/pages';
-import { CTA_LABEL } from '../i18n/site';
-import { TECHNICAL_CONSTANTS } from '../i18n/constants';
-
+import { localizedPath, type PageKey } from '../i18n/pages';
+import { PARTNER_COPY } from '../i18n/partner';
 interface Props { locale: Locale; page: PageKey; }
 const { locale, page } = Astro.props;
-const NAV_PAGES: PageKey[] = ['about', 'services', 'projects', 'industries'];
-const navItems = NAV_PAGES.map((p) => ({
-  key: p as PageKey,
-  label: PAGES[p][locale].label,
-  href: localizedPath(locale, p),
-}));
-const otherLocales = LOCALES.filter((l) => l !== locale);
+const c = PARTNER_COPY[locale];
+const navPages = ['about','services','projects','partner','contact'] as const;
+const others = LOCALES.filter(l => l !== locale);
 ---
-
-<header class="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-[#e2e5eb] bg-[#faf9f6]/95 backdrop-blur">
-  <div class="container-page flex h-full items-center justify-between gap-4">
-    <a href={localizedPath(locale, 'home')} class="flex items-center gap-2 text-lg font-semibold tracking-tight text-[#0b1930]">
-      <img src="/brand/logo-mark.svg" alt="" width="30" height="30" class="h-7 w-7" />
-      <span>{TECHNICAL_CONSTANTS.companyShortName}</span>
+<header class="fixed inset-x-0 top-0 z-40 h-[var(--header-h)] border-b border-[#e2e5eb] bg-[#faf9f6]">
+  <div class="container-page flex h-full items-center justify-between gap-3">
+    <a href={`/${locale}/`} class="flex items-center gap-2 text-lg font-semibold">
+      <img src="/brand/logo-mark.svg" alt="" width="30" height="30" /><span>Alanpire</span>
     </a>
-
-    <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
-      {navItems.map((item) => (
-        <a
-          href={item.href}
-          class:list={[
-            'rounded px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors',
-            page === item.key ? 'text-[#0b1930] bg-[#e2e5eb]/50' : 'text-[#64748b] hover:text-[#0b1930] hover:bg-[#e2e5eb]/30',
-          ]}
-        >{item.label}</a>
-      ))}
+    <nav aria-label={c.nav.primary} class="hidden items-center gap-1 xl:flex">
+      {navPages.map(key => <a href={`${localizedPath(locale,key)}/`} aria-current={page === key ? 'page' : undefined} class="rounded px-3 py-2 text-sm font-medium hover:bg-[#eaf0f7]">{c.nav[key]}</a>)}
     </nav>
-
     <div class="flex items-center gap-2">
-      <div class="hidden items-center gap-1 sm:flex">
-        {otherLocales.map((l) => (
-          <a
-            href={localizedPath(l, page)}
-            hreflang={LOCALE_META[l].htmlLang}
-            rel="alternate"
-            class="rounded border border-[#e2e5eb] bg-white px-2.5 py-1 text-xs font-medium text-[#475569] hover:bg-[#faf9f6] transition-colors"
-          >{LOCALE_META[l].label}</a>
-        ))}
-      </div>
-      <a href={localizedPath(locale, 'contact')} class="btn-primary text-xs py-2 px-4 min-h-[38px] hidden sm:inline-flex">{CTA_LABEL[locale]}</a>
-      <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" class="rounded-md p-2 text-brand-700 lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <div class="hidden gap-1 sm:flex">{others.map(l => <a href={`${localizedPath(l,page)}/`} hreflang={l} lang={l} class="inline-flex min-h-[44px] items-center border border-[#e2e5eb] px-3 text-sm">{LOCALE_META[l].label}</a>)}</div>
+      <button id="menu-btn" type="button" aria-label={c.nav.menu} aria-expanded="false" aria-controls="mobile-menu" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded border border-[#e2e5eb] xl:hidden">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
   </div>
-
-  <div id="mobile-menu" class="hidden border-t border-brand-100 bg-white lg:hidden">
-    <nav class="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
-      {navItems.map((item) => (
-        <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50 min-h-[44px] inline-flex items-center">{item.label}</a>
-      ))}
-      <div class="mt-2 flex gap-2">
-        {otherLocales.map((l) => (
-          <a href={localizedPath(l, page)} class="rounded border border-brand-100 px-2 py-1 text-xs font-medium text-brand-600">{LOCALE_META[l].label}</a>
-        ))}
-      </div>
-    </nav>
-  </div>
+  <nav id="mobile-menu" hidden aria-label={c.nav.mobile} class="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-[#e2e5eb] bg-white xl:hidden">
+    <div class="container-page flex flex-col gap-1 py-5">
+      {navPages.map(key => <a href={`${localizedPath(locale,key)}/`} class="inline-flex min-h-[44px] items-center px-3 py-2 font-medium">{c.nav[key]}</a>)}
+      <div class="mt-3 flex gap-3">{others.map(l => <a href={`${localizedPath(l,page)}/`} lang={l} class="inline-flex min-h-[44px] items-center border px-3">{LOCALE_META[l].label}</a>)}</div>
+    </div>
+  </nav>
 </header>
-
-<script is:inline>
-  (function () {
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (!btn || !menu) return;
-    btn.addEventListener('click', () => {
-      const open = !menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!open));
-    });
-  })();
+<script>
+  const button = document.querySelector<HTMLButtonElement>('#menu-btn');
+  const menu = document.querySelector<HTMLElement>('#mobile-menu');
+  function closeMenu() { if (menu && button) { menu.hidden = true; button.setAttribute('aria-expanded','false'); } }
+  button?.addEventListener('click', () => {
+    if (!menu) return;
+    menu.hidden = !menu.hidden;
+    button.setAttribute('aria-expanded', String(!menu.hidden));
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu && !menu.hidden) { closeMenu(); button?.focus(); } });
+  menu?.addEventListener('click', event => { if ((event.target as Element).closest('a')) closeMenu(); });
+  window.matchMedia('(min-width: 1280px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 </script>
