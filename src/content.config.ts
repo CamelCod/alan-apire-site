@@ -1,9 +1,11 @@
-import { defineCollection, reference, z } from 'astro:content';
-import { LOCALES } from '../i18n/config';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+import { LOCALES } from './i18n/config';
 
 // Only cases with approved sources, scope, role and year can generate public routes.
 export const projects = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '*.md', base: './src/content/projects' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -37,15 +39,4 @@ export const projects = defineCollection({
     }),
 });
 
-// Reusable content pages if the client wants to extend beyond the 10 hardcoded templates later.
-export const pages = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    locale: z.enum(LOCALES),
-    translationKey: z.string(),
-  }),
-});
-
-export const collections = { projects, pages };
+export const collections = { projects };

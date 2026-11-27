@@ -1,4 +1,4 @@
-# robots.txt — alanapire.ae
+# robots.txt — alanpire.ae
 # Updated: September 2026
 # Strategy: allow search indexing + AI citation crawlers; block pure AI training crawlers
 
@@ -24,4 +24,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://alanapire.ae/sitemap.xml
+Sitemap: https://alanpire.ae/sitemap.xml

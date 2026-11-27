@@ -58,13 +58,13 @@ export const GET: APIRoute = async ({ site }) => {
   for (const siblings of byKey.values()) {
     const alternates = siblings.map((s) => ({
       lang: LOCALE_META[s.data.locale].htmlLang,
-      href: `${base}/${s.data.locale}/projects/${s.slug}/`,
+      href: `${base}/${s.data.locale}/projects/${s.id}/`,
     }));
     const english = siblings.find((s) => s.data.locale === 'en') ?? siblings[0];
-    const xdefault = `${base}/${english.data.locale}/projects/${english.slug}/`;
+    const xdefault = `${base}/${english.data.locale}/projects/${english.id}/`;
     for (const project of siblings) {
       pages.push({
-        loc: `${base}/${project.data.locale}/projects/${project.slug}/`,
+        loc: `${base}/${project.data.locale}/projects/${project.id}/`,
         alternates: [{ lang: 'x-default', href: xdefault }, ...alternates],
         meta: { priority: '0.6', changefreq: 'monthly' },
       });

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import type { GetStaticPaths } from 'astro';
 import Base from '../../../layouts/Base.astro';
@@ -8,17 +8,17 @@ import { PARTNER_COPY } from '../../../i18n/partner';
 import { isPublishedCase } from '../../../lib/case-publication';
 export const getStaticPaths = (async () => {
   const cases = await getCollection('projects', entry => isPublishedCase(entry.data));
-  return cases.map(entry => ({ params: { locale: entry.data.locale, slug: entry.slug }, props: { project: entry } }));
+  return cases.map(entry => ({ params: { locale: entry.data.locale, slug: entry.id }, props: { project: entry } }));
 }) satisfies GetStaticPaths;
 const { project } = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 const d = project.data;
 const locale = d.locale;
 const c = PARTNER_COPY[locale];
 const siblings = await getCollection('projects', entry => entry.data.translationKey === d.translationKey && isPublishedCase(entry.data));
-const altPaths = Object.fromEntries(siblings.map(entry => [entry.data.locale,`/${entry.data.locale}/projects/${entry.slug}`]));
+const altPaths = Object.fromEntries(siblings.map(entry => [entry.data.locale,`/${entry.data.locale}/projects/${entry.id}`]));
 ---
-<Base locale={locale} page="projects" title={`${d.title} | Alanpire`} description={d.summary} canonicalPath={`/${locale}/projects/${project.slug}`} altPaths={altPaths}>
+<Base locale={locale} page="projects" title={`${d.title} | Alanpire`} description={d.summary} canonicalPath={`/${locale}/projects/${project.id}`} altPaths={altPaths}>
   <section class="section">
     <div class="container-page max-w-4xl">
       <p class="category-tag">{c.done}</p>

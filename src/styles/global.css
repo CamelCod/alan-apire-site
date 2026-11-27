@@ -1,8 +1,7 @@
 @import './fonts.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../../tailwind.config.mjs';
 
 @layer base {
   :root {
@@ -105,15 +104,16 @@
   }
 }
 
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors min-h-[44px];
+}
+
 @layer components {
   .container-page {
     @apply container max-w-6xl;
   }
 
   /* Plain, editorial buttons: no gradients, no pills, subtle hover color */
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors min-h-[44px];
-  }
   .btn-primary {
     @apply btn bg-[#0b4ea2] text-white hover:bg-[#083c7d];
   }

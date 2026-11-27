@@ -10,7 +10,7 @@ export function isLocale(value: string | undefined): value is Locale {
   return !!value && (LOCALES as readonly string[]).includes(value);
 }
 // Domain intentionally unchanged pending the owner's decision.
-export const SITE_URL = (import.meta.env.SITE as string | undefined)?.replace(/\/$/, '') || 'https://alanapire.ae';
+export const SITE_URL = (import.meta.env.SITE as string | undefined)?.replace(/\/$/, '') || 'https://alanpire.ae';
 export const BRAND = {
   name:'Alan and Apire Management Consultancies – FZCO',
   shortName:'Alanpire',
